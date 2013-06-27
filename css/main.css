@@ -93,17 +93,18 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0; margin: 0; color: #353535;}
+html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0; margin: 0; color: #353535; font: 500 16px "Conv_FontinSans_Cyrillic_SC", sans-serif; color: #562024; }
 
 .wrapper { width: 100%; height: 100%; min-width: 960px; }
+.page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1em auto; text-indent: -9999px; width: 187px; height: 112px; }
 	.block-1 { background: #f8f1e1; }
-	.block-2 { background: url("../img/main/block-1.jpg") no-repeat 100% 100% transparent; background-size: cover; }
-	.block-3 { background: url("../img/main/block-2.jpg") no-repeat 100% 100% transparent; background-size: cover; }
-	.block-4 { background: url("../img/main/block-3.jpg") no-repeat 100% 100% transparent; background-size: cover; }
-	.block-5 { background: url("../img/main/block-4.jpg") no-repeat 100% 100% transparent; background-size: cover; }
+	.block-2 { background: url("../img/main/block-1.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
+	.block-3 { background: url("../img/main/block-2.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
+	.block-4 { background: url("../img/main/block-3.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
+	.block-5 { background: url("../img/main/block-4.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
 	
 	.wrapper-component { position: relative; float: left; width: 20%; height: 100%; min-width: 192px; }
-		.block-name { position: relative; top: 50%; width: 90%; margin: 0 auto; background: #FFF; text-align: center; font-size: .9375em; }
+		.block-name { position: relative; top: 50%; width: 95%; margin: 0 auto; background: #FFF; text-align: center; font-size: .9375em; line-height: 2.1875em; letter-spacing: .3em; }
 		
 
 
