@@ -4,36 +4,20 @@ class Guests_interface extends MY_Controller{
 	
 	var $per_page = PER_PAGE_DEFAULT;
 	var $offset = 0;
+	var $categories = array('входные двери','межкомнатные двери','декор','паркет');
 	
 	function __construct(){
 
 		parent::__construct();
+		$this->load->library('page_variables');
 	}
 	
 	public function index(){
 		
 		$pagevar = array(
+			'manufacturers'=>array()
 		);
 		$this->load->view("guests_interface/index",$pagevar);
-	}
-	
-	public function news(){
-		
-		$this->offset = intval($this->uri->segment(3));
-		$this->load->helper('date');
-		$this->load->model('news');
-		$pagevar = array(
-			'news' => array(),
-			'pagination' => array()
-		);
-		if($this->input->get('news') === FALSE):
-			$pagevar['news'] = $this->news->limit($this->per_page,$this->offset);
-			$pagevar['pagination'] = $this->pagination('news',3,$this->news->countAllResults(),$this->per_page);
-			$this->load->view("guests_interface/news",$pagevar);
-		elseif(is_numeric($this->input->get('news'))):
-			$pagevar['news'] = $this->news->getWhere($this->input->get('news'));
-			$this->load->view("guests_interface/single-news",$pagevar);
-		endif;
 	}
 	
 	/******************************************* Авторизация и регистрация ***********************************************/

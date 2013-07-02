@@ -9,4 +9,4 @@ application/logs/*
 !application/logs/.htaccess
 
 download/*
-poolcafe.clpprj
+rivendoors.clpprj
