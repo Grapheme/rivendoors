@@ -22,7 +22,7 @@
 				<?=$this->categories[$i];?>
 				<div class="green-cross"></div>
 			</div>
-			<div class="block-description right">
+			<div class="block-description <?=(($i+2)<5)?'right':'left';?>">
 				<ul class="block-description-list">
 				<?php for($j=0;$j<count($manufacturers);$j++):?>
 					<li class="block-description-list-item"><a href="<?=site_url('#');?>"><?=$manufacturers[$j]['title'];?></a></li>
@@ -35,7 +35,6 @@
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
 	<script src="<?=base_url('js/vendor/jquery.color.js');?>"></script>
-	<script src="<?=base_url('js/vendor/jquery-ui.min.js');?>"></script>
 	<?php $this->load->view('guests_interface/includes/google-analytic');?>
 </body>
 </html>

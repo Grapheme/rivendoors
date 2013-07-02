@@ -1,7 +1,5 @@
 $(function(){
-	
 	var win_height = $(window).height();
-	
 	$(window).resize( function() {
 		win_height = $(window).height();
 		$('.about-company-slideshow').height(win_height);
@@ -9,8 +7,6 @@ $(function(){
 			height: win_height
 		});
 	});
-	
-		
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
 		transition: 'fade',

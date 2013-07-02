@@ -36,8 +36,6 @@
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
-	<script src="<?=base_url('js/vendor/jquery.color.js');?>"></script>
-	<script src="<?=base_url('js/vendor/jquery-ui.min.js');?>"></script>
 	<script src="<?=base_url('js/vendor/fotorama.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/fotorama-config.js');?>"></script>
 	<?php $this->load->view('guests_interface/includes/google-analytic');?>
