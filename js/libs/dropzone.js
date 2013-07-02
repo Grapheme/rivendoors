@@ -64,7 +64,7 @@ function UploadFile(formData,file){
 			if(event.target.status == 200){
 				var response = $.parseJSON(event.target.responseText);
 				if(response.status == true){
-					$("<li></li>").appendTo("ul.resources-items").html(response.responsePhotoSrc);
+					$('<li class="span2"></li>').appendTo("ul.resources-items").html(response.responsePhotoSrc);
 					$("a.delete-resource-item:last").off('click').on("click",function(event){
 						event.preventDefault();
 						mt.deleteResource(this);

@@ -101,14 +101,15 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		$resultUpload = $this->uploadSingleImage($uploadPath);
-		if($resultUpload['status'] == TRUE):
-			$json_request['responsePhotoSrc'] = $this->savePageResource($resultUpload['uploadData']);
-		else:
-			$json_request['responseText'] = 'Ошибка при загрузке';
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+			$resultUpload = $this->uploadSingleImage($uploadPath);
+			if($resultUpload['status'] == TRUE):
+				$json_request['responsePhotoSrc'] = $this->savePageResource($resultUpload['uploadData']);
+			else:
+				$json_request['responseText'] = 'Ошибка при загрузке';
+			endif;
+			$json_request['status'] = $resultUpload['status'];
 		endif;
-		$json_request['status'] = $resultUpload['status'];
-		$json_request['status'] = TRUE;
 		echo json_encode($json_request);
 	}
 	
@@ -134,7 +135,7 @@ class Ajax_interface extends MY_Controller{
 		/**************************************************************************************************************/
 		if($resourceID = $this->insertItem(array('insert'=>$resourceData,'model'=>'page_resources'))):
 			$this->load->helper('string');
-			$html = '<img class="" width="200" src="'.site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$resourceID).'" alt="" />';
+			$html = '<img class="img-rounded" width="200" src="'.site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$resourceID).'" alt="" />';
 			$html .= '<a href="#" data-resource-id="'.$resourceID.'" class="delete-resource-item">&times;</a>';
 			return $html;
 		else:
