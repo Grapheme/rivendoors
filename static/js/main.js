@@ -9,6 +9,11 @@ $(document).ready(function () {
 
 	$('.can-fade').click( function(){
 		$(this).animate({width: 'toggle'}, 500);	
+		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
+	});
+	$('.green-cross-on-fade').click(function () { 
+		$(this).css({'opacity' : '0', 'z-index' : '0'});
+		$('.can-fade').animate({width: 'toggle'}, 500);
 	});
 	/*$('.block-5').click( function() {		
 		$(this).find('.block-description').delay(175).show('slide', {direction:'right'}, 250);
