@@ -16,13 +16,13 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-	<?php for($i=0;$i<count($this->categories);$i++):?>
-		<div class="wrapper-component block-<?=$i+2;?>">
+	<?php foreach($this->categories as $key => $value):?>
+		<div class="wrapper-component block-<?=$key;?>">
 			<div class="block-name">
-				<?=$this->categories[$i];?>
+				<?=$value;?>
 				<div class="green-cross"></div>
 			</div>
-			<div class="block-description <?=(($i+2)<5)?'right':'left';?>">
+			<div class="block-description <?=($key<5)?'right':'left';?>">
 				<ul class="block-description-list">
 				<?php for($j=0;$j<count($manufacturers);$j++):?>
 					<li class="block-description-list-item"><a href="<?=site_url('#');?>"><?=$manufacturers[$j]['title'];?></a></li>
@@ -30,7 +30,7 @@
 				</ul>
 			</div>
 		</div>
-	<?php endfor;?>
+	<?php endforeach;?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	

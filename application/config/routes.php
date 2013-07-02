@@ -9,9 +9,12 @@ $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
 $route['redactor/upload'] = "ajax_interface/redactorUploadImage";
 /**************** remove items ********************/
-
+$route[ADMIN_START_PAGE.'/manufacturers/insert'] = "ajax_interface/insertManufacturer";
+$route[ADMIN_START_PAGE.'/manufacturers/update'] = "ajax_interface/updateManufacturer";
+$route[ADMIN_START_PAGE.'/manufacturers/upload/resource'] = "ajax_interface/manufacturerUploadImage";
+$route[ADMIN_START_PAGE.'/manufacturers/remove'] = "ajax_interface/manufacturerRemove";
 /******************load view ********************/
-$route['page/view-resource/:any'] = "guests_interface/loadResource";
+$route[':any/view-resource/:any'] = "guests_interface/loadResource";
 /***************** pages ******************/
 $route[ADMIN_START_PAGE.'/page/:any/update'] = "ajax_interface/pageUpdateContent";
 $route[ADMIN_START_PAGE.'/page/:any/upload/resource'] = "ajax_interface/pageUploadResources";
@@ -28,3 +31,6 @@ $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/
 $route[ADMIN_START_PAGE] = "admin_interface/control_panel";
 $route[ADMIN_START_PAGE.'/page/about'] = "admin_interface/editPage";
+$route[ADMIN_START_PAGE.'/manufacturers'] = "admin_interface/manufacturers";
+$route[ADMIN_START_PAGE.'/manufacturers/add'] = "admin_interface/addManufacturer";
+$route[ADMIN_START_PAGE.'/manufacturers/edit'] = "admin_interface/editManufacturer";

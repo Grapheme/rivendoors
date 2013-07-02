@@ -4,7 +4,6 @@ class Guests_interface extends MY_Controller{
 	
 	var $per_page = PER_PAGE_DEFAULT;
 	var $offset = 0;
-	var $categories = array('входные двери','межкомнатные двери','декор','паркет');
 	
 	function __construct(){
 

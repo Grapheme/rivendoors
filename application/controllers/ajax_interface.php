@@ -135,7 +135,7 @@ class Ajax_interface extends MY_Controller{
 		/**************************************************************************************************************/
 		if($resourceID = $this->insertItem(array('insert'=>$resourceData,'model'=>'page_resources'))):
 			$this->load->helper('string');
-			$html = '<img class="img-rounded" width="200" src="'.site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$resourceID).'" alt="" />';
+			$html = '<img class="img-rounded" src="'.site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$resourceID).'" alt="" />';
 			$html .= '<a href="#" data-resource-id="'.$resourceID.'" class="delete-resource-item">&times;</a>';
 			return $html;
 		else:
@@ -153,7 +153,122 @@ class Ajax_interface extends MY_Controller{
 	}
 	
 	/* -------------------------------------------------------------- */
-
+	
+	public function insertManufacturer(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($this->postDataValidation('manufacturer') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		if($manufacturerID = $this->ExecuteCreatingManufacturer($_POST)):
+				$json_request['status'] = TRUE;
+				$json_request['responseText'] = 'Производитель добавлен';
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID);
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function updateManufacturer(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','redirect'=>site_url(ADMIN_START_PAGE));
+		if($this->postDataValidation('manufacturer') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		if($manufacturerID = $this->ExecuteUpdatingManufacturer($this->input->get('id'),$_POST)):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Производитель cохранен';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function manufacturerUploadImage(){
+		
+		if(!$this->input->is_ajax_request() && !$this->input->get_request_header('X-file-name',TRUE)):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
+		$uploadPath = getcwd().'/download/';
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+			$resultUpload = $this->uploadSingleImage($uploadPath);
+			if($resultUpload['status'] == TRUE):
+				$json_request['responsePhotoSrc'] = $this->saveManufacturerImage($resultUpload['uploadData']);
+			else:
+				$json_request['responseText'] = 'Ошибка при загрузке';
+			endif;
+			$json_request['status'] = $resultUpload['status'];
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function manufacturerRemove(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->deleteManufacture($this->input->post('id'))):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Производитель cохранен';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	private function ExecuteCreatingManufacturer($post){
+		
+		/**************************************************************************************************************/
+		$manufacturer = array("category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		/**************************************************************************************************************/
+		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'model'=>'manufacturers'))):
+			return $manufacturerID;
+		endif;
+		return FALSE;
+	}
+	
+	private function ExecuteUpdatingManufacturer($id,$post){
+		
+		/**************************************************************************************************************/
+		$manufacturer = array("id"=>$id,"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		/**************************************************************************************************************/
+		$this->updateItem(array('update'=>$manufacturer,'model'=>'manufacturers'));
+		return TRUE;
+	}
+	
+	private function saveManufacturerImage($resource){
+		
+		$resourceData = array("manufacturer"=>$this->input->get('id'),"resource"=>'download/'.$resource['file_name']);
+		/**************************************************************************************************************/
+		if($resourceID = $this->insertItem(array('insert'=>$resourceData,'model'=>'manufacturers_images'))):
+			$this->load->helper('string');
+			$html = '<img class="img-rounded" src="'.site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$resourceID).'" alt="" />';
+			$html .= '<a href="#" data-resource-id="'.$resourceID.'" class="delete-resource-item">&times;</a>';
+			return $html;
+		else:
+			return '';
+		endif;
+	}
+	
+	private function deleteManufacture($id){
+		
+		$this->load->model(array('manufacturers_images','manufacturers'));
+		$images = $this->manufacturers_images->getWhere(NULL,array('manufacturer'=>$id),TRUE);
+		for($i=0;$i<count($images);$i++):
+			$this->filedelete(getcwd().'/'.$images[$i]['resource']);
+		endfor;
+		$this->manufacturers_images->delete(NULL,array('manufacturer'=>$id));
+		return $this->manufacturers->delete($id);
+	}
 	
 	/* -------------------------------------------------------------- */
 }

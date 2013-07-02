@@ -5,6 +5,7 @@ class MY_Controller extends CI_Controller{
 	var $account = array('id'=>0);
 	var $profile = '';
 	var $loginstatus = FALSE;
+	var $categories = array(2=>'входные двери',3=>'межкомнатные двери',4=>'декор',5=>'паркет');
 	
 	function __construct(){
 		
@@ -127,6 +128,10 @@ class MY_Controller extends CI_Controller{
 				case 'page': 
 					$this->load->model('page_resources');
 					$record = $this->page_resources->getWhere($this->input->get('resource_id'));
+					break;
+				case 'manufacturer': 
+					$this->load->model('manufacturers_images');
+					$record = $this->manufacturers_images->getWhere($this->input->get('resource_id'));
 					break;
 			endswitch;
 			if(!is_null($record) && isset($record)):
