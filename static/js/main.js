@@ -7,11 +7,12 @@ rivD.h_init = function() {
 
 $(document).ready(function () {
 
-	
+	$('.can-fade').click( function(){
+		$(this).animate({width: 'toggle'}, 500);	
+	});
 	/*$('.block-5').click( function() {		
 		$(this).find('.block-description').delay(175).show('slide', {direction:'right'}, 250);
-	});*/
-	initialize();
+	});*/	
 	$('.block-2, .block-3, .block-4, .block-5').click( function(){ 
 		
 		if ($(this).hasClass('checkedDiv')){	
