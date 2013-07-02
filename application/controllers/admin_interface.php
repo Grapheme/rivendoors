@@ -22,6 +22,7 @@ class Admin_interface extends MY_Controller{
 		);
 		$this->load->view("admin_interface/cabinet/control-panel",$pagevar);
 	}
+	
 	/********************************************* pages *********************************************************/
 	public function editPage(){
 		
@@ -41,33 +42,6 @@ class Admin_interface extends MY_Controller{
 			redirect(ADMIN_START_PAGE);
 		endif;
 		
-	}
-	
-	public function addNews(){
-		
-		$this->load->helper('form');
-		$this->load->view("admin_interface/news/add");
-	}
-	
-	public function editNews(){
-		
-		$this->load->helper(array('date','form'));
-		$this->load->model('news');
-		$pagevar = array(
-			'news' => $this->news->getWhere($this->uri->segment(4)),
-		);
-		if(empty($pagevar['news'])):
-			show_error('В доступе отказано');
-		endif;
-		$pagevar['news']['date_publish'] = swap_dot_date_without_time($pagevar['news']['date_publish']);
-		$this->load->view("admin_interface/news/edit",$pagevar);
-	}
-	
-	public function deleteNews(){
-		
-		$this->load->model('news');
-		$this->news->delete($this->uri->segment(4));
-		redirect(ADMIN_START_PAGE.'/news');
 	}
 	
 	/***********************************************************************************************************/

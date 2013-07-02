@@ -142,18 +142,23 @@ class MY_Controller extends CI_Controller{
 	
 	public function imageManupulation($filePath,$dim = 'width',$ratio = TRUE,$width = 60,$height = 60){
 		
-		$this->load->library('image_lib');
-		$this->image_lib->clear();
-		$config['image_library'] = 'gd2';
-		$config['source_image'] = $filePath;
-		$config['create_thumb'] = FALSE;
-		$config['maintain_ratio'] = $ratio;
-		$config['master_dim'] = $dim;
-		$config['width'] = $width;
-		$config['height'] = $height;
-		$this->image_lib->initialize($config);
-		$this->image_lib->resize();
-		return TRUE;
+		if(is_file($filePath)):
+			$this->load->library('image_lib');
+			$this->image_lib->clear();
+			$config['image_library'] = 'gd2';
+			$config['source_image'] = $filePath;
+			$config['create_thumb'] = FALSE;
+			$config['maintain_ratio'] = $ratio;
+			$config['master_dim'] = $dim;
+			$config['width'] = $width;
+			$config['height'] = $height;
+			$this->image_lib->initialize($config);
+			$this->image_lib->resize();
+			return TRUE;
+		else:
+			return FALSE;
+		endif;
+		
 	}
 	
 	public function CropToSquare(){

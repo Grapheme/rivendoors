@@ -14,7 +14,6 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
-define('PATH_PAGE_VARIABLE',					getcwd().'/application/config/page_variables.php');
 define('PATH_SMILEYS',							getcwd().'/img/smileys');
 define('NO_IMAGE',								getcwd().'/img/icons/no-photo.png');
 define('PER_PAGE_DEFAULT',						10);

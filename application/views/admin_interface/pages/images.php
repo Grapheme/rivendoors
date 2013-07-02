@@ -30,10 +30,10 @@
 						<li class="active"><a href="" class="no-clickable">Изображения страницы</a></li>
 					</ul>
 				</div>
-				<ul class="resources-items" data-action="<?=site_url(ADMIN_START_PAGE.'/page/remove/resource');?>">
+				<ul class="resources-items clearfix" data-action="<?=site_url(ADMIN_START_PAGE.'/page/remove/resource');?>">
 				<?php for($i=0;$i<count($images);$i++):?>
-					<li>
-						<img class="" width="200" src="<?=site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="">
+					<li class="span2">
+						<img class="img-rounded" src="<?=site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="">
 						<a href="" data-resource-id="<?=$images[$i]['id']?>" class="no-clickable delete-resource-item">&times;</a>
 					</li>
 				<?php endfor;?>

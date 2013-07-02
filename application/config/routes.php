@@ -9,7 +9,7 @@ $route['login-in'] = "ajax_interface/loginIn";
 $route['valid/exist-email'] = "ajax_interface/existEmail";
 $route['redactor/upload'] = "ajax_interface/redactorUploadImage";
 /**************** remove items ********************/
-$route['remove/project'] = "ajax_interface/removeItems";
+
 /******************load view ********************/
 $route['page/view-resource/:any'] = "guests_interface/loadResource";
 /***************** pages ******************/
@@ -21,7 +21,8 @@ $route['clear-session'] = "guests_interface/clearSession";
 $route['admin'] = "guests_interface/signIN";
 $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
-
+$route['about'] = "guests_interface/about";
+$route['contacts'] = "guests_interface/contacts";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

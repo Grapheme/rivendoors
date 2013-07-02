@@ -4,6 +4,7 @@ class Page_variables {
 	
 	var $head = array(
 		'home' => array('title'=>'Главная страница','description'=>'Главная страница'),
+		'about' => array('title'=>'О компании','description'=>'О компании'),
 	);
 	
 	public function __construct(){

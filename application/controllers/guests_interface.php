@@ -20,6 +20,21 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
+	public function about(){
+		
+		$this->load->model(array('pages','page_resources'));
+		$pagevar = array(
+			'content' => $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1))),
+			'images' => $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE)
+		);
+		$this->load->view("guests_interface/about",$pagevar);
+	}
+	
+	public function contacts(){
+		
+		$this->load->view("guests_interface/contacts");
+	}
+	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
 	public function signIN(){
