@@ -22,6 +22,7 @@ $route['admin'] = "guests_interface/signIN";
 $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
 $route['about'] = "guests_interface/about";
+$route['contacts'] = "guests_interface/contacts";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

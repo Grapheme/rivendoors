@@ -30,6 +30,11 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/about",$pagevar);
 	}
 	
+	public function contacts(){
+		
+		$this->load->view("guests_interface/contacts");
+	}
+	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
 	public function signIN(){

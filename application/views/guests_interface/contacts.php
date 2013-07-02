@@ -19,27 +19,20 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block">
-			<h2>О компании</h2>
-			<div class="about-page-text">
-				<?=$content['content'];?>
+			<div class="contacts-page-text">
+				<p>Ростов-на-Дону,<br>
+				пр. Стачки 123/1, 2 этаж</p>
+				<p>+7 (863) 223-92-57</p>
+				<p><?=safe_mailto('rivendoors@yandex.ru','rivendoors@yandex.ru','class="contact-mail"');?></p>
 			</div>
 		</div>
 		<div class="about-company-slideshow">
-		<?php if(empty($images) == FALSE):?>
-			<div class="__fotorama">
-			<?php for($i=0;$i<count($images);$i++):?>
-				<img src="<?=site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="Riven doors">
-			<?php endfor;?>
-			</div>
-		<?php endif;?>
+			<div id="map-canvas"></div>
 		</div>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
-	<script src="<?=base_url('js/vendor/jquery.color.js');?>"></script>
-	<script src="<?=base_url('js/vendor/jquery-ui.min.js');?>"></script>
-	<script src="<?=base_url('js/vendor/fotorama.js');?>"></script>
-	<script src="<?=base_url('js/cabinet/fotorama-config.js');?>"></script>
 	<?php $this->load->view('guests_interface/includes/google-analytic');?>
+	<?php $this->load->view('guests_interface/includes/google-maps');?>
 </body>
 </html>
