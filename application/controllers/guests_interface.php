@@ -17,6 +17,9 @@ class Guests_interface extends MY_Controller{
 		$pagevar = array(
 			'manufacturers'=>$this->manufacturers->getAll()
 		);
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
+		endfor;
 		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
@@ -57,7 +60,6 @@ class Guests_interface extends MY_Controller{
 		endfor;
 		$this->load->view("guests_interface/manufacturers",$pagevar);
 	}
-	
 	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
