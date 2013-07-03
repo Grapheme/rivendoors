@@ -168,7 +168,7 @@ class Ajax_interface extends MY_Controller{
 		if($manufacturerID = $this->ExecuteCreatingManufacturer($_POST)):
 				$json_request['status'] = TRUE;
 				$json_request['responseText'] = 'Производитель добавлен';
-				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID);
+				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID.'&step=2');
 		endif;
 		echo json_encode($json_request);
 	}
@@ -225,6 +225,39 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
+	public function manufacturerRemoveImage(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->input->post('resourceID') != FALSE):
+			$this->load->model('manufacturers_images');
+			$resourcePath = getcwd().'/'.$this->manufacturers_images->value($this->input->post('resourceID'),'resource');
+			$this->manufacturers_images->delete($this->input->post('resourceID'));
+			$this->filedelete($resourcePath);
+			$json_request['status'] = TRUE;
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	public function manufacturerImageCaption(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE);
+		if($this->postDataValidation('image_caption') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		$this->load->model('manufacturers_images');
+		$this->manufacturers_images->updateField($_POST['id'],'caption',$_POST['caption']);
+		$json_request['status'] = TRUE;
+		echo json_encode($json_request);
+	}
+	
 	private function ExecuteCreatingManufacturer($post){
 		
 		/**************************************************************************************************************/
@@ -271,4 +304,4 @@ class Ajax_interface extends MY_Controller{
 	}
 	
 	/* -------------------------------------------------------------- */
-}
+}	

@@ -83,7 +83,7 @@ class Admin_interface extends MY_Controller{
 		if($this->input->get('mode') == 'text'):
 			$this->load->model('manufacturers');
 			$pagevar['manufacturer'] = $this->manufacturers->getWhere($this->input->get('id'));
-		elseif($this->input->get('mode') == 'image'):
+		elseif($this->input->get('mode') == 'image' || $this->input->get('mode') == 'caption'):
 			$this->load->model('manufacturers_images');
 			$pagevar['images'] = $this->manufacturers_images->getWhere(NULL,array('manufacturer'=>$this->input->get('id')),TRUE);
 		else:

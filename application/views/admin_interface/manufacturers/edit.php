@@ -8,7 +8,7 @@
 
 <?php if($this->input->get('mode') === 'text'):?>
 <link rel="stylesheet" href="<?=site_url('css/redactor.css');?>" />
-<?php else:?>
+<?php elseif($this->input->get('mode') === 'image'):?>
 <link rel="stylesheet" href="<?=base_url('css/uploadzone.css');?>" />
 <?php endif;?>
 </head>
@@ -33,12 +33,15 @@
 					<ul class="nav nav-tabs">
 						<li <?=($this->input->get('mode') == 'text')?'class="active"':''?>><a href="<?=site_url(ADMIN_START_PAGE.'/manufacturers/edit?mode=text&category='.$this->input->get('category').'&id='.$this->input->get('id'));?>">Текстовая информация</a></li>
 						<li <?=($this->input->get('mode') == 'image')?'class="active"':''?>><a href="<?=site_url(ADMIN_START_PAGE.'/manufacturers/edit?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));?>">Изображения</a></li>
+						<li <?=($this->input->get('mode') == 'caption')?'class="active"':''?>><a href="<?=site_url(ADMIN_START_PAGE.'/manufacturers/edit?mode=caption&category='.$this->input->get('category').'&id='.$this->input->get('id'));?>">Подписи</a></li>
 					</ul>
 				</div>
 			<?php if($this->input->get('mode') === 'text'):?>
 				<?php $this->load->view('admin_interface/forms/edit-manufacturer');?>
-			<?php else:?>
+			<?php elseif($this->input->get('mode') === 'image'):?>
 				<?php $this->load->view('admin_interface/forms/images-manufacturer');?>
+			<?php elseif($this->input->get('mode') === 'caption'):?>
+				<?php $this->load->view('admin_interface/forms/images-captions');?>
 			<?php endif;?>
 				<a class="btn btn-success" href="<?=site_url(ADMIN_START_PAGE.'/manufacturers?category='.$this->input->get('category'));?>">Завершить</a>
 				<div class="clear"></div>
@@ -52,7 +55,7 @@
 <?php if($this->input->get('mode') === 'text'):?>
 <script type="text/javascript" src="<?=site_url('js/vendor/redactor.min.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/redactor-config.js');?>"></script>
-<?php else:?>
+<?php elseif($this->input->get('mode') === 'image'):?>
 <script type="text/javascript" src="<?=site_url('js/libs/dropzone.js');?>"></script>
 <?php endif;?>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>

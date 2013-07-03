@@ -6,9 +6,9 @@
 <head>
 <?php $this->load->view("admin_interface/includes/head");?>
 
-<?php if($this->input->get('id') === FALSE):?>
+<?php if($this->input->get('id') === FALSE && $this->input->get('step') === FALSE):?>
 <link rel="stylesheet" href="<?=site_url('css/redactor.css');?>" />
-<?php else:?>
+<?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 2):?>
 <link rel="stylesheet" href="<?=base_url('css/uploadzone.css');?>" />
 <?php endif;?>
 </head>
@@ -29,13 +29,20 @@
 					<li class="active">Добавление производителя</li>
 				</ul>
 				<div class="clear"></div>
-			<?php if($this->input->get('id') === FALSE):?>
+			<?php if($this->input->get('id') === FALSE && $this->input->get('step') === FALSE):?>
 				<div class="inline">
 					<?php $this->load->view('html/select-categories');?>
 				</div>
+				<p class="text-info">Шаг №1: Текстровая информация</p><hr/>
 				<?php $this->load->view('admin_interface/forms/add-manufacturer');?>
-			<?php else:?>
+			<?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 2):?>
+				<p class="text-info">Шаг №2: Загрузка изображений</p><hr/>
 				<?php $this->load->view('admin_interface/forms/images-manufacturer');?>
+				<a class="btn btn-info" href="<?=site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$this->input->get('id').'&step=3');?>">Подписи</a>
+				<a class="btn btn-success" href="<?=site_url(ADMIN_START_PAGE.'/manufacturers?category='.$this->input->get('category'));?>">Завершить</a>
+			<?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 3):?>
+				<p class="text-info">Шаг №3: Подписи к изображениям</p><hr/>
+				<?php $this->load->view('admin_interface/forms/images-captions');?>
 				<a class="btn btn-success" href="<?=site_url(ADMIN_START_PAGE.'/manufacturers?category='.$this->input->get('category'));?>">Завершить</a>
 			<?php endif;?>
 				<div class="clear"></div>
@@ -46,10 +53,10 @@
 	<?php $this->load->view("admin_interface/includes/footer");?>
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
-<?php if($this->input->get('id') === FALSE):?>
+<?php if($this->input->get('id') === FALSE && $this->input->get('step') === FALSE):?>
 <script type="text/javascript" src="<?=site_url('js/vendor/redactor.min.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/redactor-config.js');?>"></script>
-<?php else:?>
+<?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 2):?>
 <script type="text/javascript" src="<?=site_url('js/libs/dropzone.js');?>"></script>
 <?php endif;?>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>

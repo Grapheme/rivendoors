@@ -12,7 +12,9 @@ $route['redactor/upload'] = "ajax_interface/redactorUploadImage";
 $route[ADMIN_START_PAGE.'/manufacturers/insert'] = "ajax_interface/insertManufacturer";
 $route[ADMIN_START_PAGE.'/manufacturers/update'] = "ajax_interface/updateManufacturer";
 $route[ADMIN_START_PAGE.'/manufacturers/upload/resource'] = "ajax_interface/manufacturerUploadImage";
+$route[ADMIN_START_PAGE.'/manufacturers/remove/resource'] = "ajax_interface/manufacturerRemoveImage";
 $route[ADMIN_START_PAGE.'/manufacturers/remove'] = "ajax_interface/manufacturerRemove";
+$route[ADMIN_START_PAGE.'/manufacturers/caption/resource'] = "ajax_interface/manufacturerImageCaption";
 /******************load view ********************/
 $route[':any/view-resource/:any'] = "guests_interface/loadResource";
 /***************** pages ******************/
