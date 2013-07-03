@@ -5,6 +5,11 @@ class Page_variables {
 	var $head = array(
 		'home' => array('title'=>'Главная страница','description'=>'Главная страница'),
 		'about' => array('title'=>'О компании','description'=>'О компании'),
+		'contacts' => array('title'=>'Контакты','description'=>'Контакты'),
+		'entrance-doors' => array('title'=>'Входные двери','description'=>'Входные двери'),
+		'interior-doors' => array('title'=>'Межкомнатные двери','description'=>'Межкомнатные двери'),
+		'dekor' => array('title'=>'Декор','description'=>'Декор'),
+		'parket' => array('title'=>'Паркет','description'=>'Паркет'),
 	);
 	
 	public function __construct(){

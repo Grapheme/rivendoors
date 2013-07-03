@@ -166,9 +166,12 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($manufacturerID = $this->ExecuteCreatingManufacturer($_POST)):
-				$json_request['status'] = TRUE;
-				$json_request['responseText'] = 'Производитель добавлен';
-				$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID.'&step=2');
+			if(isset($_FILES['file']['tmp_name'])):
+				$this->uploadManufacturerLogo($manufacturerID);
+			endif;
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Производитель добавлен';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID.'&step=2');
 		endif;
 		echo json_encode($json_request);
 	}
@@ -185,9 +188,12 @@ class Ajax_interface extends MY_Controller{
 			return FALSE;
 		endif;
 		if($manufacturerID = $this->ExecuteUpdatingManufacturer($this->input->get('id'),$_POST)):
+			if(isset($_FILES['file']['tmp_name'])):
+				$json_request['responsePhotoSrc'] = $this->uploadManufacturerLogo($this->input->get('id'));
+			endif;
 			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Производитель cохранен';
-			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/edit?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
 		endif;
 		echo json_encode($json_request);
 	}
@@ -301,6 +307,17 @@ class Ajax_interface extends MY_Controller{
 		endfor;
 		$this->manufacturers_images->delete(NULL,array('manufacturer'=>$id));
 		return $this->manufacturers->delete($id);
+	}
+	
+	private function uploadManufacturerLogo($id){
+		
+		$responsePhotoSrc = '';
+		$resultUpload = $this->uploadSingleImage(getcwd().'/download/');
+		if($resultUpload['status'] == TRUE):
+			$this->load->model('manufacturers');
+			$responsePhotoSrc = $this->manufacturers->updateField($id,'logo','download/'.$resultUpload['uploadData']['file_name']);
+		endif;
+		return $responsePhotoSrc;
 	}
 	
 	/* -------------------------------------------------------------- */

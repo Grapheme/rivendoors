@@ -10,7 +10,16 @@ rivD.h_init = function() {
 
 $(document).ready(function () {
 	$('.can-fade').click( function(){
-		$(this).animate({width: 'toggle'}, 500);
+		$(this).animate({width: 'toggle'}, 500);	
+		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
+		$('.simple-page-slideshow').css({width: '80%'});	
+		$('.__fotorama-within-html').trigger('rescale', ['100%', $('.page-description-block').height() / 100 * 80, 1.6, 1000]);
+	});
+	$('.green-cross-on-fade').click(function () { 
+		$(this).css({'opacity' : '0', 'z-index' : '0'});
+		$('.can-fade').animate({width: 'toggle'}, 500);
+		$('.simple-page-slideshow').css({width: '60%'});	
+		$('.__fotorama-within-html').trigger('rescale', ['100%', $('.page-description-block').height() / 100 * 80, 1.6, 1000]);
 	});
 	$('.block-2, .block-3, .block-4, .block-5').click( function(){
 		if ($(this).hasClass('checkedDiv')){

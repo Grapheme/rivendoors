@@ -1,24 +1,37 @@
 $(function(){
-	var win_height = $(window).height();
-	$(window).resize( function() {
-		win_height = $(window).height();
-		$('.about-company-slideshow').height(win_height);
-		$('.__fotorama').fotorama({
-			height: win_height
-		});
-	});
+	var page_desc_height = $('.page-description-block').height();	
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
 		transition: 'fade',
 		autoplay: 'false',
 		margin: 0,
 		minPadding: 0,
-		loop: true,
+		loop: true,		
 		cropToFit: true,
 		width: '100%',
-		height: win_height/*,
+		/*minHeight: win_height,*/
+		height: page_desc_height,
+		arrows: false
+		/*,
 		arrowNext: '<div class="arrows right_arrow"></div>',
 		arrowPrev: '<div class="arrows left_arrow"></div>'*/
 	});	
 	
+	$('.__fotorama-within-html').fotorama({	
+		nav: 'none',	
+		transition: 'slide',
+		autoplay: 'false',
+		margin: 0,
+		caption: 'simple',
+		alwaysPadding: true,
+		minPadding: 30,
+		loop: true,		
+		cropToFit: true,
+		width: '100%',
+		/*minHeight: win_height,*/
+		height: '100%',
+		arrows: true,
+		arrowNext: '<div class="right_arrow"></div>',
+		arrowPrev: '<div class="left_arrow"></div>'
+	});	
 });

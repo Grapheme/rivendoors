@@ -35,6 +35,30 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/contacts");
 	}
 	
+	public function manufacturers(){
+		
+		$categories = array('entrance-doors'=>2,'interior-doors'=>3,'dekor'=>4,'parket'=>5);
+		$this->load->model(array('manufacturers','manufacturers_images'));
+		$pagevar = array(
+			'manufacturers' => $this->manufacturers->getWhere(NULL,array('category'=>$categories[$this->uri->segment(1)]),TRUE),
+			'single' => array('title'=>'','logo'=>'','comment'=>'','description'=>''),
+			'images' => array()
+		);
+		if($this->input->get('id') !== FALSE && is_numeric($this->input->get('id')) === TRUE):
+			$pagevar['single'] = $this->manufacturers->getWhere($this->input->get('id'),array('category'=>$categories[$this->uri->segment(1)]));
+			$pagevar['images'] = $this->manufacturers_images->getWhere(NULL,array('manufacturer'=>$this->input->get('id')),TRUE);
+		else:
+			if(isset($pagevar['manufacturers'][0])):
+				redirect($this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][0]['title']).'?id='.$pagevar['manufacturers'][0]['id']);
+			endif;
+		endif;
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
+		endfor;
+		$this->load->view("guests_interface/manufacturers",$pagevar);
+	}
+	
+	
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
 	public function signIN(){

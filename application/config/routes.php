@@ -28,6 +28,10 @@ $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
 $route['about'] = "guests_interface/about";
 $route['contacts'] = "guests_interface/contacts";
+$route['entrance-doors(\/:any)*?'] = "guests_interface/manufacturers";
+$route['interior-doors(\/:any)*?'] = "guests_interface/manufacturers";
+$route['dekor(\/:any)*?'] = "guests_interface/manufacturers";
+$route['parket(\/:any)*?'] = "guests_interface/manufacturers";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/

@@ -59,6 +59,7 @@
 <?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 2):?>
 <script type="text/javascript" src="<?=site_url('js/libs/dropzone.js');?>"></script>
 <?php endif;?>
+<script type="text/javascript" src="<?=site_url('js/cabinet/upload.js');?>"></script>
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
 </body>
 </html>

@@ -122,7 +122,7 @@ class MY_Controller extends CI_Controller{
 	
 	public function loadResource(){
 		
-		$resource = NULL;
+		$resource = $record = NULL; 
 		if($this->input->get('resource_id') != FALSE && is_numeric($this->input->get('resource_id'))):
 			switch($this->uri->segment(1)):
 				case 'page': 

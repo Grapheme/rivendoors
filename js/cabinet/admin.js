@@ -43,17 +43,7 @@
 		$(this).addClass('loading');
 		var redactorData = $("textarea.redactor").redactor('get');
 		$(_form).find("textarea.redactor").html(redactorData);
-		var options = mainOptions;
-		options.success = function(response,status,xhr,jqForm){
-			mt.ajaxSuccessSubmit(response,status,xhr,jqForm);
-			if(response.status){
-				$("div.div-form-operation").after('<div class="msg-alert">'+response.responseText+'</div>');
-				setTimeout(function(){mt.redirect(response.redirect);},2000);
-			}else{
-				$("div.div-form-operation").after('<div class="msg-alert error">'+response.responseText+'</div>');
-			}
-		}
-		setTimeout(function(){$(_form).ajaxSubmit(options);},500);
+		setTimeout(function(){$(_form).ajaxSubmit(uploadImage.singlePhotoOption);},500);
 		return false;
 	});
 	$("select.select-categories").change(function(){

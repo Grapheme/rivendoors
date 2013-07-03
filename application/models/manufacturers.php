@@ -4,7 +4,7 @@ class Manufacturers extends MY_Model{
 
 	protected $table = "manufacturers";
 	protected $primary_key = "id";
-	protected $fields = array("id","category","title","comment","description");
+	protected $fields = array("id","category","title","comment","description","logo");
 
 	function __construct(){
 		parent::__construct();
