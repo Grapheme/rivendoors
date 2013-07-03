@@ -13,8 +13,9 @@ class Guests_interface extends MY_Controller{
 	
 	public function index(){
 		
+		$this->load->model('manufacturers');
 		$pagevar = array(
-			'manufacturers'=>array()
+			'manufacturers'=>$this->manufacturers->getAll()
 		);
 		$this->load->view("guests_interface/index",$pagevar);
 	}
