@@ -26,7 +26,7 @@
 				<ul class="block-description-list">
 				<?php for($j=0;$j<count($manufacturers);$j++):?>
 					<?php if($manufacturers[$j]['category'] == $key):?>
-					<li class="block-description-list-item"><a href="<?=site_url($manufacturers[$i]['link']);?>"><?=$manufacturers[$j]['title'];?></a></li>
+					<li class="block-description-list-item"><a href="<?=site_url($manufacturers[$j]['link']);?>"><?=$manufacturers[$j]['title'];?></a></li>
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>

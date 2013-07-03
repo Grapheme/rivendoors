@@ -17,8 +17,9 @@ class Guests_interface extends MY_Controller{
 		$pagevar = array(
 			'manufacturers'=>$this->manufacturers->getAll()
 		);
+		$categories = array(2=>'entrance-doors',3=>'interior-doors',4=>'dekor',5=>'parket');
 		for($i=0;$i<count($pagevar['manufacturers']);$i++):
-			$pagevar['manufacturers'][$i]['link'] = $this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
+			$pagevar['manufacturers'][$i]['link'] = $categories[$pagevar['manufacturers'][$i]['category']].'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
 		endfor;
 		$this->load->view("guests_interface/index",$pagevar);
 	}

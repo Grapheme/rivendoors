@@ -55,7 +55,7 @@
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
 					<?php if($manufacturers[$i]['category'] == 5):?>
 					<li class="subnavigation-list-item">
-						<a href="<?=site_url($this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id']);?>"><?=$manufacturers[$i]['title'];?></a>
+						<a href="<?=site_url($manufacturers[$i]['link']);?>"><?=$manufacturers[$i]['title'];?></a>
 					</li>
 					<?php endif;?>
 				<?php endfor;?>
