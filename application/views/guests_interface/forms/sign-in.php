@@ -3,6 +3,6 @@
 	<input type="text" class="input-block-level valid-required" name="login" value="" placeholder="Login">
 	<input type="password" class="input-block-level valid-required" name="password" value="" placeholder="Password">
 	<div class="div-form-operation">
-		<button class="btn input-block-level btn-loading no-clickable" type="submit">Ввойти</button>
+		<button class="btn input-block-level btn-loading no-clickable" type="submit">Войти</button>
 	</div>
 </form>
