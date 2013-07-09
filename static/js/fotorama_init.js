@@ -1,22 +1,4 @@
 $(function(){
-	
-	/*var win_height = $(window).height();	
-	var main_block_height = $('.block-1').height();
-	var page_desc_height = $('.page-description-block').height();
-	var current_height = ( main_block_height > page_desc_height ) ? main_block_height : page_desc_height;
-	
-	$(window).resize( function() {
-		win_height = $(window).height();
-		main_block_height = $('.block-1').height();
-		page_desc_height = $('.page-description-block').height();		
-		current_height = ( main_block_height > page_desc_height ) ? main_block_height : page_desc_height;			
-		$('.about-company-slideshow').height(current_height);
-		$('.__fotorama').fotorama({
-			height: win_height
-		});
-	});
-	
-		*/
 			
 	var page_desc_height = $('.page-description-block').height() + 21;	
 	$('.__fotorama').fotorama({

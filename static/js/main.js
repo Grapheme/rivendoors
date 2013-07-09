@@ -1,22 +1,23 @@
-var rivD = rivD || {};
-rivD.h_init = function() {
-	rivD.wh = $(window).height();
-	rivD.block1_h = $('.block1').height();	
-	rivD.pageDH = $('.')
-}
-
-
 $(document).ready(function () {
 
 	/* Same height  */	
 	if ($('.page-description-block').height() > $('.block-1').height())
 	{
-		$('.block-1').height($('.page-description-block').height());
-		
+		$('.page-description-block').height($('.page-description-block').height());	
+		$('.block-1').height($('.page-description-block').height());	
+		$('.about-company-slideshow').height($('.page-description-block').height());	
+		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
 	}
+	else {
+		$('.page-description-block').height($('.block-1').height());
+		$('.about-company-slideshow').height($('.block-1').height());
+		$('.__fotorama').trigger('rescale', [false, $('.block-1').height(), 700/467, 333]);
+	}	
+	
 	$(window).resize(function() {
 		
 		$('.block-1').height($('.page-description-block').height());
+		$('.about-company-slideshow').height($('.block-1').height());
 		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
 		$('.about-page-text, .production').width($('.page-description-block').width() - 20);
 	});	
