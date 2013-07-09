@@ -17,15 +17,15 @@ $(function(){
 	});
 	
 		*/
-	var page_desc_height = $('.page-description-block').height();	
+			
+	var page_desc_height = $('.page-description-block').height() + 21;	
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
 		transition: 'fade',
-		autoplay: 'false',
-		margin: 0,
-		minPadding: 0,
+		autoplay: 'false',			
 		loop: true,		
 		cropToFit: true,
+		zoomToFit: true,
 		width: '100%',
 		/*minHeight: win_height,*/
 		height: page_desc_height,
@@ -45,6 +45,7 @@ $(function(){
 		minPadding: 30,
 		loop: true,		
 		cropToFit: true,
+		zoomToFit: true,
 		width: '100%',
 		/*minHeight: win_height,*/
 		height: '100%',
