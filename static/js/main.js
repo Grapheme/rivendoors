@@ -18,12 +18,14 @@ $(document).ready(function () {
 		
 		$('.block-1').height($('.page-description-block').height());
 		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
-		
+		$('.about-page-text, .production').width($('.page-description-block').width() - 20);
 	});	
 	/* end of script */
 	
+	$('.about-page-text, .production').width($('.page-description-block').width() - 20);
+	
 	$('.can-fade').click( function(){
-		$(this).animate({width: 'toggle'}, 500);	
+		$(this).animate({width: 'toggle'}, 800);	
 		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
 		$('.simple-page-slideshow').css({width: '80%'});	
 		$('.__fotorama-within-html').trigger('rescale', ['100%', $(window).height() / 100 * 80, 1.6, 1000]);
@@ -31,7 +33,7 @@ $(document).ready(function () {
 	});
 	$('.green-cross-on-fade').click(function () { 
 		$(this).css({'opacity' : '0', 'z-index' : '0'});
-		$('.can-fade').animate({width: 'toggle'}, 500);
+		$('.can-fade').animate({width: 'toggle'}, 800);
 		$('.simple-page-slideshow').css({width: '60%'});	
 		$('.__fotorama-within-html').trigger('rescale', ['100%', $(window).height() / 100 * 80, 1.6, 1000]);
 		$('.afterfade-block').toggle();

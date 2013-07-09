@@ -96,9 +96,11 @@ textarea {
 html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0; margin: 0; color: #353535; font: 500 16px "Conv_PTZ55F", sans-serif; color: #562024; }
 
 .wrapper { width: 100%; height: 100%; min-width: 960px; min-height: 600px; }
-.page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1em auto; text-indent: -9999px; width: 187px; height: 112px; }
+.page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1em auto; text-indent: -9999px; width: 187px; height: 112px; overflow: hidden; }
+.page-header a { display: block; width: 100%; height: 7em; }
 	.block-1 { background: #f8f1e1; }
 		footer { position: absolute; bottom: 0; width: 100%; text-align: center; font: 500 .95em "Conv_PTS55F", sans-serif; }
+		footer a { color: #562024; }
 			.copyright { margin: 0 0 1em; }
 			.developer { margin: 0; }
 			
@@ -142,7 +144,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 /* ==========================================================================
  * Detailed description pages styles
    ========================================================================== */
-
+   .can-fade { min-width: 0; }
    .can-fade:hover .red-cross { opacity: 1; transition: opacity .5s ease-in-out; -moz-transition: opacity .25s ease-in-out; -webkit-transition: opacity .25s ease-in-out; }
    .red-cross { opacity: 0; position: absolute; top: 5%; right: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_2.png) no-repeat;  }
    .green-cross-on-fade { opacity: 0; position: absolute; top: 5%; left: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_1.png) no-repeat;  }
