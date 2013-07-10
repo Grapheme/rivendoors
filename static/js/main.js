@@ -44,6 +44,30 @@ $(document).ready(function () {
 	});*/	
 	$('.block-2, .block-3, .block-4, .block-5').click( function(){ 
 		
+		
+		
+	if ($(window).width() <= 320) {
+		
+		if ($(this).hasClass('checkedDiv')){	
+						
+			$(this).removeClass('checkedDiv');
+			$(this).find('.block-description').slideToggle(1000);
+			$(this).animate({ 'margin-bottom': '0px' }, 400); 
+			$(this).find('.block-name').animate({ backgroundColor: '#fff', color: '#562024' }, 250);
+		}
+		else {
+			$('.checkedDiv').find('.block-description').slideToggle();
+			$('.checkedDiv').animate({ 'margin-bottom': '0px' }, 400);
+			$('.checkedDiv').find('.block-name').animate({ backgroundColor: '#fff', color: '#562024' }, 250);
+			$('.checkedDiv').removeClass('checkedDiv');	
+			$(this).addClass('checkedDiv');		
+			$(this).find('.block-description').height($(this).find('.block-description-list').height());
+			$(this).find('.block-name').animate({ backgroundColor: '#aead3a', color: "#fff"}, 250);	
+			$(this).find('.block-description').slideToggle(1000);			
+			$(this).animate({ 'margin-bottom': $(this).find('.block-description-list').height() }, 1000); 
+		};	
+	}	
+	else {	
 		if ($(this).hasClass('checkedDiv')){	
 			
 			$(this).removeClass('checkedDiv');	
@@ -86,7 +110,7 @@ $(document).ready(function () {
 							
 			}
 		};		
-				
+		};		
 	});
 	
 });
