@@ -99,10 +99,10 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 .page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1em auto; text-indent: -9999px; width: 187px; height: 112px; overflow: hidden; }
 .page-header a { display: block; width: 100%; height: 7em; }
 	.block-1 { background: #f8f1e1; }
-		footer { position: absolute; bottom: 0; width: 100%; padding: 0 0 1em 0; text-align: center; font: 500 .95em "Conv_PTS55F", sans-serif; }
+		footer { position: absolute; bottom: 0; width: 100%; padding: 0 0 2em 0; text-align: center; font: 500 .75em "Conv_PTS55F", sans-serif; }
 		footer a { color: #562024; }
 			.copyright { margin: 0 0 1em; }
-			.developer { margin: 0; }
+			.developer { margin: 0 0 1em; }
 			
 	.block-2 { background: url("../img/main/block-1.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
 	.block-3 { background: url("../img/main/block-2.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
@@ -115,23 +115,24 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 		.block-description { display: none; position: absolute; width: 100%; height: 100%; background-color: #aead3a; z-index: 10001; }
 			.right { left: 100%; }	
 			.left { left: -100%; }		
-			.block-description-list { position:absolute; top: 50%; margin: -5.5em 0 0 0; height: 14em; min-width: 12em; }
-				.block-description-list-item { margin: .5em 0; list-style-type: none; font-size: 0.9em; }
+			.block-description-list { position:absolute; top: 50%; padding: 0 0 0 20px; margin: -5.5em 0 0 0; height: 14em; min-width: 12em; }
+				.block-description-list-item { margin: .5em 0; list-style-type: none; font-size: 0.8125em; }
 					.block-description-list-item a { text-decoration: none; color: #fff; }
 		.block-name { position: absolute; top: 50%; left: 2.5%; width: 95%; margin: 0 auto; background: #FFF; text-align: center; letter-spacing: .25em; font: 500 .9375em/2.1875em "Conv_FontinSans_Cyrillic_SC", sans-serif; }
 		.navigation-list { margin: 3em 0; padding: 0 1em; border-top: 3px dotted color: #562024; border-bottom: 3px dotted color: #562024; font-family: "Conv_FontinSans_Cyrillic_SC", sans-serif;}
-			.navigation-list-item { max-width: 14.75em; margin: 0 auto; line-height: 2.1875; text-align: center; }
+			.navigation-list-item { max-width: 14.75em; margin: 0 auto; line-height: 2.1875; text-align: center; font-size: .9375em; }
 			.navigation-list-item a { text-decoration: none; color: #562024; }
-			.navigation-list-item a:hover { color: #AEAD3A; }
+			.navigation-list-item a:hover,
+			footer a:hover { color: #AEAD3A; }
 			.item-1 { max-width: 8em; padding: 3em 0 0 0; border-top: 1px dotted; }
 			.item-6 { max-width: 8em; padding: 0 0 3em 0; border-bottom: 1px dotted; }
 
 /* ==========================================================================
  * About company page styles
    ========================================================================== */
-	.page-description-block { height: auto ; min-height: 100%; background-color: #aead3a; color: #fff; line-height: 1.5em; }
-		.page-description-block h2 { font-size: 1.375em; margin: 5.5em 1em 0 .5em; }
-		.about-page-text { margin: 1em 1em 0 1em; overflow: auto; font-size: .9em; }
+	.page-description-block { height: auto ; min-height: 100%; background-color: #aead3a; color: #fff; line-height: 1.125em; }
+		.page-description-block h2 { font-size: 1.375em; margin: 3.5em 1em 1em .5em; }
+		.about-page-text { margin: 1em 1em 0 1em; overflow: auto; font-size: 0.8125em; }
 	.about-company-slideshow { position: relative; float: left; height: 100%; min-height: 600px; width: 60%; min-width: 192px;}
 
 /* ==========================================================================
@@ -148,15 +149,32 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
    .can-fade:hover .red-cross { opacity: 1; transition: opacity .5s ease-in-out; -moz-transition: opacity .25s ease-in-out; -webkit-transition: opacity .25s ease-in-out; }
    .red-cross { opacity: 0; position: absolute; top: 5%; right: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_2.png) no-repeat;  }
    .green-cross-on-fade { opacity: 0; position: absolute; top: 5%; left: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_1.png) no-repeat;  }
-   .subnavigation-list { margin: 0; padding: 0; font: .8125em 'Conv_PTS55F', sans-serif;  }
-   .subnavigation-list-item { line-height: 1.375em; }
+   .subnavigation-list { margin: 0; padding: 0; font-size: .83em; font-family: 'Conv_PTZ55F', sans-serif; font-weight: 500; }
+   .subnavigation-list-item { line-height: 1.375em; margin: 0 0 .3em 0; }
    .simple-page-slideshow { position: relative; top: 10%; float: left; height: 80%; min-height: 600px; width: 60%; min-width: 192px;}
    .detailed-description-header { width: 8.5em; height: 3em; }
    		.detailed-description-header img { max-width: 98%; }
-   	.production { margin: 1em 1em 0; font-style: italic; }
+   	.production { margin: 1em 1em 0; font-size: .8125em; /*font-style: italic; */font-family: 'Conv_PTZ56F', sans-serif; }
    	.afterfade-block { margin: 1.5em; position: absolute; top: -84px; display: none; }
     .header-after-fade { font: 1.7em 'Conv_PTZ55F', sans-serif; }
     .production-after-fade { font: .8em 'Conv_PTZ56F', sans-serif; }
+    
+/* ==========================================================================
+ * Scroller styles
+   ========================================================================== */ 
+   
+   .slider-container { height: 800px; width: 100%; overflow: hidden; }
+   .slider-content { width: 5000px; }
+   .slide { float: left; height: 800px; }
+   .slide-image { display: block; height: 712px; } 
+   .slide-caption { height: 100px; text-align: center; }
+   
+/* ==========================================================================
+ * Adaptation media queries
+   ========================================================================== */  
+   
+   
+       
 /* ==========================================================================
    Fotorama styles
    ========================================================================== */

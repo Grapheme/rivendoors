@@ -19,14 +19,14 @@ $(document).ready(function () {
 		$('.block-1').height($('.page-description-block').height());
 		$('.about-company-slideshow').height($('.block-1').height());
 		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
-		$('.about-page-text, .production').width($('.page-description-block').width() - 20);
+		$('.about-page-text, .production').width($('.page-description-block').width() - 40);
 	});	
 	/* end of script */
 	
-	$('.about-page-text, .production').width($('.page-description-block').width() - 20);
+	$('.about-page-text, .production').width($('.page-description-block').width() - 40);
 	
-	$('.can-fade').click( function(){
-		$(this).animate({width: 'toggle'}, 800);	
+	$('.red-cross').click( function(){
+		$('.can-fade').animate({width: 'toggle'}, 800);	
 		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
 		$('.simple-page-slideshow').css({width: '80%'});	
 		$('.__fotorama-within-html').trigger('rescale', ['100%', $(window).height() / 100 * 80, 1.6, 1000]);

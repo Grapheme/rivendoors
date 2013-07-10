@@ -41,15 +41,33 @@
 						<li class="navigation-list-item item-3">
 							<a href="#">Межкомнатные двери</a>
 							<ul class="subnavigation-list">
-								<li class="subnavigation-list-item"><a href="#">Pasini Ettore</a></li>
-								<li class="subnavigation-list-item"><a href="#">Pavanetto Porte</a></li>
-								<li class="subnavigation-list-item"><a href="#">Res</a></li>
-								<li class="subnavigation-list-item"><a href="#">Astor Mobile</a></li>
-								<li class="subnavigation-list-item"><a href="#">3ELLE</a></li>
-								<li class="subnavigation-list-item"><a href="#">Мастер Вуд</a></li>
-								<li class="subnavigation-list-item"><a href="#">Dolce Porte</a></li>
-								<li class="subnavigation-list-item"><a href="#">Стеклянные двери</a></li>
-								<li class="subnavigation-list-item"><a href="#">Складская программа</a></li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pasini Ettore</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pavanetto Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Res</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Astor Mobile</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">3ELLE</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Мастер Вуд</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Dolce Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Стеклянные двери</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Складская программа</a>
+								</li>
 							</ul>
 						</li>
 						<li class="navigation-list-item item-4">
@@ -64,17 +82,22 @@
 					</ul>
 				</nav>
 				<footer>
-					<p>
+					<p class="copyright">
 						&copy; Rivendoors, 2013
 					</p>
-					<p>
+					<p class="developer">
 						Разработано <a href="#">Grapheme.ru</a>
 					</p>
+					<div class="social-likes">
+						<a href="#"><img src="img/interface/like.png"></a>
+					</div>
 				</footer>
 			</div>
 			<div class="wrapper-component page-description-block can-fade">
 				<h2 class="detailed-description-header"><img src="img/mdoors/res/Logo.png"></h2>
-				<div class="production">Итальянское производство</div>
+				<div class="production">
+					Итальянское производство
+				</div>
 				<div class="about-page-text">
 					В современном мире дизайн
 					и инновации тесно переплелись,
@@ -106,20 +129,43 @@
 					оставила положительный след
 					и воспоминания.
 				</div>
-				<div class="red-cross"></div>				
+				<div class="red-cross"></div>
 			</div>
 			<div class="simple-page-slideshow">
 				<div class="afterfade-block">
-					<div class="header-after-fade">RES</div>
-					<div class="production-after-fade">Итальянское производство</div>
+					<div class="header-after-fade">
+						RES
+					</div>
+					<div class="production-after-fade">
+						Итальянское производство
+					</div>
 				</div>
 				<div class="green-cross-on-fade"></div>
-				<div class="__fotorama-within-html">
-        			<img src="img/about-company/1.jpg" alt="Riven doors first slide" />
-        			<img src="img/about-company/2.jpg" alt="Riven doors second slide" />        			
-        			<img src="img/about-company/3.jpg" alt="Riven doors third slide" />        			
-        		</div>
-			</div>			
+				<div class="slider-container">
+					<div class="slider-content">
+						<div class="slide">
+							<img class="slide-image" src="img/mdoors/res/Deco_1.jpg" alt="">
+							<div class="slide-caption">Slide 1</div>
+						</div>
+						<div class="slide">
+							<img class="slide-image" src="img/mdoors/res/Deco_2.jpg" alt="">
+							<div class="slide-caption">Slide 2</div>
+						</div>
+						<div class="slide">
+							<img class="slide-image" src="img/mdoors/res/Deco_4.jpg" alt="">
+							<div class="slide-caption">Slide 3</div>
+						</div>
+						<div class="slide">
+							<img class="slide-image" src="img/mdoors/res/Deco_2.jpg" alt="">
+							<div class="slide-caption">Slide 4</div>
+						</div>
+						<div class="slide">
+							<img class="slide-image" src="img/mdoors/res/Deco_1.jpg" alt="">
+							<div class="slide-caption">Slide 5</div>
+						</div>
+					</div>					
+				</div>
+			</div>
 
 		</div>
 		<!-- End of div wrapper-->
@@ -133,12 +179,11 @@
 		<script src="js/vendor/jquery-ui.min.js"></script>
 		<script src="js/vendor/fotorama.js"></script>
 		<script src="js/fotorama_init.js"></script>
-		<script src="js/main.js"></script>		
+		<script src="js/main.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-			( function(d, t) {
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 					g.src = '//www.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)
