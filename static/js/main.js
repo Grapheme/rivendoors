@@ -1,12 +1,16 @@
 $(document).ready(function () {	
 	/* Same height  */	
 	$('.about-company-slideshow').height($('.page-description-block').height());	
+	$('.jcarousel').height($('.page-description-block').height() * 0.8);	
+	$('.jcarousel-img-container').height($('.page-description-block').height() * 0.74 );
+	$('.jcarousel-img-container img').height($('.page-description-block').height() * 0.8 - 36);
+	
 	if ($('.page-description-block').height() > $('.block-1').height() && ($(window).width() >= 960))
 	{
 		$('.page-description-block').height($('.page-description-block').height());	
 		$('.block-1').height($('.page-description-block').height());	
 		$('.about-company-slideshow').height($('.page-description-block').height());	
-		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
+		$('.jcarousel').height($('.page-description-block').height());
 	}
 	/*else {
 		$('.page-description-block').height($('.block-1').height());
@@ -15,7 +19,10 @@ $(document).ready(function () {
 	}	*/
 	
 	$(window).resize(function() {
-		
+		$('.about-company-slideshow').height($('.page-description-block').height());	
+		$('.jcarousel').height($('.page-description-block').height() * 0.8);	
+		$('.jcarousel-img-container').height($('.page-description-block').height() * 0.74 );
+		$('.jcarousel-img-container img').height($('.page-description-block').height() * 0.8 - 36);
 		$('.block-1').height($('.page-description-block').height());
 		$('.about-company-slideshow').height($('.block-1').height());
 		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
@@ -29,14 +36,12 @@ $(document).ready(function () {
 		$('.can-fade').animate({width: 'toggle'}, 800);	
 		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
 		$('.simple-page-slideshow').css({width: '80%'});	
-		$('.__fotorama-within-html').trigger('rescale', ['100%', $(window).height() / 100 * 80, 1.6, 1000]);
 		$('.afterfade-block').toggle();
 	});
 	$('.green-cross-on-fade').click(function () { 
 		$(this).css({'opacity' : '0', 'z-index' : '0'});
 		$('.can-fade').animate({width: 'toggle'}, 800);
-		$('.simple-page-slideshow').css({width: '60%'});	
-		$('.__fotorama-within-html').trigger('rescale', ['100%', $(window).height() / 100 * 80, 1.6, 1000]);
+		$('.simple-page-slideshow').css({width: '60%'});
 		$('.afterfade-block').toggle();
 	});
 	/*$('.block-5').click( function() {		
