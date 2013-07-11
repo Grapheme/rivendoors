@@ -16,4 +16,5 @@
 			icon : image
 		});
 	}
+	initialize();
 </script>

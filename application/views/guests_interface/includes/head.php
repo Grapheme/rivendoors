@@ -6,5 +6,6 @@
 <link rel="icon" type="image/png" href="<?=base_url('favicon.png');?>" />
 <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>" />
 <link rel="stylesheet" href="<?=base_url('css/fonts.css');?>" />
+<link rel="stylesheet" href="<?=base_url('css/fotorama.css');?>">
 <link rel="stylesheet" href="<?=base_url('css/main.css');?>" />
 <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>

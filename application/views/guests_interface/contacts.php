@@ -14,7 +14,7 @@
 <![endif]-->
 	<div class="wrapper">
 		<div class="wrapper-component block-1">
-			<h1 class="page-header">Riven Doors</h1>
+			<h1 class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</h1>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>

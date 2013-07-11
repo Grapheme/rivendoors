@@ -10,7 +10,7 @@
 <!--[if lt IE 7]>
 	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-	<div class="wrapper">
+	<div class="wrapper index-wrapper">
 		<div class="wrapper-component block-1">
 			<h1 class="page-header">Riven Doors</h1>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
