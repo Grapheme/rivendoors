@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+$(document).ready(function () {	
 	/* Same height  */	
 	if ($('.page-description-block').height() > $('.block-1').height())
 	{
@@ -42,11 +41,21 @@ $(document).ready(function () {
 	/*$('.block-5').click( function() {		
 		$(this).find('.block-description').delay(175).show('slide', {direction:'right'}, 250);
 	});*/	
+	
+	/* =======================================================================================
+	 * Scripts for media - 320px
+	   ======================================================================================= */
+	if ($(window).width() <= 335) {
+		$(function() {		
+			$('.wrapper').height( $(document).height() - 43);	
+			$('footer').appendTo('.wrapper');
+		});
+	};
+	
 	$('.block-2, .block-3, .block-4, .block-5').click( function(){ 
 		
+	if ($(window).width() <= 320) {		
 		
-		
-	if ($(window).width() <= 320) {
 		
 		if ($(this).hasClass('checkedDiv')){	
 						
