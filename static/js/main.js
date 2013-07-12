@@ -1,14 +1,21 @@
 $(document).ready(function () {	
 	/* Same height  */	
-	$('.about-company-slideshow').height($('.page-description-block').height());	
+	$('.about-company-slideshow').height($('.block-1').height());	
 	$('.jcarousel').height($('.page-description-block').height() * 0.8);	
 	$('.jcarousel-img-container').height($('.page-description-block').height() * 0.74 );
 	$('.jcarousel-img-container img').height($('.page-description-block').height() * 0.8 - 36);
-	
+	if ($(window).height() > $('.wrapper-component.page-description-block.contacts-description-block').height($(window).height()))
+		{
+			$('.wrapper-component.page-description-block.contacts-description-block').height($(window).height());
+		}
+		else {
+			$('.wrapper-component.page-description-block.contacts-description-block').css({ height: 'auto'});	
+		}
+	/*$('.wrapper.about-page-wrapper').height($(window).height());*/
 	if ($('.page-description-block').height() > $('.block-1').height() && ($(window).width() >= 960))
 	{
-		$('.page-description-block').height($('.page-description-block').height());	
-		$('.block-1').height($('.page-description-block').height());	
+		/*$('.page-description-block').height($(window).height());*/	
+		/*$('.block-1').height($('.page-description-block').height());	*/
 		$('.about-company-slideshow').height($('.page-description-block').height());	
 		$('.jcarousel').height($('.page-description-block').height());
 	}
@@ -16,32 +23,59 @@ $(document).ready(function () {
 		$('.page-description-block').height($('.block-1').height());
 		$('.about-company-slideshow').height($('.block-1').height());
 		$('.__fotorama').trigger('rescale', [false, $('.block-1').height(), 700/467, 333]);
-	}	*/
+	}*/
 	
 	$(window).resize(function() {
 		$('.about-company-slideshow').height($('.page-description-block').height());	
 		$('.jcarousel').height($('.page-description-block').height() * 0.8);	
 		$('.jcarousel-img-container').height($('.page-description-block').height() * 0.74 );
 		$('.jcarousel-img-container img').height($('.page-description-block').height() * 0.8 - 36);
+		/*if ($(window).width() >= 960){
 		$('.block-1').height($('.page-description-block').height());
+		}*/
+		if ($(window).height() > $('.page-description-block').height())
+		{
+			$('.page-description-block').height($(window).height());
+		}
+		if ($(window).height() > $('.wrapper-component.page-description-block.contacts-description-block').height($(window).height()))
+		{
+			$('.wrapper-component.page-description-block.contacts-description-block').height($(window).height());
+		}
+		else {
+			$('.wrapper-component.page-description-block.contacts-description-block').css({ height: 'auto'});	
+		}
+		
 		$('.about-company-slideshow').height($('.block-1').height());
-		$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);
+		$('.__fotorama').trigger('rescale', [false, $('.block-1').height(), 700/467, 333]);
+		/*$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);*/
 		$('.about-page-text, .production').width($('.page-description-block').width() - 40);
 	});	
 	/* end of script */
+	
+	/*$('.navigation-list-item').click( function() {
+		if ($(this).hasClass('visible-sub-list')) {
+			$(this).removeClass('visible-sub-list');
+			$(this).find('.subnavigation-list').slideToggle( 1000 );			
+		}
+		else {
+			$('.visible-sub-list').find('.subnavigation-list').slideToggle( 1000 );	
+			$('.visible-sub-list').removeClass('visible-sub-list');
+			$(this).addClass('visible-sub-list').find('.subnavigation-list').slideToggle( 1000 );
+		}	
+	});*/
 	
 	$('.about-page-text, .production').width($('.page-description-block').width() - 40);
 	
 	$('.red-cross').click( function(){
 		$('.can-fade').animate({width: 'toggle'}, 800);	
 		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
-		$('.simple-page-slideshow').css({width: '80%'});	
+		$('.simple-page-slideshow').animate({left: '20%', width: '80%'}, 800);	
 		$('.afterfade-block').toggle();
 	});
 	$('.green-cross-on-fade').click(function () { 
 		$(this).css({'opacity' : '0', 'z-index' : '0'});
 		$('.can-fade').animate({width: 'toggle'}, 800);
-		$('.simple-page-slideshow').css({width: '60%'});
+		$('.simple-page-slideshow').animate({left: '40%', width: '60%'}, 800);
 		$('.afterfade-block').toggle();
 	});
 	/*$('.block-5').click( function() {		
