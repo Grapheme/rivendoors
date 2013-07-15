@@ -4,7 +4,7 @@ $(function(){
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
 		transition: 'fade',
-		autoplay: 'false',			
+		autoplay: true,			
 		loop: true,		
 		cropToFit: true,
 		zoomToFit: true,
