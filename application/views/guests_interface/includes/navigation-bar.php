@@ -1,11 +1,12 @@
 <nav id="main-navigation">
+    <div class="scroll-pane">
 	<ul class="navigation-list">
 		<li class="navigation-list-item item-1">
 			<a href="<?=site_url('about');?>">О компании</a>
 		</li>
 		<li class="navigation-list-item item-2">
-			<a href="<?=site_url('entrance-doors');?>">Входные двери</a>
-			<?php if($this->uri->segment(1) == 'entrance-doors'):?>
+			<a href="#">Входные двери</a>
+			<?//php if($this->uri->segment(1) == 'entrance-doors'):?>
 				<ul class="subnavigation-list">
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
 					<?php if($manufacturers[$i]['category'] == 2):?>
@@ -15,11 +16,11 @@
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>
-			<?php endif;?>
+			<?php //endif;?>
 		</li>
 		<li class="navigation-list-item item-3">
-			<a href="<?=site_url('interior-doors');?>">Межкомнатные двери</a>
-			<?php if($this->uri->segment(1) == 'interior-doors'):?>
+			<a href="#">Межкомнатные двери</a>
+			<?php //if($this->uri->segment(1) == 'interior-doors'):?>
 				<ul class="subnavigation-list">
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
 					<?php if($manufacturers[$i]['category'] == 3):?>
@@ -29,11 +30,11 @@
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>
-			<?php endif;?>
+			<?php //endif;?>
 		</li>
 		<li class="navigation-list-item item-4">
-			<a href="<?=site_url('dekor');?>">Декор</a>
-			<?php if($this->uri->segment(1) == 'dekor'):?>
+			<a href="#">Декор</a>
+			<?php //if($this->uri->segment(1) == 'dekor'):?>
 				<ul class="subnavigation-list">
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
 					<?php if($manufacturers[$i]['category'] == 4):?>
@@ -43,11 +44,11 @@
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>
-			<?php endif;?>
+			<?php //endif;?>
 		</li>
 		<li class="navigation-list-item item-5">
-			<a href="<?=site_url('parket');?>">Паркет</a>
-			<?php if($this->uri->segment(1) == 'parket'):?>
+			<a href="#">Паркет</a>
+			<?php //if($this->uri->segment(1) == 'parket'):?>
 				<ul class="subnavigation-list">
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
 					<?php if($manufacturers[$i]['category'] == 5):?>
@@ -57,10 +58,11 @@
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>
-			<?php endif;?>
+			<?php //endif;?>
 		</li>
 		<li class="navigation-list-item item-6">
 			<a href="<?=site_url('contacts');?>">Контакты</a>
 		</li>
 	</ul>
+    </div>
 </nav>

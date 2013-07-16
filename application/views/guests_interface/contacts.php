@@ -6,6 +6,8 @@
 <head>
 	<?php $this->load->view('guests_interface/includes/head');?>
 	<link rel="stylesheet" href="<?=base_url('css/fotorama.css');?>">
+	<link rel="stylesheet" href="<?=base_url('css/jquery.jscrollpane.css');?>">
+
 	<!--<link rel="stylesheet" href="<?=base_url('css/fotorama-config.css');?>">-->
 </head>
 <body>
@@ -18,7 +20,7 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		<div class="wrapper-component page-description-block">
+		<div class="wrapper-component page-description-block contacts-description-block">
 			<div class="contacts-page-text">
 				<p>Ростов-на-Дону,<br>
 				пр. Стачки 123/1, 2 этаж</p>
@@ -26,7 +28,7 @@
 				<p><?=safe_mailto('rivendoors@yandex.ru','rivendoors@yandex.ru','class="contact-mail"');?></p>
 			</div>
 		</div>
-		<div class="about-company-slideshow">
+		<div class="contacts-map">
 			<div id="map-canvas"></div>
 		</div>
 	</div>

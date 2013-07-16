@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="css/fonts.css">
 		<link rel="stylesheet" href="css/fotorama.css">
 		<link rel="stylesheet" href="css/main.css">		
+		<!-- styles needed by jScrollPane -->
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	</head>
@@ -31,7 +33,8 @@
 			<div class="wrapper-component block-1 about-page-block-1">
 				<h1 class="page-header">Riven Doors</h1>
 				<nav id="main-navigation">
-					<ul class="navigation-list scroll-pane">
+					<div class="scroll-pane">
+					<ul class="navigation-list">
 						<li class="navigation-list-item item-1">
 							<a href="#">О компании</a>
 						</li>
@@ -51,6 +54,7 @@
 							<a href="#">Контакты</a>
 						</li>
 					</ul>
+					</div>
 				</nav>
 				<footer>
 					<p class="copyright">
@@ -111,6 +115,10 @@
 		<script src="js/vendor/jquery-ui.min.js"></script>
 		<script src="js/vendor/fotorama.js"></script>
 		<script src="js/fotorama_init.js"></script>
+		<!-- the mousewheel plugin - optional to provide mousewheel support -->
+		<script type="text/javascript" src="js/vendor/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/vendor/jquery.jscrollpane.min.js"></script>
 		<script src="js/main.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -96,14 +96,18 @@ textarea {
 html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0; margin: 0; color: #353535; font: 500 16px "Conv_PTZ55F", sans-serif; color: #562024; }
 
 .wrapper { width: 100%; height: 100%; /*min-width: 1280px;*/ min-height: 600px; }
-.index-wrapper { min-width: 1280px; }
+.index-wrapper { min-width: 1280px; min-height: 39.875em; }
 .page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1.3em auto 1.3em auto; text-indent: -9999px; width: 187px; height: 112px; overflow: hidden; }
 .page-header a { display: block; width: 100%; height: 7em; }
 	.block-1 { background: #f8f1e1; }
-		footer { position: absolute; bottom: 0; width: 100%; padding: 0 0 .3em 0; text-align: center; font: 500 .75em "Conv_PTS55F", sans-serif; }
+		footer { position: absolute; bottom: 1em; width: 100%; padding: 0 0 .3em 0; text-align: center; font: 500 .75em "Conv_PTS55F", sans-serif; }
 		footer a { color: #562024; }
+		footer>a { display: block; }		
+		.fb_iframe_widget { float: right; }
 			.copyright { margin: 0 0 .5em; }
 			.developer { margin: 0 0 .5em; }
+			.social-likes { margin: 0 auto; width: 17em; }
+}			
 			.social-likes a img { width:14px; height: 14px; }
 				
 	.block-2 { background: url("../img/main/block-1.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
@@ -123,19 +127,19 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 					.block-description-list-item a:hover { text-decoration: underline; }
 		.block-name { position: absolute; top: 50%; left: 2.5%; width: 95%; margin: -1em auto 0 auto; background: #F8F1E1; text-align: center; letter-spacing: .25em; font: 500 .9375em/2.1875em "Conv_FontinSans_Cyrillic_SC", sans-serif; }
 		.block-name:hover { background: #AEAD3A !important; }
-		.navigation-list { margin: .5em auto; padding: 0; width:12.75em; border-top: 1px dotted; border-bottom: 1px dotted; border-top: 3px dotted color: #562024; border-bottom: 3px dotted color: #562024; font-family: "Conv_FontinSans_Cyrillic_SC", sans-serif;}
+		.navigation-list { margin: .5em auto; padding: 0; width:15.75em;font-family: "Conv_FontinSans_Cyrillic_SC", sans-serif;}
 			.navigation-list-item { max-width: 14.75em; width:100%; margin: 0 auto; line-height: 2.1875; text-align: center; font-size: .9375em; }
 			.navigation-list-item a { text-decoration: none; color: #562024; }
 			.navigation-list-item a:hover,
 			footer a:hover { color: #AEAD3A; }
-			.item-1 { max-width: 11em; padding: 1.4em 0 0 0; /*border-top: 1px dotted; */}
-			.item-6 { max-width: 11em; padding: 0 0 1.4em 0; /*border-bottom: 1px dotted; */}
+			.item-1 { max-width: 11em; /*border-top: 1px dotted; */}
+			.item-6 { max-width: 11em; /*border-bottom: 1px dotted; */}
 
 /* ==========================================================================
  * About company page styles
    ========================================================================== */
-	.page-description-block { height: auto; /*overflow: hidden;*/ min-height: 100%; background-color: #aead3a; color: #fff; line-height: 1.125em; }
-		.page-description-block h2 { font-weight: 100; font-size: 1.375em; margin: 5.2em 1em 0 .5em; /*overflow: hidden;*/ }
+	.page-description-block { height: auto; /*overflow: hidden;*/ min-height: 100%; padding-bottom: 3em; background-color: #aead3a; color: #fff; line-height: 1.125em; }
+		.page-description-block h2 { font-weight: 100; font-size: 1.375em; margin: 5.4em 1em 0 .5em; /*overflow: hidden;*/ }
 		.about-page-text { margin: 1.5em 1em 0 1em; overflow: auto; font-size: 0.8125em; }
 		.about-page-text>p { margin: 0 0 1.5em 0; }
 	.about-company-slideshow, .contacts-map { position: relative; float: left; height: 100%; /*min-height: 600px;*/ width: 60%; min-width: 192px;}
@@ -157,8 +161,10 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
    .can-fade { min-width: 256px; max-width: 340px; position: relative; left: 20%;}
    .can-fade:hover .red-cross { opacity: 1; transition: opacity .5s ease-in-out; -moz-transition: opacity .25s ease-in-out; -webkit-transition: opacity .25s ease-in-out; }
    .red-cross { opacity: 0; position: absolute; top: 5%; right: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_2.png) no-repeat;  }
+   .red-cross:hover { cursor: pointer; }
    .green-cross-on-fade { opacity: 0; position: absolute; top: 5%; left: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_1.png) no-repeat;  }
-   .subnavigation-list { /*display: none;*/ margin: 0; padding: 0; font-size: .83em; font-family: 'Conv_PTZ55F', sans-serif; font-weight: 500; }
+   .green-cross-on-fade:hover { cursor: pointer; }
+   .subnavigation-list { display: none; margin: 0; padding: 0; font-size: .83em; font-family: 'Conv_PTZ55F', sans-serif; font-weight: 500; }
    .subnavigation-list-item { line-height: 1.375em; margin: 0 0 .3em 0; }
    .subnavigation-list-item a:hover { text-decoration: underline; }
    .simple-page-slideshow { position: fixed; top: 10%; left: 40%; float: left; height: 80%; /*min-height: 600px;*/ width: 60%; min-width: 192px;}
@@ -195,19 +201,20 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 } 
 
 @media (max-width: 480px) {
+	
 	html, body { min-width: 0; height: auto; }
-	footer { position: relative; visibility: hidden; padding-bottom: .5em; bottom: -.5em; z-index: 10001; }
+	footer { position: relative; /*visibility: hidden;*/ padding-bottom: .5em; bottom: -.5em; z-index: 10001; }
 	.block-description-list { margin: -7.2em 0 0 0; }
 	.green-cross { display: none; }
 	.copyright, .developer { margin: 0 0 .5em 0; }
 	.wrapper { position: relative; width: 28.936em; min-width: 0; /*padding-bottom: 76px;*/ }	
-	.index-wrapper { width: 28.936em; }
-	.wrapper-component { width: 100%; height: 23.9em; z-index: 10002; }
+	.index-wrapper { width: 30em; }
+	.wrapper-component { width: 100%; height: 29.5em; z-index: 10002; }
 	.block-2, .block-3, .block-4, .block-5 { height: 8em; }
 	.block-description-list { height: 15em; }
 	.page-description-block { min-height: 8em; height: auto; }
 	.about-page-description-block { left: 0 !important; }
-	.about-company-slideshow { height: 12em; width: 100%; }
+	.about-company-slideshow { height: 18em !important; width: 100% !important; }
 	.page-description-block h2 { margin: 1.5em 0 0 1.1em; }
 	.page-description-block h2, .about-page-text { text-align: left; }
 	.about-page-text { padding: 0 0 1em 1em; }
@@ -229,13 +236,13 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 	.block-name:hover { background: #BABA50 !important; }
 	.right, .left { left: 0; top: 100%; }
 	/*.green-cross { width: 2.25em; height: 2.25em; margin-top: 1.65em; }*/
-	.navigation-list { margin: 2em 0; padding: 0; }
+	.navigation-list { margin: 0 auto; padding: 0; }
 		.item-1 { max-width: 100%; padding: 1em 0 0; }
 		.item-6 { max-width: 100%; padding: 0 0 1em; }
 } 
    
 @media (max-width: 335px) /* +15px */{
-	.wrapper { position: relative; width: 19.6245em; min-width: 0; /*padding-bottom: 76px;*/ }		
+	.wrapper { position: relative; width: 19.93em; min-width: 0; /*padding-bottom: 76px;*/ }		
 }   
        
 /* ==========================================================================
@@ -255,7 +262,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 /* ==========================================================================
  * Scroll-pane styles
    ========================================================================== */
-.scroll-pane { overflow: auto; height: 13.375em; }
+.scroll-pane { overflow: auto; width: 16em; padding: 1.4em 0; margin: 0 auto; border-top: 1px dotted; border-bottom: 1px dotted; }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
