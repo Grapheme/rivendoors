@@ -11,8 +11,7 @@ class Guests_interface extends MY_Controller{
 		$this->load->library('page_variables');
 	}
 	
-	public function index(){
-		
+	private function loadManufacturers() {
 		$this->load->model('manufacturers');
 		$pagevar = array(
 			'manufacturers'=>$this->manufacturers->getAll()
@@ -21,22 +20,34 @@ class Guests_interface extends MY_Controller{
 		for($i=0;$i<count($pagevar['manufacturers']);$i++):
 			$pagevar['manufacturers'][$i]['link'] = $categories[$pagevar['manufacturers'][$i]['category']].'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
 		endfor;
+		
+		return $pagevar;
+	}
+	
+	public function index(){
+		
+		$pagevar = $this->loadManufacturers();
+		
 		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
 	public function about(){
 		
+		$pagevar = $this->loadManufacturers();
+		
 		$this->load->model(array('pages','page_resources'));
-		$pagevar = array(
-			'content' => $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1))),
-			'images' => $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE)
-		);
+		
+		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1)));
+		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE);
+
 		$this->load->view("guests_interface/about",$pagevar);
 	}
 	
 	public function contacts(){
 		
-		$this->load->view("guests_interface/contacts");
+		$pagevar = $this->loadManufacturers();
+		
+		$this->load->view("guests_interface/contacts",$pagevar);
 	}
 	
 	public function manufacturers(){
@@ -44,7 +55,8 @@ class Guests_interface extends MY_Controller{
 		$categories = array('entrance-doors'=>2,'interior-doors'=>3,'dekor'=>4,'parket'=>5);
 		$this->load->model(array('manufacturers','manufacturers_images'));
 		$pagevar = array(
-			'manufacturers' => $this->manufacturers->getWhere(NULL,array('category'=>$categories[$this->uri->segment(1)]),TRUE),
+			//'manufacturers' => $this->manufacturers->getWhere(NULL,array('category'=>$categories[$this->uri->segment(1)]),TRUE),
+			'manufacturers' => $this->manufacturers->getAll(),
 			'single' => array('title'=>'','logo'=>'','comment'=>'','description'=>''),
 			'images' => array()
 		);
@@ -56,9 +68,16 @@ class Guests_interface extends MY_Controller{
 				redirect($this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][0]['title']).'?id='.$pagevar['manufacturers'][0]['id']);
 			endif;
 		endif;
+		
+		$categories = array(2=>'entrance-doors',3=>'interior-doors',4=>'dekor',5=>'parket');
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $categories[$pagevar['manufacturers'][$i]['category']].'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
+		endfor;
+		/*
 		for($i=0;$i<count($pagevar['manufacturers']);$i++):
 			$pagevar['manufacturers'][$i]['link'] = $this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
 		endfor;
+		*/
 		$this->load->view("guests_interface/manufacturers",$pagevar);
 	}
 	

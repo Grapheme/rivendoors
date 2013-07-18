@@ -106,10 +106,12 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 		.fb_iframe_widget { float: right; }
 			.copyright { margin: 0 0 .5em; }
 			.developer { margin: 0 0 .5em; }
-			.social-likes { margin: 0 auto; width: 17em; }
-}			
-			.social-likes a img { width:14px; height: 14px; }
-				
+			.social-likes { margin: 0 auto; width: 215px; height: 25px;}
+			.like-button { height: 17px; padding: 0 0 7px 0; }
+			.facebook-like { float: left; width: 74px; overflow: hidden; height: 22px; margin-left: 10px; display: none; }
+			.vkontakte-like { float: left; width: 103px; overflow: hidden; height: 22px; margin-left: 10px; display: none; }		
+			
+			.social-likes a img { width:14px; height: 14px !important; }			
 	.block-2 { background: url("../img/main/block-1.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
 	.block-3 { background: url("../img/main/block-2.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
 	.block-4 { background: url("../img/main/block-3.jpg") no-repeat 100% 100% transparent; background-size: cover; cursor: pointer; }
@@ -174,7 +176,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
    	.afterfade-block { margin: 1.5em; position: absolute; top: -84px; display: none; }
     .header-after-fade { font: 1.7em 'Conv_PTZ55F', sans-serif; }
     .production-after-fade { font: .8em 'Conv_PTZ56F', sans-serif; }
-    
+    .active { display: block; }
 /* ==========================================================================
  * Scroller styles
    ========================================================================== */ 
@@ -198,17 +200,13 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 
 @media (max-width: 768px) {
 	
-} 
-
-@media (max-width: 480px) {
-	
 	html, body { min-width: 0; height: auto; }
 	footer { position: relative; /*visibility: hidden;*/ padding-bottom: .5em; bottom: -.5em; z-index: 10001; }
 	.block-description-list { margin: -7.2em 0 0 0; }
 	.green-cross { display: none; }
 	.copyright, .developer { margin: 0 0 .5em 0; }
-	.wrapper { position: relative; width: 28.936em; min-width: 0; /*padding-bottom: 76px;*/ }	
-	.index-wrapper { width: 30em; }
+	.wrapper { position: relative; width: 46.936em; min-width: 0; /*padding-bottom: 76px;*/ }	
+	.index-wrapper { width: 46.936em; }
 	.wrapper-component { width: 100%; height: 29.5em; z-index: 10002; }
 	.block-2, .block-3, .block-4, .block-5 { height: 8em; }
 	.block-description-list { height: 15em; }
@@ -221,11 +219,11 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 	
 	/* Contacts */
 	.page-description-block.contacts-description-block { min-height: 8em; height: 8em; }
-	.contacts-page-text { width: 88%; text-align: center; padding-top: 0.5em; }
+	.contacts-page-text { width: 100%; text-align: center; padding-top: 0.5em; }
 	.contacts-description-block { height: 12.5em !important; }
 	.contacts-map { width: 100% !important; height: 18em !important;}
 	.wrapper-component.block-1.about-page-block-1 { position: relative; max-width: none; }
-	.wrapper-component.page-description-block.about-page-description-block { left: 0; max-width: none; }
+	.wrapper-component.page-description-block.about-page-description-block { height: auto !important; left: 0; max-width: none; }
 	.about-company-slideshow { position: relative; left: 0 !important; }
 	/* Samplepage */
 	.can-fade { left:0 !important; height: auto !important; padding-bottom: 1em; max-width: none; }
@@ -239,6 +237,11 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 	.navigation-list { margin: 0 auto; padding: 0; }
 		.item-1 { max-width: 100%; padding: 1em 0 0; }
 		.item-6 { max-width: 100%; padding: 0 0 1em; }
+		.block-1 { height: auto !important; }
+} 
+
+@media (max-width: 480px) {
+	.wrapper { position: relative; width: 28.936em; min-width: 0; /*padding-bottom: 76px;*/ }		
 } 
    
 @media (max-width: 335px) /* +15px */{
@@ -262,7 +265,8 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 /* ==========================================================================
  * Scroll-pane styles
    ========================================================================== */
-.scroll-pane { overflow: auto; width: 16em; padding: 1.4em 0; margin: 0 auto; border-top: 1px dotted; border-bottom: 1px dotted; }
+.scroll-pane-container { padding: 2em 0; border-top: 1px dotted; border-bottom: 1px dotted; }  
+.scroll-pane { overflow: auto; width: 16em; /*padding: 1.4em 0;*/ margin: 0 auto; }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

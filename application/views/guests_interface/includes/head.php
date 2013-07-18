@@ -2,8 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title><?=$this->page_variables->getPageTitle($this->uri->segment(1));?></title>
 <meta name="description" content="<?=$this->page_variables->getPageDescription($this->uri->segment(1));?>" />
-<meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/png" href="<?=base_url('favicon.png');?>" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="icon" href="<?=base_url('favicon.ico');?>" />
 <link rel="stylesheet" href="<?=base_url('css/normalize.css');?>" />
 <link rel="stylesheet" href="<?=base_url('css/fonts.css');?>" />
 <link rel="stylesheet" href="<?=base_url('css/fotorama.css');?>">
@@ -11,3 +11,8 @@
 <link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 
 <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 3770009, onlyWidgets: true});
+</script>

@@ -23,6 +23,12 @@
 		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 		
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 3770009, onlyWidgets: true});
+</script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -34,13 +40,42 @@
 			<div class="wrapper-component block-1 about-page-block-1">
 				<h1 class="page-header">Riven Doors</h1>
 				<nav id="main-navigation">
-					<div class="scroll-pane">
-					<ul class="navigation-list">
+					<div class="scroll-pane-container">
+					<ul class="navigation-list scroll-pane">
 						<li class="navigation-list-item item-1">
 							<a href="#">О компании</a>
 						</li>
 						<li class="navigation-list-item item-2">
 							<a href="#">Входные двери</a>
+							<ul class="subnavigation-list">
+								<li class="subnavigation-list-item">
+									<a href="#">Pasini Ettore</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pavanetto Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Res</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Astor Mobile</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">3ELLE</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Мастер Вуд</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Dolce Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Стеклянные двери</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Складская программа</a>
+								</li>
+							</ul>
 						</li>
 						<li class="navigation-list-item item-3">
 							<a href="#">Межкомнатные двери</a>
@@ -76,12 +111,99 @@
 						</li>
 						<li class="navigation-list-item item-4">
 							<a href="#">Декор</a>
+							<ul class="subnavigation-list">
+								<li class="subnavigation-list-item">
+									<a href="#">Pasini Ettore</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pavanetto Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Res</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Astor Mobile</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">3ELLE</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Мастер Вуд</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Dolce Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Стеклянные двери</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Складская программа</a>
+								</li>
+							</ul>
 						</li>
 						<li class="navigation-list-item item-5">
 							<a href="#">Паркет</a>
+							<ul class="subnavigation-list">
+								<li class="subnavigation-list-item">
+									<a href="#">Pasini Ettore</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pavanetto Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Res</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Astor Mobile</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">3ELLE</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Мастер Вуд</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Dolce Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Стеклянные двери</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Складская программа</a>
+								</li>
+							</ul>
 						</li>
 						<li class="navigation-list-item item-6">
 							<a href="#">Контакты</a>
+							<ul class="subnavigation-list">
+								<li class="subnavigation-list-item">
+									<a href="#">Pasini Ettore</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Pavanetto Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Res</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Astor Mobile</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">3ELLE</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Мастер Вуд</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Dolce Porte</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Стеклянные двери</a>
+								</li>
+								<li class="subnavigation-list-item">
+									<a href="#">Складская программа</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 					</div>
@@ -94,7 +216,20 @@
 						Разработано в &laquo;<a href="#">Графема</a>&raquo;
 					</p>
 					<div class="social-likes">
-						<a href="#"><img src="img/interface/like.png"></a>
+						<div class="like-button">
+							<a href="#">
+								<img src="img/interface/like.png">
+							</a>
+						</div>
+						<div class="facebook-like">
+							<div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+						</div>
+						<div class="vkontakte-like">
+							<div id="vk_like"></div>
+							<script type="text/javascript">
+							VK.Widgets.Like("vk_like", {type: "button"});
+							</script>
+						</div>
 					</div>
 				</footer>
 			</div>
@@ -231,5 +366,15 @@
 					s.parentNode.insertBefore(g, s)
 				}(document, 'script'));
 		</script>
+		
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+		
 	</body>
 </html>
