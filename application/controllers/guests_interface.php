@@ -18,8 +18,14 @@ class Guests_interface extends MY_Controller{
 	}
 	
 	public function seo(){
-		$this->load->model('pages');
+
+		if($this->uri->total_segments() == 1 && array_search($this->uri->segment(1),$this->categoriesURL)):
+			show_404();
+		endif;
+		$pagevar = $this->loadManufacturers();
+		$this->load->model(array('pages','page_resources'));
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
+			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 			$this->load->view("guests_interface/seo",$pagevar);
 		else:
 			show_404();

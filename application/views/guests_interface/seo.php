@@ -18,8 +18,19 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		<div class="page-text">
-			<?=$content['content'];?>
+		<div class="wrapper-component page-description-block about-page-description-block">
+			<div class="about-page-text">
+				<?=$content['content'];?>
+			</div>
+		</div>
+		<div class="about-company-slideshow">
+		<?php if(empty($images) == FALSE):?>
+			<div class="__fotorama">
+			<?php for($i=0;$i<count($images);$i++):?>
+				<img src="<?=site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="Riven doors">
+			<?php endfor;?>
+			</div>
+		<?php endif;?>
 		</div>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>

@@ -18,8 +18,6 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		
-		
 		<div class="wrapper-component page-description-block can-fade">
 			<h2 class="detailed-description-header">
 		<?php if(!empty($single['logo'])):?>

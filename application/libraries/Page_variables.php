@@ -15,7 +15,6 @@ class Page_variables {
 		$record = array();
 		switch($this->CI->uri->total_segments()):
 			case 0: $record = $this->CI->pages->getWhere(NULL,array('url'=>'home')); break;
-			case 1: $record = $this->CI->pages->getWhere(NULL,array('url'=>uri_string())); break;
 			case 2:
 				if($this->CI->uri->segment(1) !== FALSE && array_search($this->CI->uri->segment(1),$this->CI->categoriesURL)):
 					$categoryID = array_search($this->CI->uri->segment(1),$this->CI->categoriesURL);
