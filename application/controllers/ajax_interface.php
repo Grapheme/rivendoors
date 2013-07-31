@@ -147,6 +147,32 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
+	public function pageRemoveContent(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->deletePage($this->input->post('id'))):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Cтраница удалена';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	private function deletePage($id){
+		
+		$this->load->model(array('pages','page_resources'));
+		$pageURL = $this->pages->value($id,'url');
+		$images = $this->page_resources->getWhere(NULL,array('page'=>$pageURL),TRUE);
+		for($i=0;$i<count($images);$i++):
+			$this->filedelete(getcwd().'/'.$images[$i]['resource']);
+		endfor;
+		$this->page_resources->delete(NULL,array('page'=>$pageURL));
+		return $this->pages->delete($id);
+	}
+	
 	private function savePageResource($resource){
 		
 		$resourceData = array("page"=>$this->uri->segment(3),"resource"=>'download/'.$resource['file_name']);
@@ -252,7 +278,7 @@ class Ajax_interface extends MY_Controller{
 		$json_request = array('status'=>FALSE,'responseText'=>'');
 		if($this->deleteManufacture($this->input->post('id'))):
 			$json_request['status'] = TRUE;
-			$json_request['responseText'] = 'Производитель cохранен';
+			$json_request['responseText'] = 'Производитель удален';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
 		endif;
 		echo json_encode($json_request);

@@ -69,6 +69,26 @@
 			error: function(xhr,textStatus,errorThrown){}
 		});
 	});
+	$("button.remove-pages").click(function(){
+		if(!confirm('Удалить страницу?')){return false;}
+		var _this = this;
+		var itemID = $(this).attr('data-item');
+		var action = $(this).parents('table').attr('data-action');
+		$.ajax({
+			url: action,type: 'POST',dataType: 'json',data:{'id':itemID},
+			beforeSend: function(){
+				$("div.result-request").html('');
+			},
+			success: function(response,textStatus,xhr){
+				if(response.status){
+					$(_this).parents('tr').remove();
+				}else{
+					$("div.result-request").html(response.responseText);
+				}
+			},
+			error: function(xhr,textStatus,errorThrown){}
+		});
+	});
 	$("button.btn-image-caption").click(function(){
 		var _this = this;
 		var itemID = $(this).attr('data-item');

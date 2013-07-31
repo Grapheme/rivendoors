@@ -20,6 +20,7 @@ $route[':any/view-resource/:any'] = "guests_interface/loadResource";
 /***************** pages ******************/
 $route[ADMIN_START_PAGE.'/page/update'] = "ajax_interface/pageUpdateContent";
 $route[ADMIN_START_PAGE.'/page/insert'] = "ajax_interface/pageInsertContent";
+$route[ADMIN_START_PAGE.'/pages/remove'] = "ajax_interface/pageRemoveContent";
 $route[ADMIN_START_PAGE.'/pages/:any/upload/resource'] = "ajax_interface/pageUploadResources";
 $route[ADMIN_START_PAGE.'/page/remove/resource'] = "ajax_interface/removePageResource";
 /*************************************************** GUEST INTRERFACE ***********************************************/
