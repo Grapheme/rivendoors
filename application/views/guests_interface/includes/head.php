@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="<?=base_url('css/fonts.css');?>" />
 <link rel="stylesheet" href="<?=base_url('css/fotorama.css');?>">
 <link rel="stylesheet" href="<?=base_url('css/main.css');?>" />
-<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<link type="text/css" href="<?=base_url('css/jquery.jscrollpane.css');?>" rel="stylesheet" media="all" />
 
 <script src="<?=base_url('js/vendor/modernizr-2.6.2.min.js');?>"></script>
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>

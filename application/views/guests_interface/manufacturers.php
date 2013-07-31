@@ -6,7 +6,6 @@
 <head>
 	<?php $this->load->view('guests_interface/includes/head');?>
 	
-	<link rel="stylesheet" href="<?=base_url('css/jcarousel.css');?>">
 	<link rel="stylesheet" href="<?=base_url('css/jquery.jscrollpane.css');?>">
 </head>
 <body>

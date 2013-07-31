@@ -17,15 +17,21 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
+	public function seo(){
+		$this->load->model('pages');
+		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
+			$this->load->view("guests_interface/seo",$pagevar);
+		else:
+			show_404();
+		endif;
+	}
+	
 	public function about(){
 		
 		$pagevar = $this->loadManufacturers();
-		
 		$this->load->model(array('pages','page_resources'));
-		
 		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1)));
 		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE);
-
 		$this->load->view("guests_interface/about",$pagevar);
 	}
 	

@@ -6,8 +6,7 @@
 			array('field'=>'password','label'=>'Пароль','rules'=>'required|trim')
 		),
 		'page' =>array(
-			array('field'=>'id','label'=>'ID','rules'=>'required|numeric|trim'),
-			array('field'=>'content','label'=>'Контент','rules'=>'required|trim'),
+			array('field'=>'content','label'=>'Контент','rules'=>'trim'),
 		),
 		'manufacturer' =>array(
 			array('field'=>'page_title','label'=>'Title страницы','rules'=>'trim'),

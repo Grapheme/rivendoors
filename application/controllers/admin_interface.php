@@ -24,19 +24,41 @@ class Admin_interface extends MY_Controller{
 	}
 	
 	/********************************************* pages *********************************************************/
+	
+	public function pages(){
+		
+		$this->load->model('pages');
+		$pagevar = array(
+			'pages' => $this->pages->getAll(),
+		);
+		$this->load->view("admin_interface/pages/list",$pagevar);
+	}
+	
+	public function addPage(){
+		
+		$this->load->helper('form');
+		$this->load->view("admin_interface/pages/add");
+	}
+	
 	public function editPage(){
 		
+		if($this->input->get('id') === FALSE || is_numeric($this->input->get('id')) === FALSE):
+			redirect(ADMIN_START_PAGE);
+		endif;
 		$this->load->model(array('pages','page_resources'));
 		$this->load->helper('form');
 		$pagevar = array(
-			'content' => $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(3))),
+			'content' => $this->pages->getWhere($this->input->get('id')),
 			'images' => array(),
-			'pageTitle' => 'О компании'
+			'pageTitle' => ''
 		);
+		if($pagevar['content']):
+			$pagevar['pageTitle'] = $pagevar['content']['page_title'];
+		endif;
 		if($this->input->get('mode') == 'text'):
 			$this->load->view("admin_interface/pages/edit",$pagevar);
 		elseif($this->input->get('mode') == 'image'):
-			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(3)),TRUE);
+			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$pagevar['content']['url']),TRUE);
 			$this->load->view("admin_interface/pages/images",$pagevar);
 		else:
 			redirect(ADMIN_START_PAGE);

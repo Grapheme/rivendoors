@@ -76,6 +76,24 @@ class Ajax_interface extends MY_Controller{
 
 	/********************************************* admin interface *******************************************************/
 	
+	public function pageInsertContent(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->postDataValidation('page') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		if($newsID = $this->ExecuteInsertingPageContent($_POST)):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Cохранено';
+		endif;
+		echo json_encode($json_request);
+	}
+	
 	public function pageUpdateContent(){
 		
 		if(!$this->input->is_ajax_request()):
@@ -87,7 +105,7 @@ class Ajax_interface extends MY_Controller{
 			echo json_encode($json_request);
 			return FALSE;
 		endif;
-		if($newsID = $this->ExecuteUpdatingPageContent($_POST['id'],$_POST)):
+		if($newsID = $this->ExecuteUpdatingPageContent($this->input->get('id'),$_POST)):
 			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Cохранено';
 		endif;
@@ -143,10 +161,19 @@ class Ajax_interface extends MY_Controller{
 		endif;
 	}
 	
+	private function ExecuteInsertingPageContent($post){
+		
+		/**************************************************************************************************************/
+		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"url"=>$post['url'],"content"=>$post['content']);
+		/**************************************************************************************************************/
+		$this->insertItem(array('insert'=>$content,'model'=>'pages'));
+		return TRUE;
+	}
+	
 	private function ExecuteUpdatingPageContent($id,$post){
 		
 		/**************************************************************************************************************/
-		$content = array("id"=>$id,"content"=>$post['content']);
+		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"url"=>$post['url'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$content,'model'=>'pages'));
 		return TRUE;
