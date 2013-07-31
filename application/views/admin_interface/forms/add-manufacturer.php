@@ -1,5 +1,10 @@
 <?=form_open(ADMIN_START_PAGE.'/manufacturers/insert'.getUrlLink(),array('class'=>'form-manage-manufacturer')); ?>
 	<div class="control-group">
+		<input type="text" name="page_title" class="span9" value="" placeholder="Title страницы" />
+		<textarea name="page_description" class="span9" placeholder="Description страницы"></textarea>
+	</div>
+	<hr/>
+	<div class="control-group">
 		<input type="text" name="title" class="span3 valid-required" value="" placeholder="Название" />
 		<input type="text" name="comment" class="span3 valid-required" value="" placeholder="Производство" />
 	</div>
@@ -18,4 +23,4 @@
 	<div class="div-form-operation">
 		<button type="submit" value="" name="submit" class="btn btn-submit no-clickable btn-loading">Добавить</button>
 	</div>
-<?= form_close(); ?>
+<?=form_close();?>

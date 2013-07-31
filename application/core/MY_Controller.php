@@ -6,6 +6,7 @@ class MY_Controller extends CI_Controller{
 	var $profile = '';
 	var $loginstatus = FALSE;
 	var $categories = array(2=>'входные двери',3=>'межкомнатные двери',4=>'декор',5=>'паркет');
+	var $categoriesURL = array(2=>'entrance-doors',3=>'interior-doors',4=>'dekor',5=>'parket');
 	
 	function __construct(){
 		

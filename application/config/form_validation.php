@@ -10,6 +10,9 @@
 			array('field'=>'content','label'=>'Контент','rules'=>'required|trim'),
 		),
 		'manufacturer' =>array(
+			array('field'=>'page_title','label'=>'Title страницы','rules'=>'trim'),
+			array('field'=>'page_description','label'=>'Description страницы','rules'=>'trim'),
+			array('field'=>'page_url','label'=>'URL страницы','rules'=>'trim'),
 			array('field'=>'title','label'=>'Название','rules'=>'required|trim'),
 			array('field'=>'comment','label'=>'Производство','rules'=>'required|trim'),
 			array('field'=>'description','label'=>'Описание','rules'=>'required|trim'),

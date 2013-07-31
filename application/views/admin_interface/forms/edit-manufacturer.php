@@ -1,5 +1,10 @@
 <?=form_open(ADMIN_START_PAGE.'/manufacturers/update'.getUrlLink(),array('class'=>'form-manage-manufacturer')); ?>
 	<div class="control-group">
+		<input type="text" name="page_title" class="span9" value="<?=$manufacturer['page_title'];?>" placeholder="Title страницы" />
+		<textarea name="page_description" class="span9" placeholder="Description страницы"><?=$manufacturer['page_description'];?></textarea>
+	</div>
+	<hr/>
+	<div class="control-group">
 		<input type="text" name="title" class="span3 valid-required" value="<?=$manufacturer['title'];?>" placeholder="Название" />
 		<input type="text" name="comment" class="span3 valid-required" value="<?=$manufacturer['comment'];?>" placeholder="Производство" />
 	</div>

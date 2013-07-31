@@ -11,23 +11,9 @@ class Guests_interface extends MY_Controller{
 		$this->load->library('page_variables');
 	}
 	
-	private function loadManufacturers() {
-		$this->load->model('manufacturers');
-		$pagevar = array(
-			'manufacturers'=>$this->manufacturers->getAll()
-		);
-		$categories = array(2=>'entrance-doors',3=>'interior-doors',4=>'dekor',5=>'parket');
-		for($i=0;$i<count($pagevar['manufacturers']);$i++):
-			$pagevar['manufacturers'][$i]['link'] = $categories[$pagevar['manufacturers'][$i]['category']].'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
-		endfor;
-		
-		return $pagevar;
-	}
-	
 	public function index(){
 		
 		$pagevar = $this->loadManufacturers();
-		
 		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
@@ -52,35 +38,42 @@ class Guests_interface extends MY_Controller{
 	
 	public function manufacturers(){
 		
-		$categories = array('entrance-doors'=>2,'interior-doors'=>3,'dekor'=>4,'parket'=>5);
 		$this->load->model(array('manufacturers','manufacturers_images'));
 		$pagevar = array(
-			//'manufacturers' => $this->manufacturers->getWhere(NULL,array('category'=>$categories[$this->uri->segment(1)]),TRUE),
 			'manufacturers' => $this->manufacturers->getAll(),
-			'single' => array('title'=>'','logo'=>'','comment'=>'','description'=>''),
+			'single' => array(),
 			'images' => array()
 		);
-		if($this->input->get('id') !== FALSE && is_numeric($this->input->get('id')) === TRUE):
-			$pagevar['single'] = $this->manufacturers->getWhere($this->input->get('id'),array('category'=>$categories[$this->uri->segment(1)]));
-			$pagevar['images'] = $this->manufacturers_images->getWhere(NULL,array('manufacturer'=>$this->input->get('id')),TRUE);
-		else:
-			if(isset($pagevar['manufacturers'][0])):
-				redirect($this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][0]['title']).'?id='.$pagevar['manufacturers'][0]['id']);
+		if($this->uri->segment(1) !== FALSE && array_search($this->uri->segment(1),$this->categoriesURL)):
+			$categoryID = array_search($this->uri->segment(1),$this->categoriesURL);
+			if($this->uri->segment(2) !== FALSE ):
+				$pagevar['single'] = $this->manufacturers->getWhere(NULL,array('category'=>$categoryID,'translit'=>$this->uri->segment(2)));
+				if(isset($pagevar['single']['id']) && is_numeric($pagevar['single']['id'])):
+					$pagevar['images'] = $this->manufacturers_images->getWhere(NULL,array('manufacturer'=>$pagevar['single']['id']),TRUE);
+				endif;
 			endif;
 		endif;
-		
-		$categories = array(2=>'entrance-doors',3=>'interior-doors',4=>'dekor',5=>'parket');
+		if(empty($pagevar['single'])):
+			show_404();
+		endif;
 		for($i=0;$i<count($pagevar['manufacturers']);$i++):
-			$pagevar['manufacturers'][$i]['link'] = $categories[$pagevar['manufacturers'][$i]['category']].'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
+			$pagevar['manufacturers'][$i]['link'] = $this->categoriesURL[$pagevar['manufacturers'][$i]['category']].'/'.$pagevar['manufacturers'][$i]['translit'];
 		endfor;
-		/*
-		for($i=0;$i<count($pagevar['manufacturers']);$i++):
-			$pagevar['manufacturers'][$i]['link'] = $this->uri->segment(1).'/manufacturer/'.$this->translite($pagevar['manufacturers'][$i]['title']).'?id='.$pagevar['manufacturers'][$i]['id'];
-		endfor;
-		*/
 		$this->load->view("guests_interface/manufacturers",$pagevar);
 	}
 	
+	private function loadManufacturers(){
+		
+		$this->load->model('manufacturers');
+		$pagevar = array(
+			'manufacturers'=>$this->manufacturers->getAll()
+		);
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $this->categoriesURL[$pagevar['manufacturers'][$i]['category']].'/'.$pagevar['manufacturers'][$i]['translit'];
+		endfor;
+		return $pagevar;
+	}
+
 	/******************************************* Авторизация и регистрация ***********************************************/
 	
 	public function signIN(){

@@ -267,9 +267,10 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteCreatingManufacturer($post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		$manufacturer = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],
+			"description"=>$post['description']);
 		/**************************************************************************************************************/
-		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'model'=>'manufacturers'))):
+		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'))):
 			return $manufacturerID;
 		endif;
 		return FALSE;
@@ -278,9 +279,10 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingManufacturer($id,$post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("id"=>$id,"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		$manufacturer = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"title"=>$post['title'],
+			"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
 		/**************************************************************************************************************/
-		$this->updateItem(array('update'=>$manufacturer,'model'=>'manufacturers'));
+		$this->updateItem(array('update'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'));
 		return TRUE;
 	}
 	
