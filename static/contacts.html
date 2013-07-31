@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="css/fonts.css">
 		<link rel="stylesheet" href="css/fotorama.css">
 		<link rel="stylesheet" href="css/main.css">
+		<!-- styles needed by jScrollPane -->
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 	</head>
@@ -31,7 +33,8 @@
 			<div class="wrapper-component block-1">
 				<h1 class="page-header">Riven Doors</h1>
 				<nav id="main-navigation">
-					<ul class="navigation-list">
+					<div class="scroll-pane-container">
+					<ul class="navigation-list scroll-pane">
 						<li class="navigation-list-item item-1">
 							<a href="#">О компании</a>
 						</li>
@@ -51,14 +54,18 @@
 							<a href="#">Контакты</a>
 						</li>
 					</ul>
+					</div>
 				</nav>
 				<footer>
-					<p>
+					<p class="copyright">
 						&copy; Rivendoors, 2013
 					</p>
-					<p>
-						Разработано <a href="#">Grapheme.ru</a>
+					<p class="developer">
+						Разработано в &laquo;<a href="#">Графема</a>&raquo;
 					</p>
+					<div class="social-likes">
+						<a href="#"><img src="img/interface/like.png"></a>
+					</div>
 				</footer>
 			</div>
 			<div class="wrapper-component page-description-block contacts-description-block">				
@@ -66,10 +73,10 @@
 					<p>Ростов-на-Дону,<br>
 					пр. Стачки 123/1, 2 этаж</p>
 					<p>+7 (863) 223-92-57</p>
-					<p>rivendoors@yandex.ru</p>
+					<p><a href="mailto:rivendoors@yandex.ru">rivendoors@yandex.ru</a></p>
 				</div>
 			</div>
-			<div class="about-company-slideshow contacts-map">
+			<div class="contacts-map">
 				<div id="map-canvas"></div>
 			</div>
 
@@ -85,6 +92,10 @@
 		<script src="js/vendor/jquery-ui.min.js"></script>
 		<script src="js/vendor/fotorama.js"></script>
 		<script src="js/fotorama_init.js"></script>
+		<!-- the mousewheel plugin - optional to provide mousewheel support -->
+		<script type="text/javascript" src="js/vendor/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="js/vendor/jquery.jscrollpane.min.js"></script>
 		<script src="js/main.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

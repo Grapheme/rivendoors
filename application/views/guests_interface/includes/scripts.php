@@ -3,3 +3,5 @@
 <script src="<?=base_url('js/plugins.js');?>"></script>
 <script src="<?=base_url('js/vendor/jquery-ui.min.js');?>"></script>
 <script src="<?=base_url('js/main.js');?>"></script>
+<script src="<?=base_url('js/vendor/jquery.mousewheel.js');?>"></script>
+<script src="<?=base_url('js/vendor/jquery.jscrollpane.min.js');?>"></script>
