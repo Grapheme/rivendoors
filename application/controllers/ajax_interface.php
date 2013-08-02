@@ -190,7 +190,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteInsertingPageContent($post){
 		
 		/**************************************************************************************************************/
-		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"url"=>$post['url'],"content"=>$post['content']);
+		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->insertItem(array('insert'=>$content,'model'=>'pages'));
 		return TRUE;
@@ -199,7 +199,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingPageContent($id,$post){
 		
 		/**************************************************************************************************************/
-		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"url"=>$post['url'],"content"=>$post['content']);
+		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$content,'model'=>'pages'));
 		return TRUE;
@@ -320,8 +320,8 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteCreatingManufacturer($post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],
-			"description"=>$post['description']);
+		$manufacturer = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1']
+			,"category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
 		/**************************************************************************************************************/
 		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'))):
 			return $manufacturerID;
@@ -332,8 +332,8 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingManufacturer($id,$post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"title"=>$post['title'],
-			"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		$manufacturer = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1']
+			,"title"=>$post['title'],"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'));
 		return TRUE;

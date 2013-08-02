@@ -19,6 +19,7 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block about-page-description-block">
+			<h1><?=$content['h1'];?></h1>
 			<div class="about-page-text">
 				<?=$content['content'];?>
 			</div>
