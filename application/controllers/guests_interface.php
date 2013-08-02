@@ -19,9 +19,6 @@ class Guests_interface extends MY_Controller{
 	
 	public function seo(){
 
-		if($this->uri->total_segments() == 1 && array_search($this->uri->segment(1),$this->categoriesURL)):
-			show_404();
-		endif;
 		$pagevar = $this->loadManufacturers();
 		$this->load->model(array('pages','page_resources'));
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):

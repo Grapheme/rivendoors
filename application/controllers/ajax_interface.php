@@ -119,7 +119,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,750,640)):
 			$resultUpload = $this->uploadSingleImage($uploadPath);
 			if($resultUpload['status'] == TRUE):
 				$json_request['responsePhotoSrc'] = $this->savePageResource($resultUpload['uploadData']);
@@ -258,7 +258,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,450,450)):
 			$resultUpload = $this->uploadSingleImage($uploadPath);
 			if($resultUpload['status'] == TRUE):
 				$json_request['responsePhotoSrc'] = $this->saveManufacturerImage($resultUpload['uploadData']);
