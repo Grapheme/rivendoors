@@ -14,11 +14,12 @@
 <![endif]-->
 	<div class="wrapper about-page-wrapper">
 		<div class="wrapper-component block-1 about-page-block-1">
-			<h1 class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</h1>
+			<div class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</div>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block about-page-description-block">
+			<h1 class="hidden">О компании Rivendoors</h1>
 			<h2>Рћ РєРѕРјРїР°РЅРёРё</h2>
 			<div class="about-page-text">
 				<?=$content['content'];?>
