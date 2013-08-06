@@ -6,7 +6,6 @@
 <head>
 	<?php $this->load->view('guests_interface/includes/head');?>
 	
-	<link rel="stylesheet" href="<?=base_url('css/jcarousel.css');?>">
 	<link rel="stylesheet" href="<?=base_url('css/jquery.jscrollpane.css');?>">
 </head>
 <body>
@@ -19,9 +18,8 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		
-		
 		<div class="wrapper-component page-description-block can-fade">
+			<!--<h1><?=$single['h1'];?></h1>-->
 			<h2 class="detailed-description-header">
 		<?php if(!empty($single['logo'])):?>
 			<img src="<?=site_url($single['logo']);?>">

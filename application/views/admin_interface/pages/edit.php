@@ -21,13 +21,13 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li>Страницы<span class="divider">/</span></li>
+					<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages?mode=list');?>">Страницы</a> <span class="divider">/</span></li>
 					<li class="active"><?=$pageTitle;?> (Контент)</li>
 				</ul>
 				<div class="clearfix">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#" class="no-clickable">Редактирование страницы</a></li>
-						<li><a href="<?=site_url(ADMIN_START_PAGE.'/page/about?mode=image');?>">Изображения страницы</a></li>
+						<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages/edit?mode=image&id='.$content['id']);?>">Изображения страницы</a></li>
 					</ul>
 				</div>
 				<?php $this->load->view('admin_interface/forms/edit-pages');?>
