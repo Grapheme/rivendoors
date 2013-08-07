@@ -1,5 +1,15 @@
 $(document).ready(function () {	
 	
+	$('.jcarousel-img-container > img').load( function() {
+		var imgWidth = 0;
+		$('.jcarousel-img-container > img').each( function() {
+			imgWidth += $(this).width();
+		});
+		if ( imgWidth <= ($(window).width() * 0.6 )) {
+			$('.jcarousel-next').hide();
+		};
+	});
+	
 	/* Same height  */	
 	$('.about-company-slideshow').height($('.block-1').height());	
 	$('.jcarousel').height($('.page-description-block').height() * 0.8);	

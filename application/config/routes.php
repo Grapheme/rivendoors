@@ -18,8 +18,10 @@ $route[ADMIN_START_PAGE.'/manufacturers/caption/resource'] = "ajax_interface/man
 /******************load view ********************/
 $route[':any/view-resource/:any'] = "guests_interface/loadResource";
 /***************** pages ******************/
-$route[ADMIN_START_PAGE.'/page/:any/update'] = "ajax_interface/pageUpdateContent";
-$route[ADMIN_START_PAGE.'/page/:any/upload/resource'] = "ajax_interface/pageUploadResources";
+$route[ADMIN_START_PAGE.'/page/update'] = "ajax_interface/pageUpdateContent";
+$route[ADMIN_START_PAGE.'/page/insert'] = "ajax_interface/pageInsertContent";
+$route[ADMIN_START_PAGE.'/pages/remove'] = "ajax_interface/pageRemoveContent";
+$route[ADMIN_START_PAGE.'/pages/:any/upload/resource'] = "ajax_interface/pageUploadResources";
 $route[ADMIN_START_PAGE.'/page/remove/resource'] = "ajax_interface/removePageResource";
 /*************************************************** GUEST INTRERFACE ***********************************************/
 $route['clear-session'] = "guests_interface/clearSession";
@@ -28,15 +30,23 @@ $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
 $route['about'] = "guests_interface/about";
 $route['contacts'] = "guests_interface/contacts";
-$route['entrance-doors(\/:any)*?'] = "guests_interface/manufacturers";
-$route['interior-doors(\/:any)*?'] = "guests_interface/manufacturers";
-$route['dekor(\/:any)*?'] = "guests_interface/manufacturers";
-$route['parket(\/:any)*?'] = "guests_interface/manufacturers";
+$route['entrance-doors/:any'] = "guests_interface/manufacturers";
+$route['interior-doors/:any'] = "guests_interface/manufacturers";
+$route['dekor/:any'] = "guests_interface/manufacturers";
+$route['parket/:any'] = "guests_interface/manufacturers";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
 /*************************************************** ADMIN INTRERFACE ***********************************************/
 $route[ADMIN_START_PAGE] = "admin_interface/control_panel";
-$route[ADMIN_START_PAGE.'/page/about'] = "admin_interface/editPage";
+
+$route[ADMIN_START_PAGE.'/pages'] = "admin_interface/pages";
+$route[ADMIN_START_PAGE.'/pages/edit'] = "admin_interface/editPage";
+$route[ADMIN_START_PAGE.'/pages/add'] = "admin_interface/addPage";
+
 $route[ADMIN_START_PAGE.'/manufacturers'] = "admin_interface/manufacturers";
 $route[ADMIN_START_PAGE.'/manufacturers/add'] = "admin_interface/addManufacturer";
 $route[ADMIN_START_PAGE.'/manufacturers/edit'] = "admin_interface/editManufacturer";
+
+/*************************************************** DIMAMIC PAGES ***********************************************/
+
+$route[':any'] = "guests_interface/seo";

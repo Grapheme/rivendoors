@@ -76,6 +76,24 @@ class Ajax_interface extends MY_Controller{
 
 	/********************************************* admin interface *******************************************************/
 	
+	public function pageInsertContent(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->postDataValidation('page') === FALSE):
+			$json_request['responseText'] = $this->load->view('html/validation-errors',array('alert_header'=>'Неверно заполнены обязательные поля'),TRUE);
+			echo json_encode($json_request);
+			return FALSE;
+		endif;
+		if($newsID = $this->ExecuteInsertingPageContent($_POST)):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Cохранено';
+		endif;
+		echo json_encode($json_request);
+	}
+	
 	public function pageUpdateContent(){
 		
 		if(!$this->input->is_ajax_request()):
@@ -87,7 +105,7 @@ class Ajax_interface extends MY_Controller{
 			echo json_encode($json_request);
 			return FALSE;
 		endif;
-		if($newsID = $this->ExecuteUpdatingPageContent($_POST['id'],$_POST)):
+		if($newsID = $this->ExecuteUpdatingPageContent($this->input->get('id'),$_POST)):
 			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Cохранено';
 		endif;
@@ -101,7 +119,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,750,640)):
 			$resultUpload = $this->uploadSingleImage($uploadPath);
 			if($resultUpload['status'] == TRUE):
 				$json_request['responsePhotoSrc'] = $this->savePageResource($resultUpload['uploadData']);
@@ -129,6 +147,32 @@ class Ajax_interface extends MY_Controller{
 		echo json_encode($json_request);
 	}
 	
+	public function pageRemoveContent(){
+		
+		if(!$this->input->is_ajax_request()):
+			show_error('В доступе отказано');
+		endif;
+		$json_request = array('status'=>FALSE,'responseText'=>'');
+		if($this->deletePage($this->input->post('id'))):
+			$json_request['status'] = TRUE;
+			$json_request['responseText'] = 'Cтраница удалена';
+			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
+		endif;
+		echo json_encode($json_request);
+	}
+	
+	private function deletePage($id){
+		
+		$this->load->model(array('pages','page_resources'));
+		$pageURL = $this->pages->value($id,'url');
+		$images = $this->page_resources->getWhere(NULL,array('page'=>$pageURL),TRUE);
+		for($i=0;$i<count($images);$i++):
+			$this->filedelete(getcwd().'/'.$images[$i]['resource']);
+		endfor;
+		$this->page_resources->delete(NULL,array('page'=>$pageURL));
+		return $this->pages->delete($id);
+	}
+	
 	private function savePageResource($resource){
 		
 		$resourceData = array("page"=>$this->uri->segment(3),"resource"=>'download/'.$resource['file_name']);
@@ -143,10 +187,19 @@ class Ajax_interface extends MY_Controller{
 		endif;
 	}
 	
+	private function ExecuteInsertingPageContent($post){
+		
+		/**************************************************************************************************************/
+		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
+		/**************************************************************************************************************/
+		$this->insertItem(array('insert'=>$content,'model'=>'pages'));
+		return TRUE;
+	}
+	
 	private function ExecuteUpdatingPageContent($id,$post){
 		
 		/**************************************************************************************************************/
-		$content = array("id"=>$id,"content"=>$post['content']);
+		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$content,'model'=>'pages'));
 		return TRUE;
@@ -205,7 +258,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$json_request = array('status'=>FALSE,'responseText'=>'','responsePhotoSrc'=>'');
 		$uploadPath = getcwd().'/download/';
-		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,1980,1345)):
+		if($this->imageManupulation($_FILES['file']['tmp_name'],'width',TRUE,450,450)):
 			$resultUpload = $this->uploadSingleImage($uploadPath);
 			if($resultUpload['status'] == TRUE):
 				$json_request['responsePhotoSrc'] = $this->saveManufacturerImage($resultUpload['uploadData']);
@@ -225,7 +278,7 @@ class Ajax_interface extends MY_Controller{
 		$json_request = array('status'=>FALSE,'responseText'=>'');
 		if($this->deleteManufacture($this->input->post('id'))):
 			$json_request['status'] = TRUE;
-			$json_request['responseText'] = 'Производитель cохранен';
+			$json_request['responseText'] = 'Производитель удален';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?mode=image&category='.$this->input->get('category').'&id='.$this->input->get('id'));
 		endif;
 		echo json_encode($json_request);
@@ -267,9 +320,10 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteCreatingManufacturer($post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		$manufacturer = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1']
+			,"category"=>$this->input->get('category'),"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
 		/**************************************************************************************************************/
-		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'model'=>'manufacturers'))):
+		if($manufacturerID = $this->insertItem(array('insert'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'))):
 			return $manufacturerID;
 		endif;
 		return FALSE;
@@ -278,9 +332,10 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingManufacturer($id,$post){
 		
 		/**************************************************************************************************************/
-		$manufacturer = array("id"=>$id,"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
+		$manufacturer = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1']
+			,"title"=>$post['title'],"title"=>$post['title'],"comment"=>$post['comment'],"description"=>$post['description']);
 		/**************************************************************************************************************/
-		$this->updateItem(array('update'=>$manufacturer,'model'=>'manufacturers'));
+		$this->updateItem(array('update'=>$manufacturer,'translit'=>$this->translite($post['title']),'model'=>'manufacturers'));
 		return TRUE;
 	}
 	

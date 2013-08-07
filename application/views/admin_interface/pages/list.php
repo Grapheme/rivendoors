@@ -5,8 +5,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <?php $this->load->view("admin_interface/includes/head");?>
-
-<link rel="stylesheet" href="<?=base_url('css/uploadzone.css');?>" />
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -21,24 +19,33 @@
 			<div class="span9">
 				<ul class="breadcrumb">
 					<li><a href="<?=site_url(ADMIN_START_PAGE);?>">Панель управления</a> <span class="divider">/</span></li>
-					<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages?mode=list');?>">Страницы</a><span class="divider">/</span></li>
-					<li class="active"><?=$pageTitle;?> (Рисунки)</li>
+					<li class="active">Страницы</li>
 				</ul>
-				<div class="clearfix">
-					<ul class="nav nav-tabs">
-						<li><a href="<?=site_url(ADMIN_START_PAGE.'/pages/edit?mode=text&id='.$content['id']);?>" >Редактирование страницы</a></li>
-						<li class="active"><a href="" class="no-clickable">Изображения страницы</a></li>
-					</ul>
-				</div>
-				<ul class="resources-items clearfix" data-action="<?=site_url(ADMIN_START_PAGE.'/page/remove/resource');?>">
-				<?php for($i=0;$i<count($images);$i++):?>
-					<li class="span2">
-						<img class="img-rounded" src="<?=site_url('page/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="">
-						<a href="" data-resource-id="<?=$images[$i]['id']?>" class="no-clickable delete-resource-item">&times;</a>
-					</li>
-				<?php endfor;?>
-				</ul>
-				<?=$this->load->view('html/zone-upload-file',array('action'=>site_url(ADMIN_START_PAGE.'/pages/'.$content['url'].'/upload/resource?id='.$content['id'])));?>
+				<div class="clear"></div>
+			<div class="inline">
+				<a href="<?=site_url(ADMIN_START_PAGE.'/pages/add')?>" class="btn">Добавить страницу</a>
+			</div>
+				<h2>Страницы</h2>
+				<table class="table table-bordered" data-action="<?=site_url(ADMIN_START_PAGE.'/pages/remove');?>">
+					<thead>
+						<tr>
+							<th class="span9">Название</th>
+							<th class="span2"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<?php for($i=0;$i<count($pages);$i++):?>
+						<tr>
+							<td><?=$pages[$i]['page_title'];?></td>
+							<td>
+								<a href="<?=site_url(ADMIN_START_PAGE.'/pages/edit?mode=text&id='.$pages[$i]['id'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
+								<button data-item="<?=$pages[$i]['id'];?>" class="btn btn-link remove-pages"><i class="icon-remove"></i></button>
+							</td>
+						</tr>
+					<?php endfor;?>
+					</tbody>
+				</table>
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
@@ -47,6 +54,5 @@
 	<?php $this->load->view("admin_interface/includes/scripts");?>
 
 <script type="text/javascript" src="<?=site_url('js/cabinet/admin.js');?>"></script>
-<script type="text/javascript" src="<?=site_url('js/libs/dropzone.js');?>"></script>
 </body>
 </html>
