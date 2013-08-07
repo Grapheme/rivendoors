@@ -3,7 +3,7 @@
 		&copy; Rivendoors, 2013
 	</p>
 	<p class="developer">
-		Разработано в &laquo;<a href="http://grapheme.ru">Графема</a>&raquo;
+		Разработано агентством &laquo;<a href="http://grapheme.ru">Графема</a>&raquo;
 	</p>
 	<div class="social-likes">
 		<div class="like-button">

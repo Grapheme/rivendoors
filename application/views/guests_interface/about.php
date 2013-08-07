@@ -19,8 +19,8 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block about-page-description-block">
-			<h1 class="hidden">� �������� Rivendoors</h1>
-			<h2>О компании</h2>
+			<h1 class="hidden">� �������� Rivendoors</h1>
+			<div class="page-desc-header">О компании</div>
 			<div class="about-page-text">
 				<?=$content['content'];?>
 			</div>
@@ -39,6 +39,6 @@
 	
 	<script src="<?=base_url('js/vendor/fotorama.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/fotorama-config.js');?>"></script>
-	<?php $this->load->view('guests_interface/includes/google-analytic');?>
+	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
 </html>

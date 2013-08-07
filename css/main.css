@@ -93,16 +93,17 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0; margin: 0; color: #353535; font: 500 16px "Conv_PTZ55F", sans-serif; color: #562024; }
+html, body { width: 100%; height: 100%; min-width: 800px; padding: 0; margin: 0; color: #353535; font-family: "pt serif", serif; font-weight: 500; color: #562024; }
 
 .wrapper { width: 100%; height: 100%; /*min-width: 1280px;*/ min-height: 600px; }
 .index-wrapper { min-width: 1280px; min-height: 39.875em; }
 .page-header { background: url("../img/interface/Logo_1.png") no-repeat 100% 100% transparent; background-size: cover; margin: 1.3em auto 1.3em auto; text-indent: -9999px; width: 187px; height: 112px; overflow: hidden; }
 .page-header a { display: block; width: 100%; height: 7em; }
 	.block-1 { background: #f8f1e1; }
-		footer { position: absolute; bottom: 1em; width: 100%; padding: 0 0 .3em 0; text-align: center; font: 500 .75em "Conv_PTS55F", sans-serif; }
+		footer { position: absolute; bottom: 1em; width: 100%; padding: 0 0 .3em 0; text-align: center; font: 500 .8em "pt serif", serif; }
 		footer a { color: #562024; }
-		footer>a { display: block; }		
+		footer>a { display: block; }
+		footer .developer a { text-decoration: none; border-bottom: 1px solid; display: inline-block; line-height: 1.1em; }		
 		.fb_iframe_widget { float: right; }
 			.copyright { margin: 0 0 .5em; }
 			.developer { margin: 0 0 .5em; }
@@ -124,7 +125,8 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 			.right { left: 100%; }	
 			.left { left: -100%; }		
 			.block-description-list { position:absolute; top: 50%; padding: 0 0 0 20px; margin: -5.5em 0 0 0; height: 14em; min-width: 12em; }
-				.block-description-list-item { margin: .5em 0; list-style-type: none; font-size: 0.8125em; }
+				.block-description-list-item { margin: .5em 0; list-style-type: none; }
+				.block-description-list-item h3 { font-size: 0.95em; font-weight: 100; margin: 0.5em 0; }
 					.block-description-list-item a { text-decoration: none; color: #fff; }
 					.block-description-list-item a:hover { text-decoration: underline; }
 		.block-name { position: absolute; top: 50%; left: 2.5%; width: 95%; margin: -1em auto 0 auto; background: #F8F1E1; text-align: center; letter-spacing: .25em; font: 500 .9375em/2.1875em "Conv_FontinSans_Cyrillic_SC", sans-serif; }
@@ -136,27 +138,30 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 			footer a:hover { color: #AEAD3A; }
 			.item-1 { max-width: 11em; /*border-top: 1px dotted; */}
 			.item-6 { max-width: 11em; /*border-bottom: 1px dotted; */}
+	.sub-active a { color: #aead3a; }
 
 /* ==========================================================================
  * About company page styles
    ========================================================================== */
-	.page-description-block { height: auto; /*overflow: hidden;*/ min-height: 100%; padding-bottom: 3em; background-color: #aead3a; color: #fff; line-height: 1.125em; }
-		.page-description-block h2 { font-weight: 100; font-size: 1.375em; margin: 5.4em 1em 0 .5em; /*overflow: hidden;*/ }
-		.about-page-text { margin: 1.5em 1em 0 1em; overflow: auto; font-size: 0.8125em; }
+	.page-description-block { height: auto; /*overflow: hidden;*/ min-height: 100%; padding-bottom: 3em; background-color: #aead3a; color: #fff; line-height: 1.325em; }
+		.page-description-block .page-desc-header,
+		.page-description-block h2 { font-weight: 300; font-size: 1.675em; margin: 4.4em 1em 0 .5em; }
+		.about-page-text { margin: 1.5em 1em 0 1em; overflow: auto; font-size: 0.95em; }
 		.about-page-text>p { margin: 0 0 1.5em 0; }
 	.about-company-slideshow, .contacts-map { position: relative; float: left; height: 100%; /*min-height: 600px;*/ width: 60%; min-width: 192px;}
 
 	.wrapper.about-page-wrapper { height: auto !important; }
-	.wrapper-component.block-1.about-page-block-1 { position: fixed; max-width: 340px; }
-	.wrapper-component.page-description-block.about-page-description-block { position: relative; left: 20%; max-width: 340px; }	
+	.wrapper-component.block-1.about-page-block-1 { position: fixed; max-width: 340px; min-height: 600px; }
+	.wrapper-component.page-description-block.about-page-description-block { position: relative; left: 20%; max-width: 340px; padding: 0;}	
 	.about-company-slideshow { position: fixed; left: 40%; }	
 /* ==========================================================================
  * Contacts page styles
    ========================================================================== */
 
    #map-canvas { width: 100%; height: 100%; }
-   .contacts-page-text { position: absolute; height: 10em; margin: -5em 1em 0 1em; top: 40%; font: .8125em/1.125em 'Conv_PTZ55F', sans-serif; }
+   .contacts-page-text { position: absolute; height: 10em; margin: -5em 1em 0 1em; top: 40%; font: .95em/1.4em 'pt serif', serif; }
    a[href^="mailto:"] { color: #fff; }
+   .wrapper-component.page-description-block.contacts-description-block { padding: 0; }
 /* ==========================================================================
  * Detailed description pages styles
    ========================================================================== */
@@ -166,16 +171,16 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
    .red-cross:hover { cursor: pointer; }
    .green-cross-on-fade { opacity: 0; position: absolute; top: 5%; left: 5%; margin: 3.5em 0 0 -.96875em; width: 3.05em; height: 3.05em; background: url(../img/interface/button_1.png) no-repeat;  }
    .green-cross-on-fade:hover { cursor: pointer; }
-   .subnavigation-list { display: none; margin: 0; padding: 0; font-size: .83em; font-family: 'Conv_PTZ55F', sans-serif; font-weight: 500; }
-   .subnavigation-list-item { line-height: 1.375em; margin: 0 0 .3em 0; }
+   .subnavigation-list { display: none; margin: 0; padding: 0; font-size: .95em; font-family: 'pt serif', serif; font-weight: 500; }
+   .subnavigation-list-item { line-height: 1.425em; margin: 0 0 .3em 0; }
    .subnavigation-list-item a:hover { text-decoration: underline; }
    .simple-page-slideshow { position: fixed; top: 10%; left: 40%; float: left; height: 80%; /*min-height: 600px;*/ width: 60%; min-width: 192px;}
    .detailed-description-header { width: 11.5em; /*height: 3em;*/ /*line-height: 4.5em;*/ }
    		.detailed-description-header img { display: block; max-width: 78%; max-height: 100%; }
-   	.production { margin: 1em 1em 0; font-size: .8125em; /*font-style: italic; */font-family: 'Conv_PTZ56F', sans-serif; }
-   	.afterfade-block { margin: 1.5em; position: absolute; top: -84px; display: none; }
-    .header-after-fade { font: 1.7em 'Conv_PTZ55F', sans-serif; }
-    .production-after-fade { font: .8em 'Conv_PTZ56F', sans-serif; }
+   	.production { margin: 1em 1em 0; font: italic 0.925em 'pt serif',serif; }
+   	.afterfade-block { margin: 1.5em; position: absolute; top: -90px; display: none; }
+    .header-after-fade { font: 1.7em 'pt serif', serif; }
+    .production-after-fade { font: italic 0.9em 'pt serif',serif; }
     .active { display: block; }
 /* ==========================================================================
  * Scroller styles
@@ -238,6 +243,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 		.item-1 { max-width: 100%; padding: 1em 0 0; }
 		.item-6 { max-width: 100%; padding: 0 0 1em; }
 		.block-1 { height: auto !important; }
+	
 } 
 
 @media (max-width: 480px) {
@@ -265,7 +271,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; font: 16px; padding: 0
 /* ==========================================================================
  * Scroll-pane styles
    ========================================================================== */
-.scroll-pane-container { padding: 2em 0; border-top: 1px dotted; border-bottom: 1px dotted; }  
+.scroll-pane-container { /*overflow: auto;*/ padding: 2em 0; border-top: 1px dotted; border-bottom: 1px dotted; }  
 .scroll-pane { overflow: auto; width: 16em; /*padding: 1.4em 0;*/ margin: 0 auto; }
 /* ==========================================================================
    Helper classes

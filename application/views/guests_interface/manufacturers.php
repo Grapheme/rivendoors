@@ -14,7 +14,7 @@
 <![endif]-->
 	<div class="wrapper">
 		<div class="wrapper-component block-1 about-page-block-1">
-			<h1 class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</h1>
+			<div class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</div>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
@@ -61,6 +61,6 @@
 	
 	<script src="<?=base_url('js/vendor/jquery.jcarousel.min.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>	
-	<?php $this->load->view('guests_interface/includes/google-analytic');?>
+	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
 </html>
