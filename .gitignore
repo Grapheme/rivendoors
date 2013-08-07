@@ -10,3 +10,6 @@ application/logs/*
 
 download/*
 rivendoors.clpprj
+.project
+.settings
+.settings/*
