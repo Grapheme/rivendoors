@@ -16,12 +16,13 @@
 <![endif]-->
 	<div class="wrapper">
 		<div class="wrapper-component block-1">
-			<h1 class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</h1>
+			<div class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</div>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block contacts-description-block">
 			<div class="contacts-page-text">
+				<h1 class="hidden">���������� ������ ��������</h1>
 				<p>Ростов-на-Дону,<br>
 				пр. Стачки 123/1, 2 этаж</p>
 				<p>+7 (863) 223-92-57</p>
@@ -34,7 +35,7 @@
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
-	<?php $this->load->view('guests_interface/includes/google-analytic');?>
+	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 	<?php $this->load->view('guests_interface/includes/google-maps');?>
 </body>
 </html>

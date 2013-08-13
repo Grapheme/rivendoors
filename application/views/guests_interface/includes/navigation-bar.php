@@ -5,7 +5,7 @@
 			<a href="<?=site_url('about');?>">О компании</a>
 		</li>
 		<li class="navigation-list-item item-2">
-			<a href="#" class="no-clickable">Входные двери</a>
+			<a href="#" class="no-clickable <?php if($this->uri->segment(1) == 'entrance-doors') echo 'visible-sub-list'; ?>">Входные двери</a>
 			<ul class="subnavigation-list <?php if($this->uri->segment(1) == 'entrance-doors') echo 'active'; ?>">
 			<?php for($i=0;$i<count($manufacturers);$i++):?>
 				<?php if($manufacturers[$i]['category'] == 2):?>
@@ -17,7 +17,7 @@
 			</ul>
 		</li>
 		<li class="navigation-list-item item-3">
-			<a href="#" class="no-clickable">Межкомнатные двери</a>
+			<a href="#" class="no-clickable <?php if($this->uri->segment(1) == 'interior-doors') echo 'visible-sub-list'; ?>">Межкомнатные двери</a>
 			<ul class="subnavigation-list <?php if($this->uri->segment(1) == 'interior-doors') echo 'active'; ?>">
 			<?php for($i=0;$i<count($manufacturers);$i++):?>
 				<?php if($manufacturers[$i]['category'] == 3):?>
@@ -29,7 +29,7 @@
 			</ul>
 		</li>
 		<li class="navigation-list-item item-4">
-			<a href="#" class="no-clickable">Декор</a>
+			<a href="#" class="no-clickable <?php if($this->uri->segment(1) == 'dekor') echo 'visible-sub-list'; ?>">Декор</a>
 			<ul class="subnavigation-list <?php if($this->uri->segment(1) == 'dekor') echo 'active'; ?>">
 			<?php for($i=0;$i<count($manufacturers);$i++):?>
 				<?php if($manufacturers[$i]['category'] == 4):?>
@@ -41,7 +41,7 @@
 			</ul>
 		</li>
 		<li class="navigation-list-item item-5">
-			<a href="#" class="no-clickable">Паркет</a>
+			<a href="#" class="no-clickable <?php if($this->uri->segment(1) == 'parket') echo 'visible-sub-list'; ?>">Паркет</a>
 			<ul class="subnavigation-list <?php if($this->uri->segment(1) == 'parket') echo 'active'; ?>">
 			<?php for($i=0;$i<count($manufacturers);$i++):?>
 				<?php if($manufacturers[$i]['category'] == 5):?>

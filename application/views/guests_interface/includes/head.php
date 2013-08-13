@@ -14,5 +14,5 @@
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?97"></script>
 
 <script type="text/javascript">
-  VK.init({apiId: 3770009, onlyWidgets: true});
+  VK.init({apiId: 3771737, onlyWidgets: true});
 </script>

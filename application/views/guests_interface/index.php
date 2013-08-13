@@ -18,15 +18,15 @@
 		</div>
 	<?php foreach($this->categories as $key => $value):?>
 		<div class="wrapper-component block-<?=$key;?>">
-			<div class="block-name">
+			<h2 class="block-name">
 				<?=$value;?>
-				<div class="green-cross"></div>
-			</div>
+				<!-- <div class="green-cross"></div> -->
+			</h2>
 			<div class="block-description <?=($key<5)?'right':'left';?>">
 				<ul class="block-description-list">
 				<?php for($j=0;$j<count($manufacturers);$j++):?>
 					<?php if($manufacturers[$j]['category'] == $key):?>
-					<li class="block-description-list-item"><a href="<?=site_url($manufacturers[$j]['link']);?>"><?=$manufacturers[$j]['title'];?></a></li>
+					<li class="block-description-list-item"><h3><a href="<?=site_url($manufacturers[$j]['link']);?>"><?=$manufacturers[$j]['title'];?></a></h3></li>
 					<?php endif;?>
 				<?php endfor;?>
 				</ul>
@@ -37,6 +37,6 @@
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
 	<script src="<?=base_url('js/vendor/jquery.color.js');?>"></script>
-	<?php $this->load->view('guests_interface/includes/google-analytic');?>
+	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
 </html>
