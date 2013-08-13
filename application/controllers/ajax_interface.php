@@ -367,10 +367,10 @@ class Ajax_interface extends MY_Controller{
 	private function uploadManufacturerLogo($id){
 		
 		$responsePhotoSrc = '';
-		$resultUpload = $this->uploadSingleImage(getcwd().'/download/');
+		$resultUpload = $this->uploadSingleImage(getcwd().'/img/partners/');
 		if($resultUpload['status'] == TRUE):
-			$this->load->model('manufacturers');
-			$responsePhotoSrc = $this->manufacturers->updateField($id,'logo','download/'.$resultUpload['uploadData']['file_name']);
+			$this->load->model('brends');
+			$responsePhotoSrc = $this->brends->updateField($id,'logo','img/partners/'.$resultUpload['uploadData']['file_name']);
 		endif;
 		return $responsePhotoSrc;
 	}

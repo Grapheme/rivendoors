@@ -4,7 +4,7 @@
 $(function(){
 	var buttons = ['bold', 'italic', '|', 'unorderedlist', 'orderedlist'];
 	$("textarea.redactor").redactor({
-		buttons: buttons,
+		//buttons: buttons,
 		autoresize: false,
 		minHeight: true,
 	});

@@ -2,7 +2,7 @@
  *  http://grapheme.ru/
  */
 
-(function($){
+$(function(){
 	var mainOptions = {target: null,beforeSubmit: mt.ajaxBeforeSubmit,success: mt.ajaxSuccessSubmit,dataType:'json',type:'post'};
 	/*-------------------------------------------------------------------- */
 	$("form.form-signup-admin .btn-submit").click(function(event){
@@ -113,4 +113,4 @@
 			}
 		});
 	});
-})(window.jQuery);
+})

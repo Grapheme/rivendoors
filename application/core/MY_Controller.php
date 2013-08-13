@@ -142,7 +142,7 @@ class MY_Controller extends CI_Controller{
 		if(is_null($resource)):
 			$resource = file_get_contents(NO_IMAGE);
 		endif;
-		header('Content-type: image/gif');
+		header('Content-type: image/jpeg');
 		echo $resource;
 	}
 	
@@ -306,7 +306,7 @@ class MY_Controller extends CI_Controller{
 				$config['remove_spaces'] = TRUE;
 				$config['overwrite'] = TRUE;
 				$config['max_size'] = 5120;
-				$config['file_name'] = preg_replace('/.+(.)(\.)+/',random_string('nozero',12)."\$2",$_FILES['file']['name']);
+				$config['file_name'] = random_string('nozero',12).'.'.substr(strrchr($_FILES['file']['name'], '.'),1);
 				$this->upload->initialize($config);
 				if(!$this->upload->do_upload('file')):
 					$uploadStatus['message'] = $this->load->view('html/print-error',array('alert_header'=>'Файл: '.$_FILES['file']['name'],'message'=>$this->upload->display_errors()),TRUE);

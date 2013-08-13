@@ -33,7 +33,7 @@
 				<div class="inline">
 					<?php $this->load->view('html/select-categories');?>
 				</div>
-				<p class="text-info">Шаг №1: Текстровая информация</p><hr/>
+				<p class="text-info">Шаг №1: Текстовая информация</p><hr/>
 				<?php $this->load->view('admin_interface/forms/add-manufacturer');?>
 			<?php elseif($this->input->get('id') !== FALSE && $this->input->get('step') == 2):?>
 				<p class="text-info">Шаг №2: Загрузка изображений</p><hr/>
