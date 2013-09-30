@@ -67,11 +67,10 @@ function calcWrapperParts() {
  */
 function calcSameHeight(){
 	$('.about-company-slideshow').height($('.block-1').height());	
-	$('.jcarousel').height($('.block-1').height() * 0.8);	
-	$('.jcarousel-img-container').height($('.page-description-block').height() * 0.74 );
-	$('.jcarousel-img-container img').height($('.page-description-block').height() * 0.8 - 36);
-	$('#foo li img').height( $('.jcarousel').height() / 2.4 );
-	$('#fooX li img').height( $('.jcarousel').height() / 2.4 );
+	$('.jcarousel').height($('.block-1').height() * 0.4);	 /* there was a 0.8 height */
+	$('.jcarousel2').height($('.block-1').height() * 0.4);	
+	$('.jcarousel-img-container').height($('.block-1').height() * 0.74 / 2 ); /* there was no dividing by zero */
+	$('.jcarousel-img-container img').height($('.block-1').height() * 0.8 / 2  - 36);
 };
 /* function for calculation nav max height
  * 
@@ -206,7 +205,7 @@ $(window).resize(function() {
 	var api = scrollPaneInit(); 		
 	calcPanMaxHeight(api);
 	calcWrapperParts();			
-	calcSameHeight();				
+	calcSameHeight();	
 		
 		if ($(window).height() > $('.page-description-block').height())
 		{
