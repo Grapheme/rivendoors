@@ -39,9 +39,17 @@
 			<div class="green-cross-on-fade"></div>
 			<div class="slider-container">
 			<?php if(empty($images) == FALSE):?>
+				<?php
+					$carousel1 = count($images);
+					$carousel2 = 0;
+					if(count($images) > 10):
+						$carousel1 = round(count($images)/2);
+						$carousel2 = count($images);
+					endif;
+				?>
 				<div class="jcarousel">
 					<ul>
-					<?php for($i=0;$i<count($images);$i++):?>
+					<?php for($i=0;$i<$carousel1;$i++):?>
 						<li>
 							<div class="jcarousel-img-container">
 								<img height="450" src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">
@@ -52,6 +60,21 @@
 					<?php endfor;?>
 					</ul>
 				</div>
+				<?php if($carousel2 > 0):?>
+				<div class="jcarousel2">
+					<ul>
+					<?php for($i=$carousel1;$i<$carousel2;$i++):?>
+						<li>
+							<div class="jcarousel-img-container">
+								<img height="450" src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">
+								<a class="carousel-overlay fancybox" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'><?=htmlspecialchars($images[$i]['caption']);?></span><span class='fancy_body'><?=htmlspecialchars($images[$i]['description'])?></span>"></a>
+								<span class="img-caption"><?=$images[$i]['caption']?></span>
+							</div>
+						</li>
+					<?php endfor;?>
+					</ul>
+				</div>
+				<?php endif;?>
 				<a class="jcarousel-prev" href="#"></a>
 				<a class="jcarousel-next" href="#"></a>
 			<?php endif;?>

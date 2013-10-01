@@ -1,8 +1,8 @@
 $(window).load(function () {
-    $(".jcarousel").after('<div class="jcarousel2" class="clearfix" />').next().html($(".jcarousel").html());
+   /* $(".jcarousel").after('<div class="jcarousel2" class="clearfix" />').next().html($(".jcarousel").html());
 	$(".jcarousel li:odd").remove();
 	$(".jcarousel2 li:even").remove();
-    $('.jcarousel2').height($('.block-1').height() * 0.35);	
+    $('.jcarousel2').height($('.block-1').height() * 0.35);	*/
 
   	$('.jcarousel').jcarousel();
 	$('.jcarousel2').jcarousel();
