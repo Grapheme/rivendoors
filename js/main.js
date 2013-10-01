@@ -66,11 +66,20 @@ function calcWrapperParts() {
  * 
  */
 function calcSameHeight(){
-	$('.about-company-slideshow').height($('.block-1').height());	
-	$('.jcarousel').height($('.block-1').height() * 0.4);	 /* there was a 0.8 height */
-	$('.jcarousel2').height($('.block-1').height() * 0.4);	
-	$('.jcarousel-img-container').height($('.block-1').height() * 0.74 / 2 ); /* there was no dividing by zero */
-	$('.jcarousel-img-container img').height($('.block-1').height() * 0.8 / 2  - 36);
+	if ( $('.jcarousel-img-container img').length > 10 ) {
+		$('.about-company-slideshow').height($('.block-1').height());	
+		$('.jcarousel').height($('.block-1').height() * 0.4);	 /* there was a 0.8 height */
+		$('.jcarousel2').height($('.block-1').height() * 0.4);	
+		$('.jcarousel-img-container').height($('.block-1').height() * 0.74 / 2 ); /* there was no dividing by zero */
+		$('.jcarousel-img-container img').height($('.block-1').height() * 0.8 / 2  - 36);
+	}
+	else {
+		$('.about-company-slideshow').height($('.block-1').height());	
+		$('.jcarousel').height($('.block-1').height() * 0.8);	 /* there was a 0.8 height */
+		$('.jcarousel2').height($('.block-1').height() * 0.8);	
+		$('.jcarousel-img-container').height($('.block-1').height() * 0.74 ); /* there was no dividing by zero */
+		$('.jcarousel-img-container img').height($('.block-1').height() * 0.8 - 36);
+	}
 };
 /* function for calculation nav max height
  * 
