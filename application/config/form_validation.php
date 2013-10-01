@@ -18,7 +18,8 @@
 		),
 		'image_caption' =>array(
 			array('field'=>'id','label'=>'ID','rules'=>'required|numeric|trim'),
-			array('field'=>'caption','label'=>'Описание','rules'=>'trim')
+			array('field'=>'caption','label'=>'Подпись','rules'=>'trim'),
+			array('field'=>'description','label'=>'Описание','rules'=>'trim')
 		)
 	);
 ?>

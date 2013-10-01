@@ -94,8 +94,10 @@ $(function(){
 		var itemID = $(this).attr('data-item');
 		var caption = $(this).siblings('input.image-caption').val().trim();
 		var action = $(this).parents('ul.resources-items').attr('data-action');
+		var description = $(this).siblings('textarea.image-description').val().trim();
 		$.ajax({
-			url: action,type: 'POST',dataType: 'json',data:{'id':itemID,'caption':caption},
+			url: action,type: 'POST',dataType: 'json',
+			data:{'id':itemID,'caption':caption,'description':description},
 			beforeSend: function(){
 				$(_this).addClass('loading');
 			},

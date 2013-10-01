@@ -313,6 +313,7 @@ class Ajax_interface extends MY_Controller{
 		endif;
 		$this->load->model('manufacturers_images');
 		$this->manufacturers_images->updateField($_POST['id'],'caption',$_POST['caption']);
+		$this->manufacturers_images->updateField($_POST['id'],'description',$_POST['description']);
 		$json_request['status'] = TRUE;
 		echo json_encode($json_request);
 	}
