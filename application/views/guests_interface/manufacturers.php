@@ -45,8 +45,8 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img height="450" src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">
-								<a class="carousel-overlay fancybox" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'>Amon Amarth</span><span class='fancy_body'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>"></a>						
-								<span class="img-caption"><?=$images[$i]['caption']?></span>	
+								<a class="carousel-overlay fancybox" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'><?=htmlspecialchars($images[$i]['caption']);?></span><span class='fancy_body'><?=htmlspecialchars($images[$i]['description'])?></span>"></a>
+								<span class="img-caption"><?=$images[$i]['caption']?></span>
 							</div>
 						</li>
 					<?php endfor;?>
