@@ -4,9 +4,9 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
 <head>
-	<?php $this->load->view('guests_interface/includes/head');?>
-	
+	<?php $this->load->view('guests_interface/includes/head');?>	
 	<link rel="stylesheet" href="<?=base_url('css/jquery.jscrollpane.css');?>">
+	<link rel="stylesheet" href="<?=base_url('css/jquery.fancybox.css');?>">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -45,8 +45,9 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img height="450" src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">
+								<a class="carousel-overlay fancybox" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'>Amon Amarth</span><span class='fancy_body'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>"></a>						
+								<span class="img-caption"><?=$images[$i]['caption']?></span>	
 							</div>
-							<div class="img-caption"><?=$images[$i]['caption']?></div>
 						</li>
 					<?php endfor;?>
 					</ul>
@@ -58,7 +59,8 @@
 		</div>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
-	
+	<script src="<?=base_url('js/vendor/jquery.fancybox.pack.js');?>"></script>
+	<script src="<?=base_url('js/cabinet/fancybox-init.js');?>"></script>
 	<script src="<?=base_url('js/vendor/jquery.jcarousel.min.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>	
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>

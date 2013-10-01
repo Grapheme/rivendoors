@@ -187,14 +187,49 @@ html, body { width: 100%; height: 100%; min-width: 800px; padding: 0; margin: 0;
    ========================================================================== */ 
    
    .slider-container { /*height: 600px;*/ width: 100%; overflow: hidden; }   
-   .jcarousel { position: relative; overflow: hidden; height: 500px; }
-   .jcarousel ul { width: 20000em; position: absolute; list-style: none; margin: 0; padding: 0; }
-   .jcarousel li { float: left; }
-   .jcarousel-prev { position: absolute; top:50%; left: 5%; width: 31px; height: 31px; background: url(../img/interface/arrow_left.png) no-repeat; opacity: 0.2; }
-   .jcarousel-next { position: absolute; top:50%; right: 5%; width: 31px; height: 31px; background: url(../img/interface/arrow_right.png) no-repeat; }
-   .jcarousel-img-container { height: 449px; overflow: hidden; }
-   .img-caption { height: 2em; font-size: .8125em; text-align: center; line-height: 2em; }
-   
+   .jcarousel, .jcarousel2 { position: relative; overflow: hidden; height: 500px; }
+   .jcarousel2 > ul { top: inherit !important; bottom: 0 !important; }
+   .jcarousel ul, .jcarousel2 ul { width: 20000em; position: absolute; list-style: none; margin: 0 0 0 1em; padding: 0; }
+   .jcarousel li, .jcarousel2 li { float: left; margin: 0 1em; }
+   .jcarousel-prev { position: absolute; top:47.5%; left: 5%; width: 31px; height: 31px; background: url(../img/interface/arrow_left.png) no-repeat; opacity: 0.2; }
+   .jcarousel-next { position: absolute; top:47.5%; right: 5%; width: 31px; height: 31px; background: url(../img/interface/arrow_right.png) no-repeat; }
+   .jcarousel-img-container { position: relative; height: 449px; overflow: hidden; }
+   .carousel-overlay {
+   	    position: absolute;
+   	    top: 0;
+   	    left: 0;
+   	    width: 100%;
+   	    height: 100%;
+		background: #AEAD3A;
+		opacity: 0;	
+	    transition: all .8s ease;
+		-webkit-transition: all .8s ease;
+		-moz-transition: all .8s ease;
+		-o-transition: all .8s ease;
+		-ms-transition: all .8s ease;
+	}
+	.jcarousel-img-container:hover .carousel-overlay { opacity: .5; }
+	.jcarousel-img-container:hover .img-caption { opacity: 1; }
+	.img-caption { opacity: 0; position: absolute; top: 50%; left: 0; width: 100%; height: 2em; font-size: 1em; text-align: center; line-height: 2em; font-family: "pt serif",serif; color: #fff; 
+   		transition: all .8s ease;
+		-webkit-transition: all .8s ease;
+		-moz-transition: all .8s ease;
+		-o-transition: all .8s ease;
+		-ms-transition: all .8s ease;
+	}
+	.fancybox-title.fancybox-title-inside-wrap {
+	    position: absolute;
+	    top: 0;
+	    left: 100%;
+	    width: 245px;
+	    height: 100%;
+	    padding: 0;
+	    background: #FAF1E0;      
+	}
+	.fancy_header { display: block; margin: 0 0 25px; padding: 60px 23px 15px;  border-bottom: 1px solid #562024; font: 1.3em "pt serif",serif; color: #562024; }
+	.fancy_body { display: block; padding: 0 23px; font: 1.1em "pt serif",serif; color: #562024; }
+	.fancybox-next { width: 100%; left: 0; }
+	.fancybox-prev { width: 245px; right: -100%; }
 /* ==========================================================================
  * Adaptation media queries
    ========================================================================== */  
