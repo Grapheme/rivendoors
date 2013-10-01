@@ -337,7 +337,7 @@ $(window).resize(function() {
 	
 	$('.block-2, .block-3, .block-4, .block-5').click( function(event){ 
 		
-	$('.block-description-list-item > a').click(function(event){
+	$('.block-description-list-item h3 > a').click(function(event){
 		event.stopPropagation();	
 	}); 	
 		
