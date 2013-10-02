@@ -23,9 +23,7 @@
 		<div class="wrapper-component page-description-block contacts-description-block">
 			<div class="contacts-page-text">
 				<h1 class="hidden">���������� ������ ��������</h1>
-				<p>Ростов-на-Дону,<br>
-				пр. Стачки 123/1, 2 этаж</p>
-				<p>+7 (863) 223-92-57</p>
+				<?=$content['content'];?>
 				<p><?=safe_mailto('rivendoors@yandex.ru','rivendoors@yandex.ru','class="contact-mail"');?></p>
 			</div>
 		</div>

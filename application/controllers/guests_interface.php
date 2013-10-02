@@ -40,8 +40,10 @@ class Guests_interface extends MY_Controller{
 	
 	public function contacts(){
 		
+		$this->load->model(array('pages','page_resources'));
 		$pagevar = $this->loadManufacturers();
-		
+		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()));
+		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 		$this->load->view("guests_interface/contacts",$pagevar);
 	}
 	
