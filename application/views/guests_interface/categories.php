@@ -51,7 +51,7 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
-								<h2 class="block-name"><?=$manufacturers[$i]['title'];?></h2>
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link']);?>"><?=$manufacturers[$i]['title'];?></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>
@@ -64,7 +64,7 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
-								<h2 class="block-name"><?=$manufacturers[$i]['title'];?></h2>
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link'])?>"><?=$manufacturers[$i]['title'];?></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>
