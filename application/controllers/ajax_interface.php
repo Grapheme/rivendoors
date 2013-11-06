@@ -190,7 +190,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteInsertingPageContent($post){
 		
 		/**************************************************************************************************************/
-		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
+		$content = array("page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"title"=>$post['title'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->insertItem(array('insert'=>$content,'model'=>'pages'));
 		return TRUE;
@@ -199,7 +199,7 @@ class Ajax_interface extends MY_Controller{
 	private function ExecuteUpdatingPageContent($id,$post){
 		
 		/**************************************************************************************************************/
-		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"content"=>$post['content']);
+		$content = array("id"=>$id,"page_title"=>$post['page_title'],"page_description"=>$post['page_description'],"h1"=>$post['h1'],"url"=>$post['url'],"title"=>$post['title'],"content"=>$post['content']);
 		/**************************************************************************************************************/
 		$this->updateItem(array('update'=>$content,'model'=>'pages'));
 		return TRUE;
@@ -246,6 +246,9 @@ class Ajax_interface extends MY_Controller{
 		if($manufacturerID = $this->ExecuteUpdatingManufacturer($this->input->get('id'),$_POST)):
 			if(isset($_FILES['file']['tmp_name'])):
 				$json_request['responsePhotoSrc'] = $this->uploadManufacturerLogo($this->input->get('id'));
+			endif;
+			if(isset($_FILES['file_main']['tmp_name'])):
+				$this->uploadManufacturerImage($this->input->get('id'));
 			endif;
 			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Производитель cохранен';
@@ -382,16 +385,27 @@ class Ajax_interface extends MY_Controller{
 		$resultUpload = $this->uploadSingleImage(getcwd().'/img/partners/');
 		if($resultUpload['status'] == TRUE):
 			$this->load->model('manufacturers');
+			if($manufacture = $this->manufacturers->getWhere($id)):
+				if(!empty($manufacture['logo'])):
+					$this->filedelete(getcwd().'/'.$manufacture['logo']);
+				endif;
+			endif;
 			$responsePhotoSrc = $this->manufacturers->updateField($id,'logo','img/partners/'.$resultUpload['uploadData']['file_name']);
 		endif;
 		return $responsePhotoSrc;
 	}
+
 	private function uploadManufacturerImage($id){
 		
 		$responsePhotoSrc = '';
 		$resultUpload = $this->uploadSingleImage(getcwd().'/img/partners/','file_main');
 		if($resultUpload['status'] == TRUE):
 			$this->load->model('manufacturers');
+			if($manufacture = $this->manufacturers->getWhere($id)):
+				if(!empty($manufacture['image'])):
+					$this->filedelete(getcwd().'/'.$manufacture['image']);
+				endif;
+			endif;
 			$responsePhotoSrc = $this->manufacturers->updateField($id,'image','img/partners/'.$resultUpload['uploadData']['file_name']);
 		endif;
 		return $responsePhotoSrc;

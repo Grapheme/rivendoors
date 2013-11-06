@@ -14,6 +14,10 @@
 		<label>Содержимое страницы</label>
 		<textarea rows="10" class="redactor" name="content"></textarea>
 	</div>
+	<div class="control-group clearfix">
+		<label>Название страницы</label>
+		<input type="text" name="title" class="span6" value="" />
+	</div>
 	<div class="div-form-operation">
 		<button type="submit" value="" name="submit" class="btn btn-submit no-clickable btn-loading">Сохранить</button>
 	</div>
