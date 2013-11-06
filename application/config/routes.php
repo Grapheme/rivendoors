@@ -30,6 +30,11 @@ $route['log-off'] = "guests_interface/logoff";
 /***************** pages ******************/
 $route['about'] = "guests_interface/about";
 $route['contacts'] = "guests_interface/contacts";
+$route['entrance-doors'] = "guests_interface/categories";
+$route['interior-doors'] = "guests_interface/categories";
+$route['dekor'] = "guests_interface/categories";
+$route['parket'] = "guests_interface/categories";
+
 $route['entrance-doors/:any'] = "guests_interface/manufacturers";
 $route['interior-doors/:any'] = "guests_interface/manufacturers";
 $route['dekor/:any'] = "guests_interface/manufacturers";

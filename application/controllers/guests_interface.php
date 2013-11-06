@@ -73,6 +73,17 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/manufacturers",$pagevar);
 	}
 	
+	public function categories(){
+		
+		$this->load->model(array('pages','page_resources'));
+		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
+			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
+			$this->load->view("guests_interface/categories",$pagevar);
+		else:
+			show_404();
+		endif;
+	}
+	
 	private function loadManufacturers(){
 		
 		$this->load->model('manufacturers');

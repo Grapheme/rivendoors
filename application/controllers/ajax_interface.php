@@ -222,6 +222,9 @@ class Ajax_interface extends MY_Controller{
 			if(isset($_FILES['file']['tmp_name'])):
 				$this->uploadManufacturerLogo($manufacturerID);
 			endif;
+			if(isset($_FILES['file_main']['tmp_name'])):
+				$this->uploadManufacturerImage($manufacturerID);
+			endif;
 			$json_request['status'] = TRUE;
 			$json_request['responseText'] = 'Производитель добавлен';
 			$json_request['redirect'] = site_url(ADMIN_START_PAGE.'/manufacturers/add?category='.$this->input->get('category').'&id='.$manufacturerID.'&step=2');
@@ -362,6 +365,14 @@ class Ajax_interface extends MY_Controller{
 			$this->filedelete(getcwd().'/'.$images[$i]['resource']);
 		endfor;
 		$this->manufacturers_images->delete(NULL,array('manufacturer'=>$id));
+		if($manufacture = $this->manufacturers->getWhere($id)):
+			if(!empty($manufacture['logo'])):
+				$this->filedelete(getcwd().'/'.$manufacture['logo']);
+			endif;
+			if(!empty($manufacture['image'])):
+				$this->filedelete(getcwd().'/'.$manufacture['image']);
+			endif;
+		endif;
 		return $this->manufacturers->delete($id);
 	}
 	
@@ -370,8 +381,18 @@ class Ajax_interface extends MY_Controller{
 		$responsePhotoSrc = '';
 		$resultUpload = $this->uploadSingleImage(getcwd().'/img/partners/');
 		if($resultUpload['status'] == TRUE):
-			$this->load->model('brends');
-			$responsePhotoSrc = $this->brends->updateField($id,'logo','img/partners/'.$resultUpload['uploadData']['file_name']);
+			$this->load->model('manufacturers');
+			$responsePhotoSrc = $this->manufacturers->updateField($id,'logo','img/partners/'.$resultUpload['uploadData']['file_name']);
+		endif;
+		return $responsePhotoSrc;
+	}
+	private function uploadManufacturerImage($id){
+		
+		$responsePhotoSrc = '';
+		$resultUpload = $this->uploadSingleImage(getcwd().'/img/partners/','file_main');
+		if($resultUpload['status'] == TRUE):
+			$this->load->model('manufacturers');
+			$responsePhotoSrc = $this->manufacturers->updateField($id,'image','img/partners/'.$resultUpload['uploadData']['file_name']);
 		endif;
 		return $responsePhotoSrc;
 	}

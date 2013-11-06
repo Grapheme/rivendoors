@@ -290,7 +290,7 @@ class MY_Controller extends CI_Controller{
 		return $return;
 	}
 	
-	public function uploadSingleImage($uploadPath = NULL){
+	public function uploadSingleImage($uploadPath = NULL,$fileName = 'file'){
 		
 		$uploadStatus = array('status'=>FALSE,'message'=>'','uploadData'=>array());
 		if(is_null($uploadPath) || ($this->createDir($uploadPath) == FALSE)):
@@ -306,10 +306,10 @@ class MY_Controller extends CI_Controller{
 				$config['remove_spaces'] = TRUE;
 				$config['overwrite'] = TRUE;
 				$config['max_size'] = 5120;
-				$config['file_name'] = random_string('nozero',12).'.'.substr(strrchr($_FILES['file']['name'], '.'),1);
+				$config['file_name'] = random_string('nozero',12).'.'.substr(strrchr($_FILES[$fileName]['name'], '.'),1);
 				$this->upload->initialize($config);
-				if(!$this->upload->do_upload('file')):
-					$uploadStatus['message'] = $this->load->view('html/print-error',array('alert_header'=>'Файл: '.$_FILES['file']['name'],'message'=>$this->upload->display_errors()),TRUE);
+				if(!$this->upload->do_upload($fileName)):
+					$uploadStatus['message'] = $this->load->view('html/print-error',array('alert_header'=>'Файл: '.$_FILES[$fileName]['name'],'message'=>$this->upload->display_errors()),TRUE);
 				else:
 					$uploadStatus['uploadData'] = $this->upload->data();
 					$uploadStatus['status'] = TRUE;
