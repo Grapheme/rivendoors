@@ -45,7 +45,7 @@
 						$carousel2 = count($manufacturers);
 					endif;
 				?>
-				<div class="jcarousel">
+				<div class="jcarousel categories-container">
 					<ul>
 					<?php for($i=0;$i<$carousel1;$i++):?>
 						<li>
