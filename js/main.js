@@ -93,12 +93,12 @@ function calcCatSameHeight() {
 	if ( $jCarouselImgCont.find('img').length > 10 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.5);
-		$jCarouselImgCont.height( $block1Height * 1 / 2 ).find('img').height( $block1Height * 1 / 2 ).width( $(this).height()/GOLDEN_RATIO/2 );
+		$jCarouselImgCont.height( $block1Height * 1 / 2 ).find('img').height( $block1Height * 1 / 2 ).width( $(this).height()/GOLDEN_RATIO / 2 );
 	}
 	else {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height );
-		$jCarouselImgCont.height( $block1Height ).find('img').height( $block1Height ).width( $(this).height()/GOLDEN_RATIO/2 );
+		$jCarouselImgCont.height( $block1Height ).find('img').height( $block1Height ).width( $(this).height()/GOLDEN_RATIO );
 	}
 }
 /* function for calculation nav max height
@@ -150,11 +150,28 @@ function calcListHeight(api) {
 		}
 	}
 }
+function alignCatsBlock() {
+	if( $('.category-wrapper')[0] ) {		
+		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
+		
+		if ( $pageDescriptionBlock.width() == 256){
+			$simplePageSlideshow.animate({left: '256px', width: $(window).width() - 256}, 500);
+		}
+		else if( $pageDescriptionBlock.width() == 340) {
+			$simplePageSlideshow.animate({left: '340px', width: $(window).width() - 340}, 500);
+		}	
+		else {
+			$simplePageSlideshow.animate({left: '20%', width: '80%'}, 500);
+		}	
+	}
+}
+
 $(document).ready(function () {
 	initCarouselControls();
 	var api = scrollPaneInit();	
 	calcPanMaxHeight(api, scrollInitHeight);			
 	calcWrapperParts();	
+	alignCatsBlock();
 	/*initCarouselControls();	*/
 	( $('.categories-container')[0] )? calcCatSameHeight(): calcSameHeight();	 	
 	$('.active').parent().find('a[href$="#"]').css({ 'color': '#AEAD3A' });
@@ -349,14 +366,12 @@ windowObj.resize(function() {
 			
 			$(this).addClass('checkedDiv');
 			
-			if ($(this).hasClass('block-5')) {
-				
+			if ($(this).hasClass('block-5')) {				
 				$(this).find('.block-name').animate({width: '100%', left: '0', backgroundColor: '#aead3a', color: "#fff"}, 250);
 				$(this).find('.block-description').delay(175).show('slide', {direction:'right'}, 250);	
 							
 			}
-			else {		
-							
+			else {									
 				$(this).find('.block-name').animate({width: '100%', left: '0', backgroundColor: '#aead3a', color: "#fff"}, 250);	
 				$(this).find('.block-description').delay(175).animate({width: 'toggle'}, 500);	
 							
