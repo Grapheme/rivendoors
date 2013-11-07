@@ -53,7 +53,7 @@ class Admin_interface extends MY_Controller{
 			'pageTitle' => ''
 		);
 		if($pagevar['content']):
-			$pagevar['pageTitle'] = $pagevar['content']['page_title'];
+			$pagevar['pageTitle'] = $pagevar['content']['title'];
 		endif;
 		if($this->input->get('mode') == 'text'):
 			$this->load->view("admin_interface/pages/edit",$pagevar);

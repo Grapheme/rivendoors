@@ -11,6 +11,10 @@
 	</div>
 	<hr/>
 	<div class="control-group clearfix">
+		<label>Название страницы</label>
+		<input type="text" name="title" class="span6" value="<?=$content['title'];?>" />
+	</div>
+	<div class="control-group clearfix">
 		<label>Содержимое страницы</label>
 		<textarea rows="10" class="redactor" name="content"><?=$content['content'];?></textarea>
 	</div>

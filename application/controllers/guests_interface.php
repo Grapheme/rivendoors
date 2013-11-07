@@ -13,13 +13,11 @@ class Guests_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$pagevar = $this->loadManufacturers();
-		$this->load->view("guests_interface/index",$pagevar);
+		$this->load->view("guests_interface/index");
 	}
 	
 	public function seo(){
 
-		$pagevar = $this->loadManufacturers();
 		$this->load->model(array('pages','page_resources'));
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
 			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
@@ -31,7 +29,6 @@ class Guests_interface extends MY_Controller{
 	
 	public function about(){
 		
-		$pagevar = $this->loadManufacturers();
 		$this->load->model(array('pages','page_resources'));
 		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1)));
 		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE);
@@ -41,7 +38,6 @@ class Guests_interface extends MY_Controller{
 	public function contacts(){
 		
 		$this->load->model(array('pages','page_resources'));
-		$pagevar = $this->loadManufacturers();
 		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()));
 		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 		$this->load->view("guests_interface/contacts",$pagevar);
@@ -73,11 +69,27 @@ class Guests_interface extends MY_Controller{
 		$this->load->view("guests_interface/manufacturers",$pagevar);
 	}
 	
-	private function loadManufacturers(){
+	public function categories(){
 		
+		$this->load->model(array('pages','page_resources','manufacturers'));
+		$pagevar = $this->loadManufacturers(uri_string());
+		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
+			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
+			$this->load->view("guests_interface/categories",$pagevar);
+		else:
+			show_404();
+		endif;
+	}
+	
+	private function loadManufacturers($categoryURL){
+		
+		$categoryID = 2;
+		if(array_search($categoryURL,$this->categoriesURL) != -1):
+			$categoryID = array_search($categoryURL,$this->categoriesURL);
+		endif;
 		$this->load->model('manufacturers');
 		$pagevar = array(
-			'manufacturers'=>$this->manufacturers->getAll()
+			'manufacturers'=>$this->manufacturers->getWhere(NULL,array('category'=>$categoryID),TRUE)
 		);
 		for($i=0;$i<count($pagevar['manufacturers']);$i++):
 			$pagevar['manufacturers'][$i]['link'] = $this->categoriesURL[$pagevar['manufacturers'][$i]['category']].'/'.$pagevar['manufacturers'][$i]['translit'];

@@ -36,7 +36,7 @@
 					<tbody>
 					<?php for($i=0;$i<count($pages);$i++):?>
 						<tr>
-							<td><?=$pages[$i]['page_title'];?></td>
+							<td><?=$pages[$i]['title'];?></td>
 							<td>
 								<a href="<?=site_url(ADMIN_START_PAGE.'/pages/edit?mode=text&id='.$pages[$i]['id'])?>" class="btn btn-link" ><i class="icon-edit"></i></a>
 								<button data-item="<?=$pages[$i]['id'];?>" class="btn btn-link remove-pages"><i class="icon-remove"></i></button>

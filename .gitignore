@@ -10,6 +10,8 @@ application/logs/*
 
 download/*
 rivendoors.clpprj
+img/about-company/*
+img/partners/*
 .project
 .settings
 .settings/*

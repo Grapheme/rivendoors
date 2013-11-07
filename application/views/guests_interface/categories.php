@@ -17,16 +17,8 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block can-fade">
-			<!--<h1><?=$single['h1'];?></h1>-->
-			<h2 class="detailed-description-header">
-		<?php if(!empty($single['logo'])):?>
-			<img src="<?=site_url($single['logo']);?>">
-		<?php else:?>
-			<?=$single['title'];?>
-		<?php endif;?>
-			</h2>
-			<div class="production"><?=$single['comment'];?></div>
-			<div class="about-page-text"><?=$single['description'];?></div>
+			<div class="production"><?=$content['title'];?></div>
+			<div class="about-page-text"><?=$content['content'];?></div>
 			<div class="red-cross"></div>
 		</div>
 		<div class="simple-page-slideshow">
@@ -44,13 +36,13 @@
 			</div>
 			<div class="green-cross-on-fade"></div>
 			<div class="slider-container categories-container">
-			<?php if(empty($images) == FALSE):?>
+			<?php if(empty($manufacturers) == FALSE):?>
 				<?php
-					$carousel1 = count($images);
+					$carousel1 = count($manufacturers);
 					$carousel2 = 0;
-					if(count($images) > 10):
-						$carousel1 = round(count($images)/2);
-						$carousel2 = count($images);
+					if(count($manufacturers) > 10):
+						$carousel1 = round(count($manufacturers)/2);
+						$carousel2 = count($manufacturers);
 					endif;
 				?>
 				<div class="jcarousel">
@@ -58,8 +50,8 @@
 					<?php for($i=0;$i<$carousel1;$i++):?>
 						<li>
 							<div class="jcarousel-img-container">
-								<img  src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">								
-								<h2 class="block-name"> Деревянные </h2>
+								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link']);?>"><?=$manufacturers[$i]['title'];?></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>
@@ -71,8 +63,8 @@
 					<?php for($i=$carousel1;$i<$carousel2;$i++):?>
 						<li>
 							<div class="jcarousel-img-container">
-								<img src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">								
-								<h2 class="block-name"> Алюминивые </h2>
+								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link'])?>"><?=$manufacturers[$i]['title'];?></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>
