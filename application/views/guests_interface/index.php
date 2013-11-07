@@ -17,9 +17,13 @@
 	<?php foreach($this->categories as $key => $value):?>
 		<div class="wrapper-component block-<?=$key;?>">
 			<h2 class="block-name">
-				<?=$value;?>
+				<?php if($key == 2): ?>
+					<a href="<?=base_url('about');?>"><?=$value;?></a>
+				<?php else: ?>
+					<?=$value;?>	
+				<?php endif;?>					
 			</h2>
-			<div class="block-description <?=($key<5)?'right':'left';?>">
+			<div class="block-description <?=($key == 2)?'hidden':'';?> <?=($key<5)?'right':'left';?>">
 				<ul class="block-description-list">
 				<?php for($j=0;$j<count($manufacturers);$j++):?>
 					<?php if($manufacturers[$j]['category'] == $key):?>
