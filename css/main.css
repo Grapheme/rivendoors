@@ -140,8 +140,9 @@ html, body { width: 100%; height: 100%; min-width: 800px; padding: 0; margin: 0;
 			.item-1 { max-width: 11em; /*border-top: 1px dotted; */}
 			.item-6 { max-width: 11em; /*border-bottom: 1px dotted; */}
 	.sub-active a { color: #aead3a; }
-	.navigation-list-item.active > a { color: #aead3a; }
-	.subnavigation-list-item.active > a { color: #aead3a; }
+	.navigation-list-item .active-green-link { color: #aead3a; }
+	.subnavigation-list-item > a.active { color: #aead3a; cursor: default; }
+	.subnavigation-list-item > a.active:hover { text-decoration: none; }
 	.block-name > a { color: #562023; font-size: 13px; text-decoration: none; }
 	h2.block-name > a { display: block; width: 100%; height: 100%; font-size: 1em; }
 	.about-page-text a { color: #FFFFFF; }

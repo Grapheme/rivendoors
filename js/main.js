@@ -45,8 +45,10 @@ function calcWrapperParts() {
 	{
 		$aboutCompanySH.css({ left: '512px' }).width(windowObj.width() - 512);
 		$('.about-page-description-block').css({ left: '256px' });
-		$('.can-fade').css({ left: '256px' });			
-		$simplePageSlideshow.width(windowObj.width() - 512).css({ left: '512px' });
+		$('.can-fade').css({ left: '256px' });		
+		if( $('.can-fade').is(':visible')){
+			$simplePageSlideshow.width(windowObj.width() - 512).css({ left: '512px' });
+		}
 		$('.contacts-map').width(windowObj.width() - 512);
 	}
 	else if( $pageDescriptionBlock.width() == 340 && ($(window).width() > 768)) 
@@ -54,7 +56,9 @@ function calcWrapperParts() {
 		$aboutCompanySH.css({ left: '680px' }).width(windowObj.width() - 680);
 		$('.about-page-description-block').css({ left: '340px' });
 		$('.can-fade').css({ left: '340px' });			
-		$simplePageSlideshow.width(windowObj.width() - 680).css({ left: '680px' });
+		if( $('.can-fade').is(':visible')){
+			$simplePageSlideshow.width(windowObj.width() - 680).css({ left: '680px' });
+		}
 		$('.contacts-map').width(windowObj.width() - 679);
 	}	
 	else if ($(window).width() > 768)
@@ -62,7 +66,9 @@ function calcWrapperParts() {
 		$aboutCompanySH.css({ left: '40%' }).width(windowObj.width() * 0.6);
 		$('.about-page-description-block').css({ left: '20%' });
 		$('.can-fade').css({ left: '20%' });
-		$simplePageSlideshow.width(windowObj.width() * 0.6).css({ left: '40%' });
+		if( $('.can-fade').is(':visible')){
+			$simplePageSlideshow.width(windowObj.width() * 0.6).css({ left: '40%' });
+		}
 		$('.contacts-map').width(windowObj.width() * 0.6);
 	};
 };
@@ -195,8 +201,8 @@ $(document).ready(function () {
 
 windowObj.resize(function() {
 	
-		var api = scrollPaneInit(); 		
-		calcPanMaxHeight(api, scrollInitHeight);
+	var api = scrollPaneInit(); 		
+	calcPanMaxHeight(api, scrollInitHeight);
 	
 	calcWrapperParts();			
 	( $('.categories-container')[0] )? calcCatSameHeight(): calcSameHeight();	
@@ -206,7 +212,6 @@ windowObj.resize(function() {
 		if (windowObj.width() > 768) {
 			$('.__fotorama').trigger('rescale', [false, $('.block-1').height(), 700/467, 333]);
 		}
-		/*$('.__fotorama').trigger('rescale', [false, $('.page-description-block').height(), 700/467, 333]);*/
 		$('.about-page-text, .production').width($('.page-description-block').width() - 40);
 		
 		if (windowObj.width() < 750) {
@@ -225,8 +230,8 @@ windowObj.resize(function() {
 				$('.block-1').append(detFooter);
 				/*$('.wrapper').css({ height: '100%' });*/
 		});
-		};
-	});	
+	};
+});	
 	/* end of script */	
 	
 
