@@ -29,6 +29,9 @@
 			<div id="map-canvas"></div>
 		</div>
 	</div>
+	<div class="mobile-footer">
+		<?php $this->load->view('guests_interface/includes/footer');?>
+	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>

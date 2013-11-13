@@ -33,6 +33,9 @@
 		<?php endif;?>
 		</div>
 	</div>
+	<div class="mobile-footer">
+		<?php $this->load->view('guests_interface/includes/footer');?>
+	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
 	<script src="<?=base_url('js/vendor/fotorama.js');?>"></script>

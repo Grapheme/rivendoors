@@ -1,5 +1,5 @@
 $(function(){
-			
+				
 	var page_desc_height = $('.page-description-block').height() + 21;	
 	$('.__fotorama').fotorama({
 		nav: 'dots', 
@@ -10,7 +10,7 @@ $(function(){
 		zoomToFit: true,
 		width: '100%',
 		/*minHeight: win_height,*/
-		height: $(window).height(),
+		height: ( $(window).width() > 768 )? $(window).height(): $('.about-company-slideshow').height(),
 		arrows: false		
 		/*,
 		arrowNext: '<div class="arrows right_arrow"></div>',

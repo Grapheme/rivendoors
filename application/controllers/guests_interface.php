@@ -13,12 +13,21 @@ class Guests_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$this->load->view("guests_interface/index");
+		$this->load->model('manufacturers');
+		$pagevar = array(
+			'manufacturers'=>$this->manufacturers->getAll()
+		);
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $this->categoriesURL[$pagevar['manufacturers'][$i]['category']].'/'.$pagevar['manufacturers'][$i]['translit'];
+		endfor;
+		
+		$this->load->view("guests_interface/index",$pagevar);
 	}
 	
 	public function seo(){
 
 		$this->load->model(array('pages','page_resources'));
+		$pagevar['manufacturers'] = array();
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
 			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 			$this->load->view("guests_interface/seo",$pagevar);
@@ -30,6 +39,7 @@ class Guests_interface extends MY_Controller{
 	public function about(){
 		
 		$this->load->model(array('pages','page_resources'));
+		$pagevar['manufacturers'] = array();
 		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>$this->uri->segment(1)));
 		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>$this->uri->segment(1)),TRUE);
 		$this->load->view("guests_interface/about",$pagevar);
@@ -38,6 +48,7 @@ class Guests_interface extends MY_Controller{
 	public function contacts(){
 		
 		$this->load->model(array('pages','page_resources'));
+		$pagevar['manufacturers'] = array();
 		$pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()));
 		$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 		$this->load->view("guests_interface/contacts",$pagevar);
