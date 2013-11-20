@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php $this->load->view('guests_interface/includes/ie7');?>
-	<div class="wrapper">
+	<div class="wrapper category-wrapper">
 		<div class="wrapper-component block-1 about-page-block-1">
 			<div class="page-header"><a href="<?=site_url('');?>"></a>Riven Doors</div>
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
@@ -64,6 +64,9 @@
 			<?php endif;?>
 			</div>
 		</div>
+	</div>
+	<div class="mobile-footer">
+		<?php $this->load->view('guests_interface/includes/footer');?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	<script src="<?=base_url('js/vendor/jquery.fancybox.pack.js');?>"></script>

@@ -59,7 +59,7 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img height="450" src="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" alt="<?=$images[$i]['caption']?>">
-								<a class="carousel-overlay fancybox" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'><?=htmlspecialchars($images[$i]['caption']);?></span><span class='fancy_body'><?=htmlspecialchars($images[$i]['description'])?></span>"></a>
+								<a class="carousel-overlay <?=($carousel2)? 'fancybox': 'hidden';?>" rel="gallery" href="<?=site_url('manufacturer/view-resource/'.random_string('alnum',16).'?resource_id='.$images[$i]['id'])?>" data-fancybox-title="<span class='fancy_header'><?=htmlspecialchars($images[$i]['caption']);?></span><span class='fancy_body'><?=htmlspecialchars($images[$i]['description'])?></span>"></a>
 								<span class="img-caption"><?=$images[$i]['caption']?></span>
 							</div>
 						</li>
@@ -86,6 +86,9 @@
 			<?php endif;?>
 			</div>
 		</div>
+	</div>
+	<div class="mobile-footer">
+		<?php $this->load->view('guests_interface/includes/footer');?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	<script src="<?=base_url('js/vendor/jquery.fancybox.pack.js');?>"></script>

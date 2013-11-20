@@ -17,7 +17,7 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block about-page-description-block">
-			<h1 class="hidden">� �������� Rivendoors</h1>
+			<h1 class="hidden">О компании Rivendoors</h1>
 			<div class="page-desc-header">О компании</div>
 			<div class="about-page-text">
 				<?=$content['content'];?>
@@ -32,6 +32,9 @@
 			</div>
 		<?php endif;?>
 		</div>
+	</div>
+	<div class="mobile-footer">
+		<?php $this->load->view('guests_interface/includes/footer');?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
