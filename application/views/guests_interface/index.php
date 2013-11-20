@@ -18,7 +18,7 @@
 		<div class="wrapper-component block-<?=$key;?>">
 			<h2 class="block-name">
 				<?php if($key == 2): ?>
-					<a href="<?=base_url('about');?>"><?=$value;?></a>
+					<a href="<?=base_url('about');?>">О компании</a>
 				<?php else: ?>
 					<?=$value;?>	
 				<?php endif;?>					
