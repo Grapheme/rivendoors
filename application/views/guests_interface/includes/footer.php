@@ -15,10 +15,10 @@
 		<div class="vkontakte-like">
 			<div id="vk_like"></div>
 			<script type="text/javascript">
-				VK.Widgets.Like("vk_like", {
+				/*VK.Widgets.Like("vk_like", {
 					type : "button",
 					height : 20,
-				});
+				});*/
 			</script>
 		</div>
 	</div>

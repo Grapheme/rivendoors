@@ -24,7 +24,7 @@ class Page_variables {
 			default: $record = $this->CI->pages->getWhere(NULL,array('url'=>uri_string())); break;
 		endswitch;
 		if(!empty($record)):
-			return $record['page_title'];
+			return htmlspecialchars($record['page_title']);
 		else:
 			return '';
 		endif;
@@ -45,7 +45,7 @@ class Page_variables {
 			default: $record = $this->CI->pages->getWhere(NULL,array('url'=>'home')); break;
 		endswitch;
 		if(!empty($record)):
-			return $record['page_description'];
+			return htmlspecialchars($record['page_description']);
 		else:
 			return '';
 		endif;
