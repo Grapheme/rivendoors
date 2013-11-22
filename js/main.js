@@ -77,7 +77,7 @@ function calcWrapperParts() {
  */
 function calcSameHeight(){	
 	var $block1Height = $block1.height();		
-	if ( $jCarouselImgCont.find('img').length > 6 ) {
+	if ( $jCarouselImgCont.find('img').length > 8 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.4);
 		$jCarouselImgCont.height( $block1Height * 0.8 / 2 ).find('img').height( $block1Height * 0.8 / 2 );

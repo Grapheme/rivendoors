@@ -28,7 +28,7 @@
 				<?php
 					$carousel1 = count($manufacturers);
 					$carousel2 = 0;
-					if(count($manufacturers) > 6):
+					if(count($manufacturers) > 8):
 						$carousel1 = round(count($manufacturers)/2);
 						$carousel2 = count($manufacturers);
 					endif;
