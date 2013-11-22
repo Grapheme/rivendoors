@@ -41,7 +41,6 @@ function scrollPaneInit() {
  * 
  */
 function calcWrapperParts() {
-
 	if ($('.page-description-block').width() == 256 && (windowObj.width() > 768))
 	{
 		$aboutCompanySH.css({ left: '512px' }).width(windowObj.width() - 512);
@@ -73,32 +72,12 @@ function calcWrapperParts() {
 		$('.contacts-map').width(windowObj.width() * 0.6);
 	};
 };
-
-function full_green() {
-	if($('.slider-container').height() == 0) 
-	{
-		var $green_width = $(window).width() - $('.about-page-block-1').width();
-		if($(window).width() > 767) 
-		{ 
-			$('.page-description-block').width($green_width).css({'left' : $('.about-page-block-1').width(), 'max-width' : 'none'});
-		} else
-		{
-			$('.page-description-block').width('auto');
-		}
-		$('.about-page-text').width('auto');
-		if($(window).width() > 500) {
-			$('body').css('overflow-x', 'hidden');
-		} else {
-			$('body').css('overflow-x', 'visible');
-		}
-	}
-}
 /* Function for calc same heights
  * 
  */
 function calcSameHeight(){	
 	var $block1Height = $block1.height();		
-	if ( $jCarouselImgCont.find('img').length > 10 ) {
+	if ( $jCarouselImgCont.find('img').length > 6 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.4);
 		$jCarouselImgCont.height( $block1Height * 0.8 / 2 ).find('img').height( $block1Height * 0.8 / 2 );
@@ -117,7 +96,7 @@ function calcCatSameHeight() {
 	$('.jcarousel-prev, .jcarousel-next').css({ 'top': '50%', 'margin-top': '-15px' });
 	$simplePageSlideshow.css({ 'top' : '0' });
 	
-	if ( $jCarouselImgCont.find('img').length > 10 ) {
+	if ( $jCarouselImgCont.find('img').length > 6 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.5);
 		$jCarouselImgCont.height( $block1Height * 1 / 2 ).find('img').height( $block1Height * 1 / 2 ).width( $(this).height()/GOLDEN_RATIO / 2 );
@@ -220,9 +199,7 @@ $(document).ready(function () {
 	if (windowObj.width() <= 768) {
 		$aboutCompanySlideshow.height(288);
 		$('.__fotorama').trigger('rescale', [false, $aboutCompanySlideshow.height(), 700/467, 333]);		
-	};
-	
-	full_green();	
+	};	
 });	
 
 windowObj.resize(function() {
@@ -244,8 +221,6 @@ windowObj.resize(function() {
 		$('.__fotorama').trigger('rescale', [false, $aboutCompanySlideshow.height(), 700/467, 333]);	
 		calcPanMaxHeight(api, scrollInitHeight);			
 	};
-	
-	full_green();
 });	
 	/* end of script */	
 	
