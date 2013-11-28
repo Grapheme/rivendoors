@@ -19,7 +19,7 @@
 		<div class="page-description-block description-new">
 			<span>&nbsp;</span>
 			<?php if($_SERVER['PATH_INFO'] == '/mejkomnatnie-dveri/elitnye') { ;?>
-				<div class="mezh-sale"><span>15%</span> до конца ноября скидка на двери &laquo;Мастер-Вуд&raquo;</div>
+				<div class="mezh-sale"><span>-15%</span>скидка на двери &laquo;Мастер-Вуд&raquo; в ноябре</div>
 			<?php } ?>
 			<!--<h1><?=$single['h1'];?></h1>-->
 			<h2 class="detailed-description-header">
