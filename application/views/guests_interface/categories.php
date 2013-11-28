@@ -17,6 +17,7 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="page-description-block description-new">
+			<span>&nbsp;</span>
 			<div class="production"><?=$content['title'];?></div>
 			<div class="about-page-text"><?=$content['content'];?></div>
 			<div class="red-cross"></div>
@@ -38,7 +39,7 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
-								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link']);?>"><?=$manufacturers[$i]['title'];?></a></h2>
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link']);?>"><div class="inline-name"><?=$manufacturers[$i]['title'];?></div></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>
@@ -51,7 +52,7 @@
 						<li>
 							<div class="jcarousel-img-container">
 								<img  src="<?=base_url($manufacturers[$i]['image'])?>" alt="<?=$manufacturers[$i]['title']?>">
-								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link'])?>"><?=$manufacturers[$i]['title'];?></a></h2>
+								<h2 class="block-name"><a href="<?=site_url($manufacturers[$i]['link'])?>"><div class="inline-name"><?=$manufacturers[$i]['title'];?></div></a></h2>
 							</div>
 						</li>
 					<?php endfor;?>

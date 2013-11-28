@@ -17,6 +17,7 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="wrapper-component page-description-block can-fade">
+		<span>&nbsp;</span>
 			<h1><?=$content['h1'];?></h1>
 			<div class="production"></div>
 			<div class="about-page-text"><?=$content['content'];?></div>

@@ -17,6 +17,10 @@
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
 		<div class="page-description-block description-new">
+			<span>&nbsp;</span>
+			<?php if($_SERVER['PATH_INFO'] == '/mejkomnatnie-dveri/elitnye') { ;?>
+				<div class="mezh-sale"><span>15%</span> до конца ноября скидка на двери &laquo;Мастер-Вуд&raquo;</div>
+			<?php } ?>
 			<!--<h1><?=$single['h1'];?></h1>-->
 			<h2 class="detailed-description-header">
 		<?php if(!empty($single['logo'])):?>

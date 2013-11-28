@@ -3,7 +3,7 @@ function carouselPosition() {
 
 		$('.container-carousel-new').css({
 				
-				'left': $('.block-1').width(),
+				'left': $('.block-1').width()+2,
 				'width': $(window).width() - $('.block-1').width()
 		});
 		$('.slider-center').css({
@@ -18,7 +18,7 @@ function aboutPosition() {
 
 		$('.description-new').css({
 		
-				'left': $('.block-1').width(),
+				'left': $('.block-1').width()+2,
 				'top': 0,
 				'min-height': $('.block-1').height()
 		
@@ -74,12 +74,12 @@ $(window).resize(function(){
 });
 
 $('.red-cross').click(function(){
-	$('.description-new').fadeOut('fast');
+	$('.description-new').hide('slide', {direction: 'left'}, 500);
 	$('.green-cross-on-fade').css({
 		'opacity': 1
 	});
 });
 
 $('.green-cross-on-fade').click(function(){
-	$('.description-new').fadeIn('fast');
+	$('.description-new').show('slide', {direction: 'left'}, 500);
 });
