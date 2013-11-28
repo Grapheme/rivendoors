@@ -73,7 +73,7 @@
 	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>
 	<script src="<?=base_url('js/change.js');?>"></script>
 	<script>
-		$(function(){$('.description-new').hide();});
+		$(function(){$('.description-new').hide();$('.red-cross').click();});
 	</script>	
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
