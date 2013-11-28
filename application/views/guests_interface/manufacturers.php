@@ -29,7 +29,7 @@
 			<div class="about-page-text"><?=$single['description'];?></div>
 			<div class="red-cross"></div>
 		</div>
-		<div class="container-carousel-new">
+		<div class="container-carousel-new slider-center">
 			<div class="tags-container" style="display:none;">
 				<ul class="tags-list clearfix">
 					<li class="tags-item"><a href="#" class="active-tag">Все</a></li>

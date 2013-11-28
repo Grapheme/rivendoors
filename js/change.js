@@ -4,9 +4,13 @@ function carouselPosition() {
 		$('.container-carousel-new').css({
 				
 				'left': $('.block-1').width(),
-				'width': $(window).width() - $('.block-1').width(),
-				'top': 0
+				'width': $(window).width() - $('.block-1').width()
 		});
+		$('.slider-center').css({
+				
+				'top':'12.5%'
+		});
+		
 }
 
 //Функция для определения отступа для блока описания
