@@ -46,7 +46,8 @@
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	
 	<script src="<?=base_url('js/vendor/jquery.jcarousel.min.js');?>"></script>
-	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>	
+	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>
+	<script src="<?=base_url('js/change.js');?>"></script>
 	<?php $this->load->view('guests_interface/includes/google-analytic');?>
 </body>
 </html>

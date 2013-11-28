@@ -16,7 +16,7 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		<div class="wrapper-component page-description-block can-fade">
+		<div class="page-description-block description-new">
 			<!--<h1><?=$single['h1'];?></h1>-->
 			<h2 class="detailed-description-header">
 		<?php if(!empty($single['logo'])):?>
@@ -29,7 +29,7 @@
 			<div class="about-page-text"><?=$single['description'];?></div>
 			<div class="red-cross"></div>
 		</div>
-		<div class="simple-page-slideshow">
+		<div class="container-carousel-new">
 			<div class="tags-container" style="display:none;">
 				<ul class="tags-list clearfix">
 					<li class="tags-item"><a href="#" class="active-tag">Все</a></li>
@@ -87,14 +87,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="mobile-footer">
+	<div class="mobile-footer new-footer">
 		<?php $this->load->view('guests_interface/includes/footer');?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	<script src="<?=base_url('js/vendor/jquery.fancybox.pack.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/fancybox-init.js');?>"></script>
 	<script src="<?=base_url('js/vendor/jquery.jcarousel.min.js');?>"></script>
-	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>	
+	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>
+	<script src="<?=base_url('js/change.js');?>"></script>	
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
 </html>

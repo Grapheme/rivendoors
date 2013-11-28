@@ -16,14 +16,13 @@
 			<?php $this->load->view('guests_interface/includes/navigation-bar');?>
 			<?php $this->load->view('guests_interface/includes/footer');?>
 		</div>
-		<div class="wrapper-component page-description-block can-fade">
+		<div class="page-description-block description-new">
 			<div class="production"><?=$content['title'];?></div>
 			<div class="about-page-text"><?=$content['content'];?></div>
 			<div class="red-cross"></div>
 		</div>
-		<div class="simple-page-slideshow">
+		<div class="container-carousel-new">
 			<div class="green-cross-on-fade"></div>
-			<div class="slider-container categories-container">
 			<?php if(empty($manufacturers) == FALSE):?>
 				<?php
 					$carousel1 = count($manufacturers);
@@ -62,17 +61,20 @@
 				<a class="jcarousel-prev" href="#"></a>
 				<a class="jcarousel-next" href="#"></a>
 			<?php endif;?>
-			</div>
 		</div>
 	</div>
-	<div class="mobile-footer">
+	<div class="mobile-footer new-footer">
 		<?php $this->load->view('guests_interface/includes/footer');?>
 	</div>
 	<?php $this->load->view('guests_interface/includes/scripts');?>
 	<script src="<?=base_url('js/vendor/jquery.fancybox.pack.js');?>"></script>
 	<script src="<?=base_url('js/cabinet/fancybox-init.js');?>"></script>
 	<script src="<?=base_url('js/vendor/jquery.jcarousel.min.js');?>"></script>
-	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>	
+	<script src="<?=base_url('js/cabinet/jcarousel-config.js');?>"></script>
+	<script src="<?=base_url('js/change.js');?>"></script>
+	<script>
+		$(function(){$('.description-new').hide();});
+	</script>	
 	<?php $this->load->view("guests_interface/includes/yandex-metrika");?>
 </body>
 </html>
