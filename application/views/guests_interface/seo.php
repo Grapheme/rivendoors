@@ -20,7 +20,12 @@
 		<span>&nbsp;</span>
 			<h1><?=$content['h1'];?></h1>
 			<div class="production"></div>
-			<div class="about-page-text"><?=$content['content'];?></div>
+			<?php
+				$search = array('$block$','$_block$', '$parket1$', '$parket2$', '$parket3$');
+				$replace = array('<div class="three-block">','</div>','<img class="parket-img" src="'.base_url('img/parket/parket-foto-1.png').'">','<img class="parket-img" src="'.base_url('img/parket/parket-foto-2.png').'">','<img class="parket-img" src="'.base_url('img/parket/parket-foto-3.png').'">',);
+				$content_formated = str_replace($search, $replace, $content['content']);
+			?>
+			<div class="about-page-text"><?=$content_formated?></div>
 		</div>
 		<div class="simple-page-slideshow">
 			<div class="green-cross-on-fade"></div>
