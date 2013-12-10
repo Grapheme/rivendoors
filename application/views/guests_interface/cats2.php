@@ -48,7 +48,7 @@
 				<?php
 					$carousel1 = count($images);
 					$carousel2 = 0;
-					if(count($images) > 10):
+					if(count($images) > 8):
 						$carousel1 = round(count($images)/2);
 						$carousel2 = count($images);
 					endif;

@@ -134,6 +134,13 @@ h1 {
     margin: 0.67em 0;
 }
 
+h2,h3,h4,h5,h6 {
+	font-size: 1.17em;
+    margin: 1em 0;
+}
+
+/*
+
 h2 {
     font-size: 1.5em;
     margin: 0.83em 0;
@@ -158,6 +165,8 @@ h6 {
     font-size: 0.67em;
     margin: 2.33em 0;
 }
+
+*/
 
 /**
  * Address styling not present in IE 7/8/9, Safari 5, and Chrome.

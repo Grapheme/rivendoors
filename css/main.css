@@ -252,6 +252,85 @@ html, body { width: 100%; height: 100%; min-width: 800px; padding: 0; margin: 0;
 	}
 	.tags-container .tags-item a:hover { color: #AEAD3A; border-color: transparent }
 	.tags-container .tags-item a.active-tag { color: #AEAD3A; text-decoration: none; border: none; cursor: default; }
+	
+	
+	/***** NEW *****/
+	
+.mezh-sale {
+	color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+
+.mezh-sale > span {
+    font-size: 60px;
+    margin-right: 10px;
+}
+
+.inline-name {
+	display: inline-block;
+	line-height: 20px;
+}
+
+.three-block {
+	width: 26%;
+	padding-right: 3.6%;
+	padding-left: 3.6%;
+	float: left;
+	position: relative;
+}
+
+.parket-img {
+	max-width: 100%;
+	margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+	.container-carousel-new {
+		position: fixed;
+	}
+	
+	.description-new {
+		position: absolute;
+		z-index: 199;
+		width: 60%;
+		min-height: 100%:
+	}
+	
+	.red-cross{
+		transition: .25s ease all;
+	}
+	
+	.description-new:hover .red-cross{
+		opacity: .8;
+	}
+	
+	.container-carousel-new .green-cross-on-fade {
+		opacity: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.three-block {
+		width: 100%;
+	}
+
+	.description-new {
+		z-index: 199;
+		width: 100%;
+	}
+	
+	.green-cross-on-fade {
+		display: none;
+	}
+	
+	.red-cross{
+		display: none;
+	}
+}
+
 /* ==========================================================================
  * Adaptation media queries
    ========================================================================== */  
@@ -306,7 +385,7 @@ html, body { width: 100%; height: 100%; min-width: 800px; padding: 0; margin: 0;
 } 
 
 @media (max-width: 480px) {
-	.wrapper { position: relative; width: 100%; min-width: 320px; overflow: hidden;/*padding-bottom: 76px;*/ }	
+	.wrapper { position: relative; width: 100%; min-width: 320px; /*padding-bottom: 76px;*/ }	
 	.index-wrapper { overflow: visible; }
 	.wrapper-component .block-name { font-size: .8em; }	
 } 

@@ -77,7 +77,7 @@ function calcWrapperParts() {
  */
 function calcSameHeight(){	
 	var $block1Height = $block1.height();		
-	if ( $jCarouselImgCont.find('img').length > 10 ) {
+	if ( $jCarouselImgCont.find('img').length > 8 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.4);
 		$jCarouselImgCont.height( $block1Height * 0.8 / 2 ).find('img').height( $block1Height * 0.8 / 2 );
@@ -96,7 +96,7 @@ function calcCatSameHeight() {
 	$('.jcarousel-prev, .jcarousel-next').css({ 'top': '50%', 'margin-top': '-15px' });
 	$simplePageSlideshow.css({ 'top' : '0' });
 	
-	if ( $jCarouselImgCont.find('img').length > 10 ) {
+	if ( $jCarouselImgCont.find('img').length > 6 ) {
 		$aboutCompanySH.height( $block1Height );	
 		$jCarousel1.add( $jCarousel2 ).height( $block1Height * 0.5);
 		$jCarouselImgCont.height( $block1Height * 1 / 2 ).find('img').height( $block1Height * 1 / 2 ).width( $(this).height()/GOLDEN_RATIO / 2 );
@@ -158,7 +158,7 @@ function calcListHeight(api) {
 }
 function alignCatsBlock() {
 	if( $('.category-wrapper')[0] ) {		
-		$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
+		//$('.green-cross-on-fade').css({'opacity' : '1', 'z-index' : '9999'});
 		
 		if ( $pageDescriptionBlock.width() == 256){
 			$simplePageSlideshow.animate({left: '256px', width: $(window).width() - 256}, 500);
@@ -199,10 +199,19 @@ $(document).ready(function () {
 	if (windowObj.width() <= 768) {
 		$aboutCompanySlideshow.height(288);
 		$('.__fotorama').trigger('rescale', [false, $aboutCompanySlideshow.height(), 700/467, 333]);		
-	};	
+	};
+	/*var posx = $(window).width();
+	var posy = $(window).height();
+	$('body').append("<div class='thisis' style='opacity: .9; position:fixed; right:0; top:0; padding:20px; background:#fff;'>x: " + posx + "; y: " + posy + "</div>");
+	*/
 });	
 
-windowObj.resize(function() {
+$(window).resize(function() {
+	/*
+	posx = $(window).width();
+	posy = $(window).height();
+	$('.thisis').html("x: " + posx + "; y: " + posy);
+	*/
 	
 	var api = scrollPaneInit(); 		
 	calcPanMaxHeight(api, scrollInitHeight);
@@ -361,5 +370,3 @@ $('.block-2, .block-3, .block-4, .block-5').click( function(event){
 		};		
 	};		
 });
-	
-
