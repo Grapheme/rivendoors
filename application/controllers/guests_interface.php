@@ -26,7 +26,7 @@ class Guests_interface extends MY_Controller{
 	
 	public function seo(){
 
-		$this->load->model(array('pages','page_resources'));
+		$this->load->model(array('pages','page_resources','manufacturers'));
 		$pagevar['manufacturers'] = array();
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
 			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);

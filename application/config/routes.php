@@ -36,6 +36,8 @@ $route['parket'] = "guests_interface/categories";
 
 $route['mejkomnatnie-dveri/:any'] = "guests_interface/manufacturers";
 $route['dekor/:any'] = "guests_interface/manufacturers";
+
+$route['parket/parketoff'] = "guests_interface/seo";
 $route['parket/:any'] = "guests_interface/manufacturers";
 /********** loading resources *************/
 $route['loadimage/:any/:num'] = "guests_interface/loadimage";
