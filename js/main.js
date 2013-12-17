@@ -18,7 +18,7 @@ function initCarouselControls() {
 	var imgWidth = 0;		
 	$('.jcarousel-img-container > img').load( function() {		
 		$(this).each( function(){
-			imgWidth += $(this).width();		
+			imgWidth += $(this).width();
 			if ( imgWidth < (windowObj.width() * 0.6 )) {
 				$('.jcarousel-next').fadeOut( 800 );
 			} else {
