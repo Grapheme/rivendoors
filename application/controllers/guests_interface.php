@@ -25,9 +25,16 @@ class Guests_interface extends MY_Controller{
 	}
 	
 	public function seo(){
-
+		
+		if(uri_string() == 'parket/parketoff'):
+			redirect('laminat/parketoff','location',301);
+		endif;
+		
 		$this->load->model(array('pages','page_resources','manufacturers'));
-		$pagevar['manufacturers'] = array();
+		$pagevar['manufacturers'] = $this->manufacturers->getAll();
+		for($i=0;$i<count($pagevar['manufacturers']);$i++):
+			$pagevar['manufacturers'][$i]['link'] = $this->categoriesURL[$pagevar['manufacturers'][$i]['category']].'/'.$pagevar['manufacturers'][$i]['translit'];
+		endfor;
 		if($pagevar['content'] = $this->pages->getWhere(NULL,array('url'=>uri_string()))):
 			$pagevar['images'] = $this->page_resources->getWhere(NULL,array('page'=>uri_string()),TRUE);
 			$this->load->view("guests_interface/seo",$pagevar);

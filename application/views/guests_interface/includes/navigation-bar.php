@@ -29,7 +29,7 @@
 				</ul>
 			</li>
 			<li class="navigation-list-item item-5">
-				<a href="<?=site_url('parket')?>" class="visible-sub-list <?=($this->uri->segment(1) == 'parket' && uri_string() != 'parket/parketoff')? 'active-green-link': '';?>">Паркет</a>
+				<a href="<?=site_url('parket')?>" class="visible-sub-list <?=($this->uri->segment(1) == 'parket')? 'active-green-link': '';?>">Паркет</a>
 			<?php if(!empty($manufacturers)):?>
 				<ul class="subnavigation-list <?php if($this->uri->segment(1) == 'parket') echo 'active'; ?>">
 				<?php for($i=0;$i<count($manufacturers);$i++):?>
@@ -39,11 +39,14 @@
 					</li>
 					<?php endif;?>
 				<?php endfor;?>
+					<li class="navigation-list-item item-6">
+						<a href="<?=site_url('parket/parketoff');?>" class="<?=(uri_string() == 'parket/parketoff')? 'active-green-link':'';?>">Parketoff</a>
+					</li>
 				</ul>
 			<?php endif;?>
 			</li>
 			<li class="navigation-list-item item-6">
-				<a href="<?=site_url('parket/parketoff');?>" class="<?=(uri_string() == 'parket/parketoff')? 'active-green-link':'';?>">Ламинат</a>
+				<a href="<?=site_url('laminat/parketoff');?>" class="<?=(uri_string() == 'laminat/parketoff')? 'active-green-link':'';?>">Ламинат</a>
 			</li>
 			<li class="navigation-list-item item-7">
 				<a href="<?=site_url('contacts');?>" class="<?=($this->uri->segment(1) == 'contacts')? 'active-green-link': '';?>">Контакты</a>
