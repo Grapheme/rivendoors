@@ -39,9 +39,6 @@
 					</li>
 					<?php endif;?>
 				<?php endfor;?>
-					<li class="navigation-list-item item-6">
-						<a href="<?=site_url('parket/parketoff');?>" class="<?=(uri_string() == 'parket/parketoff')? 'active-green-link':'';?>">Parketoff</a>
-					</li>
 				</ul>
 			<?php endif;?>
 			</li>

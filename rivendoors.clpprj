@@ -7332,27 +7332,27 @@
 				<treenode node="zipdata;PHP:Var Name;S:\home\rivendoors\www\system\libraries\Zip.php;f5;34;13;34;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</treenode>
-			<treenode node="Guests_interface;PHP:Class Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f0;2;1;130;;;;vpos;;vMY_Controller;;c;;r;;d44,2;;b0,0;;m">
+			<treenode node="Guests_interface;PHP:Class Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f0;2;1;134;;;;vpos;;vMY_Controller;;c;;r;;d44,2;;b0,0;;m">
 				<treenode node="__construct;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f1;7;2;11;;;;vpos;;v;;r;;d23,7;;b0,0;;m">
 					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;10;7;10;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="about;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;41;2;48;;;;vpos;;v;;r;;d24,41;;b1,0;;m">
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;44;10;44;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="about;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;45;2;52;;;;vpos;;v;;r;;d24,45;;b1,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;48;10;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;43;7;43;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="categories;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;85;2;95;;;;vpos;;v;;r;;d29,85;;b1,0;;m">
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;88;10;88;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;87;7;87;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;47;7;47;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="contacts;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;50;2;57;;;;vpos;;v;;r;;d27,50;;b1,0;;m">
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;53;10;53;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="categories;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;89;2;99;;;;vpos;;v;;r;;d29,89;;b1,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;92;10;92;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;52;7;52;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;91;7;91;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="contacts;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;54;2;61;;;;vpos;;v;;r;;d27,54;;b1,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;57;10;57;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;56;7;56;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="index;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;13;2;24;;;;vpos;;v;;r;;d24,13;;b1,0;;m">
@@ -7363,44 +7363,44 @@
 					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;15;7;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="loadManufacturers;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f9;97;2;111;;;;vpos;;v;;r;;d49,97;;b3,0;;mcategoryURL;;p">
-					<treenode node="categoryID;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;99;13;99;;;;vposmixed;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="loadManufacturers;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f9;101;2;115;;;;vpos;;v;;r;;d49,101;;b3,0;;mcategoryURL;;p">
+					<treenode node="categoryID;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;103;13;103;;;;vposmixed;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="categoryURL;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f36;97;48;97;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="categoryURL;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f36;101;48;101;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;107;8;107;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;111;8;111;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;104;10;104;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;108;10;108;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f31;100;36;100;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="logoff;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;120;2;129;;;;vpos;;v;;r;;d25,120;;b1,0;;m">
-					<treenode node="_SERVER;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f11;124;19;124;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;122;7;122;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f31;104;36;104;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="manufacturers;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;59;2;83;;;;vpos;;v;;r;;d32,59;;b1,0;;m">
-					<treenode node="categoryID;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f3;68;14;68;;;;vposmixed;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="logoff;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;124;2;133;;;;vpos;;v;;r;;d25,124;;b1,0;;m">
+					<treenode node="_SERVER;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f11;128;19;128;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;79;8;79;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;62;10;62;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;61;7;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;126;7;126;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="seo;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;26;2;39;;;;vpos;;v;;r;;d22,26;;b1,0;;m">
-					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;30;8;30;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="manufacturers;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;63;2;87;;;;vpos;;v;;r;;d32,63;;b1,0;;m">
+					<treenode node="categoryID;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f3;72;14;72;;;;vposmixed;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;29;10;29;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;83;8;83;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;28;7;28;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;66;10;66;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;65;7;65;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="signIN;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;115;2;118;;;;vpos;;v;;r;;d25,115;;b1,0;;m">
-					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;117;7;117;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="seo;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;26;2;43;;;;vpos;;v;;r;;d22,26;;b1,0;;m">
+					<treenode node="i;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f6;34;8;34;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="pagevar;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;33;10;33;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;32;7;32;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="signIN;PHP:Function Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f8;119;2;122;;;;vpos;;v;;r;;d25,119;;b1,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f2;121;7;121;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="offset;PHP:Var Name;S:\home\rivendoors\www\application\controllers\guests_interface.php;f5;5;12;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
@@ -9602,7 +9602,7 @@
 			</treenode>
 			<treenode node="manufacturer;PHP:Var Name;S:\home\rivendoors\www\application\views\admin_interface\forms\edit-manufacturer.php;f63;3;76;3;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="manufacturers;PHP:Var Name;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\list.php;f19;30;33;30;;S:\home\rivendoors\www\application\views\guests_interface\index.php;f28;27;42;27;;S:\home\rivendoors\www\application\views\guests_interface\categories.php;f18;26;32;26;;S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php;f28;9;42;9;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="manufacturers;PHP:Var Name;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\list.php;f19;30;33;30;;S:\home\rivendoors\www\application\views\guests_interface\categories.php;f18;26;32;26;;S:\home\rivendoors\www\application\views\guests_interface\index.php;f28;27;42;27;;S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php;f28;9;42;9;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="message;PHP:Var Name;S:\home\rivendoors\www\application\views\html\print-error.php;f7;3;15;3;;S:\home\rivendoors\www\application\errors\error_php.php;f24;5;32;5;;S:\home\rivendoors\www\application\errors\error_general.php;f13;58;21;58;;S:\home\rivendoors\www\application\errors\error_db.php;f13;58;21;58;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9648,7 +9648,7 @@
 			</treenode>
 			<treenode node="system_path;PHP:Var Name;S:\home\rivendoors\www\index.php;f1;58;13;58;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\views\html\select-categories.php;f14;1;19;1;;S:\home\rivendoors\www\application\views\guests_interface\accounts\signin.php;f6;3;11;3;;S:\home\rivendoors\www\application\views\guests_interface\accounts\password-forgot.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\images.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\list.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\edit.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\includes\header.php;f7;11;12;11;;S:\home\rivendoors\www\application\views\admin_interface\forms\images-manufacturer.php;f3;8;8;8;;S:\home\rivendoors\www\application\views\admin_interface\cabinet\profile.php;f6;3;11;3;;S:\home\rivendoors\www\application\views\admin_interface\cabinet\control-panel.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\add.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\guests_interface\Codelobster0.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\add.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\edit.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\list.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\guests_interface\manufacturers.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\index.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\contacts.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\categories.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\includes\head.php;f10;2;15;2;;S:\home\rivendoors\www\application\views\guests_interface\about.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\seo.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\cats2.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php;f49;4;54;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="this;PHP:Var Name;S:\home\rivendoors\www\application\views\html\select-categories.php;f14;1;19;1;;S:\home\rivendoors\www\application\views\guests_interface\accounts\signin.php;f6;3;11;3;;S:\home\rivendoors\www\application\views\guests_interface\accounts\password-forgot.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\images.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\list.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\edit.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\includes\header.php;f7;11;12;11;;S:\home\rivendoors\www\application\views\admin_interface\forms\images-manufacturer.php;f3;8;8;8;;S:\home\rivendoors\www\application\views\admin_interface\cabinet\profile.php;f6;3;11;3;;S:\home\rivendoors\www\application\views\admin_interface\cabinet\control-panel.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\manufacturers\add.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\guests_interface\Codelobster0.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\add.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\edit.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\admin_interface\pages\list.php;f6;6;11;6;;S:\home\rivendoors\www\application\views\guests_interface\manufacturers.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\contacts.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\categories.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\includes\head.php;f10;2;15;2;;S:\home\rivendoors\www\application\views\guests_interface\about.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\seo.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\cats2.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\index.php;f7;6;12;6;;S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php;f49;4;54;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="UNI;PHP:Var Name;S:\home\rivendoors\www\system\core\CodeIgniter.php;f1;157;5;157;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -20649,7 +20649,7 @@
 		<file name="S:\home\rivendoors\www\js\cabinet\datepicker.js" crc="-442824390"/>
 		<file name="S:\home\rivendoors\www\js\cabinet\admin.js" crc="-263239679"/>
 		<file name="S:\home\rivendoors\www\js\plugins.js" crc="-1277222427"/>
-		<file name="S:\home\rivendoors\www\js\main.js" crc="231107930"/>
+		<file name="S:\home\rivendoors\www\js\main.js" crc="-772114545"/>
 		<file name="S:\home\rivendoors\www\js\green.js" crc="1225838095"/>
 		<file name="S:\home\rivendoors\www\js\change.js" crc="422253586"/>
 		<file name="S:\home\rivendoors\www\fancybox\helpers\jquery.fancybox-thumbs.js" crc="-538658338"/>
@@ -20663,8 +20663,8 @@
 		<file name="S:\home\rivendoors\www\css\style.css" crc="-357875234"/>
 		<file name="S:\home\rivendoors\www\css\redactor.css" crc="498124776"/>
 		<file name="S:\home\rivendoors\www\css\pagination.css" crc="1564961335"/>
-		<file name="S:\home\rivendoors\www\css\normalize.css" crc="-1032497228"/>
-		<file name="S:\home\rivendoors\www\css\main.css" crc="-1353041932"/>
+		<file name="S:\home\rivendoors\www\css\normalize.css" crc="1754795146"/>
+		<file name="S:\home\rivendoors\www\css\main.css" crc="306732315"/>
 		<file name="S:\home\rivendoors\www\css\jquery.jscrollpane.css" crc="789588915"/>
 		<file name="S:\home\rivendoors\www\css\jquery.fancybox.css" crc="-1370954773"/>
 		<file name="S:\home\rivendoors\www\css\fotorama.css" crc="-540813299"/>
@@ -20680,7 +20680,7 @@
 		<file name="S:\home\rivendoors\www\application\views\headers\guest.php" crc="-1725456196"/>
 		<file name="S:\home\rivendoors\www\application\views\headers\admin.php" crc="-1657379736"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\scripts.php" crc="1404911508"/>
-		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php" crc="1923194961"/>
+		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\navigation-bar.php" crc="-1390730872"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\ie7.php" crc="-785440282"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\head.php" crc="714623767"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\includes\google-maps.php" crc="-1056909791"/>
@@ -20692,7 +20692,7 @@
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\accounts\password-forgot.php" crc="-1890067376"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\seo.php" crc="1441583232"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\manufacturers.php" crc="-423830546"/>
-		<file name="S:\home\rivendoors\www\application\views\guests_interface\index.php" crc="20161061"/>
+		<file name="S:\home\rivendoors\www\application\views\guests_interface\index.php" crc="-532700382"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\contacts.php" crc="1058160975"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\cats2.php" crc="1385151615"/>
 		<file name="S:\home\rivendoors\www\application\views\guests_interface\categories.php" crc="-587239331"/>
@@ -20748,7 +20748,7 @@
 		<file name="S:\home\rivendoors\www\application\errors\error_404.php" crc="-619807995"/>
 		<file name="S:\home\rivendoors\www\application\core\MY_Model.php" crc="1145638097"/>
 		<file name="S:\home\rivendoors\www\application\core\MY_Controller.php" crc="179408507"/>
-		<file name="S:\home\rivendoors\www\application\controllers\guests_interface.php" crc="-345243369"/>
+		<file name="S:\home\rivendoors\www\application\controllers\guests_interface.php" crc="1714656870"/>
 		<file name="S:\home\rivendoors\www\application\controllers\ajax_interface.php" crc="1810379517"/>
 		<file name="S:\home\rivendoors\www\application\controllers\admin_interface.php" crc="1704473702"/>
 		<file name="S:\home\rivendoors\www\application\config\user_agents.php" crc="-484381080"/>

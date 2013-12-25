@@ -16,7 +16,7 @@ class Page_variables {
 		switch($this->CI->uri->total_segments()):
 			case 0: $record = $this->CI->pages->getWhere(NULL,array('url'=>'home')); break;
 			case 2:
-				if(uri_string() == 'parket/parketoff'):
+				if(uri_string() == 'laminat/parketoff'):
 					$record = $this->CI->pages->getWhere(NULL,array('url'=>uri_string()));
 				elseif($this->CI->uri->segment(1) !== FALSE && array_search($this->CI->uri->segment(1),$this->CI->categoriesURL)):
 					$categoryID = array_search($this->CI->uri->segment(1),$this->CI->categoriesURL);
@@ -39,7 +39,7 @@ class Page_variables {
 		switch($this->CI->uri->total_segments()):
 			case 1: $record = $this->CI->pages->getWhere(NULL,array('url'=>$this->CI->uri->segment(1))); break;
 			case 2:
-				if(uri_string() == 'parket/parketoff'):
+				if(uri_string() == 'laminat/parketoff'):
 					$record = $this->CI->pages->getWhere(NULL,array('url'=>uri_string()));
 				elseif($this->CI->uri->segment(1) !== FALSE && array_search($this->CI->uri->segment(1),$this->CI->categoriesURL)):
 					$categoryID = array_search($this->CI->uri->segment(1),$this->CI->categoriesURL);

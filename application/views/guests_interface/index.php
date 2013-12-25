@@ -20,8 +20,8 @@
 				<?php if($key == 2): ?>
 					<a href="<?=base_url('about');?>">О компании</a>
 				<?php else: ?>
-					<?=$value;?>	
-				<?php endif;?>					
+					<?=$value;?>
+				<?php endif;?>
 			</h2>
 			<div class="block-description <?=($key == 2)?'hidden':'';?> <?=($key<5)?'right':'left';?>">
 				<ul class="block-description-list">
