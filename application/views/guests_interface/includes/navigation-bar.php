@@ -1,3 +1,17 @@
+<?php
+  if ($this->uri->segment(1) == 'mejkomnatnie-dveri') {
+	  $sortMans[0] = $manufacturers[4];	  
+	  $sortMans[1] = $manufacturers[0];	  
+	  $sortMans[2] = $manufacturers[5];	  
+	  $sortMans[3] = $manufacturers[1];	  
+	  $sortMans[4] = $manufacturers[6];	  
+	  $sortMans[5] = $manufacturers[2];	  
+	  $sortMans[6] = $manufacturers[7];	  
+	  $sortMans[7] = $manufacturers[3];
+	  
+	  $manufacturers = $sortMans;
+  }
+;?>
 <nav id="main-navigation">	
     <div class="scroll-pane-container">
 		<ul class="navigation-list scroll-pane">
